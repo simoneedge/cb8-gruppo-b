@@ -1,40 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# COME COLLABORARE CON GIT
 
-## Getting Started
+## PRIMA VOLTA:
 
-First, run the development server:
+- Se non ancora fatto, clonare il progetto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/simoneedge/cb8-gruppo-b.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## OGNI VOLTA:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Assicurarsi di essere nella cartella del progetto **cb8-gruppo-b**
+2. Assicurarsi di essere sul branch **main**
+3. Lanciare da terminale il seguente comando per essere allineati localmente alla ultime modifiche su GitHub
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+git pull
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. Creare un nuovo branch che abbia un titolo descrittivo e (se vi va) una struttura di questo genere:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   **parolachiave/titoloDescrittivoInCamelCase-cognome-data(yymmdd)**
 
-## Learn More
+   Esempio, devo aggiungere una navbar: **feat/addNavbar-spoto-240402**
 
-To learn more about Next.js, take a look at the following resources:
+Le parole chiavi importanti sono 3:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- feat: aggiunta di una nuova feature
+- fix: risoluzione di un bug
+- chore: modifica "d'ambiente", o comunque una modifica che non rientra nelle prime due
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Una volta modificati uno o più file, aggiungere le modifiche all'area di stage con il seguente comando:
 
-## Deploy on Vercel
+```bash
+  git add .
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+per aggiungere tutte le modifiche, oppure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+ git add nomeFile
+```
+
+per aggiungere un file specifico
+
+6. Committare le modifiche con il seguente comando:
+
+```bash
+   git commit -m "messaggio del commit"
+```
+
+anche per il messaggio del commit sarebbe figo seguire una struttura del genere:
+
+**parolachiave: messaggio del commit in inglese**
+Esempio: ho aggiunto una navbar -> **feat: add navbar**
+oppure ho risolto un bug -> **fix: style issue**
+
+7. Pushare le modifiche sul branch appena creato con il seguente comando:
+
+```bash
+    git push origin nomeBranch
+```
+
+questo comando creerà un branch con lo stesso nome su GitHub o, se già esistente, pusherà semplicemente le modifiche online.
+
+8. Quando il motivo per cui avete creato il branch è stato soddisfatto, potete fare una pull request su GitHub per unire il branch al main. Andate su GitHub, nella pagina del progetto, e cliccate su "Pull request". Selezionate il branch appena creato e create la pull request. Se tutto è a posto, il branch verrà unito al main.
+
+9. Potete poi eliminare direttamente da GitHub il branch appena mergiato.
