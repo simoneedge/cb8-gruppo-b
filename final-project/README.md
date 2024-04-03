@@ -27,6 +27,7 @@ git pull
 Le parole chiavi importanti sono 3:
 
 - feat: aggiunta di una nuova feature
+- style: modifica di stile
 - fix: risoluzione di un bug
 - chore: modifica "d'ambiente", o comunque una modifica che non rientra nelle prime due
 
