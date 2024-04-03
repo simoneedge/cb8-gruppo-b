@@ -1,6 +1,16 @@
 import Head from "next/head";
+import Link from "next/link";
 
+// next auth
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useEffect } from "react";
 export default function Home() {
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    console.log(session);
+  }, [session]);
+
   return (
     <>
       <Head>
@@ -11,6 +21,15 @@ export default function Home() {
       </Head>
       <main>
         <h1>Final Project</h1>
+        {session ? (
+          <>
+            <p>Signed in as {session.user.username}</p>
+            <button onClick={() => signOut()}>SIGN OUT</button>
+          </>
+        ) : (
+          <button onClick={() => signIn()}>SIGN IN</button>
+        )}
+        {/* <Link href="api/auth/signin">SIGN IN</Link> */}
       </main>
     </>
   );
