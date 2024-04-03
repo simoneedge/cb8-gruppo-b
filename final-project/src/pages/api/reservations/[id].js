@@ -47,6 +47,7 @@ export default async function handler(req, res) {
     try {
       const reservation = req.body;
       reservation.userId = req.query.id;
+
       const result = await db.collection("reservations").insertOne(reservation);
       if (result.acknowledged) {
         res.status(201).json({ message: "Reservation created" });
