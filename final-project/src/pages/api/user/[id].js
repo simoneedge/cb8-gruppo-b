@@ -1,12 +1,12 @@
 import { ObjectId } from "mongodb";
 import clientPromise from "../../../../utils/mongodb";
 
+const client = await clientPromise;
+const db = client.db("final-project");
+
 export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
-      const client = await clientPromise;
-      const db = client.db("final-project");
-
       if (!req.query.id) {
         return res.status(400).json({ error: "ID is required" });
       }
