@@ -1,18 +1,93 @@
 .Home {
+  width: 100%;
+  height: 100%;
+  max-width: 112.5rem;
+}
+
+// ---NAV---
+
+.navPageHome {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 3.75rem;
+  padding-top: 2.5rem;
+  background-color: var(--color-main-first);
+  margin-bottom: 1.875rem;
+}
+
+// ---MAIN---
+
+.titleAndLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+}
+
+// ---SLIDER---
+.containerSlider {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   width: 100%;
-  height: 100%;
-  max-width: 1800px;
 }
 
-.navPageHome {
+.boxSlider {
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)),
+    url("/exp1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90%;
+  height: 34vh;
+  border-radius: 20px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding-bottom: 60px;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 40px;
+
+  color: white;
+}
+
+// ---SECTION LIST ----
+.box {
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)),
+    url("/exp1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90%;
+  height: 34vh;
+  border-radius: 20px;
+  padding: 20px 40px 0px 40px;
+  color: white;
+  margin-bottom: 80px;
+
+  .boxIconTop {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .boxText {
+    background-color: white;
+    color: black;
+    margin-top: 50px;
+  }
+}
+
+// ---BOTTOM MENU----
+.menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #dddddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
 }
