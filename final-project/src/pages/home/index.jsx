@@ -1,5 +1,9 @@
 import styles from "../../styles/Home.module.scss";
-
+import { IconHeart } from "@tabler/icons-react";
+import { IconStar } from "@tabler/icons-react";
+import { IconHome } from "@tabler/icons-react";
+import { IconSailboat } from "@tabler/icons-react";
+import { IconUserCircle } from "@tabler/icons-react";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -12,7 +16,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      {/* ---NAV--- */}
       <nav className={styles.navPageHome}>
         <div className={styles.containerImage}>
           <img src="/logoipsum-331.svg" alt="logo" />
@@ -27,35 +31,38 @@ export default function Home() {
           <button>Open Air</button>
         </div>
       </nav>
-      <main>
-        {/* //h2 Title */}
-        <div>
+      {/* ---MAIN--- */}
+      <main className={styles.mainPageHome}>
+        <div className={styles.titleAndLink}>
           <h2>#Experience for you</h2>
           <Link href="#">See all</Link>
         </div>
 
         {/* //Slider */}
-        <div>
-          <div>
+        <div className={styles.containerSlider}>
+          <div className={styles.boxSlider}>
             <h4>Titolo Evento</h4>
             <p>Orario</p>
             <p>Città</p>
           </div>
         </div>
 
-        {/* //h2 Title */}
-        <div>
+        <div className={styles.titleAndLink}>
           <h2>#Show Experience</h2>
         </div>
 
         {/* List with random cards, but updates when the search is performed */}
-        <section>
-          <div>
-            <div>
-              <span>Heart Icon</span>
-              <span>Rating stars</span>
+        <section className={styles.containerSlider}>
+          <div className={styles.box}>
+            <div className={styles.boxIconTop}>
+              <span>
+                <IconHeart />
+              </span>
+              <span>
+                <IconStar />
+              </span>
             </div>
-            <div>
+            <div className={styles.boxText}>
               <h4>Titolo Evento</h4>
               <p>Orario</p>
               <p>Città</p>
@@ -64,11 +71,19 @@ export default function Home() {
         </section>
         {/* bottom menu */}
         <header>
-          <div>
-            <span>Icon Home</span>
-            <span>Icon Experience</span>
-            <span>Icon Favorites</span>
-            <span>Icon Profile</span>
+          <div className={styles.menu}>
+            <Link href="/#">
+              <IconHome />
+            </Link>
+            <Link href="/#">
+              <IconSailboat />
+            </Link>
+            <Link href="/#">
+              <IconHeart />
+            </Link>
+            <Link href="/#">
+              <IconUserCircle />
+            </Link>
           </div>
         </header>
       </main>
