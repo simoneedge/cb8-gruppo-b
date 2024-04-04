@@ -60,6 +60,15 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* bottom menu */}
+        <header>
+          <div>
+            <span>Icon Home</span>
+            <span>Icon Experience</span>
+            <span>Icon Favorites</span>
+            <span>Icon Profile</span>
+          </div>
+        </header>
       </main>
     </>
   );
