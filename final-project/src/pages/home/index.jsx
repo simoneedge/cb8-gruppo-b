@@ -1,9 +1,3 @@
-import styles from "../../styles/Home.module.scss";
-import { IconHeart } from "@tabler/icons-react";
-import { IconStar } from "@tabler/icons-react";
-import { IconHome } from "@tabler/icons-react";
-import { IconSailboat } from "@tabler/icons-react";
-import { IconUserCircle } from "@tabler/icons-react";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -22,7 +16,7 @@ export default function Home() {
           <img src="/logoipsum-331.svg" alt="logo" />
         </div>
         <div className={styles.containerInput}>
-          <input type="text" placeholder="Search..." />
+          <SearchBar />
         </div>
         <div className={styles.filterIcons}>
           <button>Food & wine</button>
