@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,7 +25,42 @@ export default function Home() {
           <button>Open Air</button>
         </div>
       </nav>
-      <main></main>
+      <main>
+        {/* //h2 Title */}
+        <div>
+          <h2>#Experience for you</h2>
+          <Link href="#">See all</Link>
+        </div>
+
+        {/* //Slider */}
+        <div>
+          <div>
+            <h4>Titolo Evento</h4>
+            <p>Orario</p>
+            <p>Città</p>
+          </div>
+        </div>
+
+        {/* //h2 Title */}
+        <div>
+          <h2>#Show Experience</h2>
+        </div>
+
+        {/* List with random cards, but updates when the search is performed */}
+        <section>
+          <div>
+            <div>
+              <span>Heart Icon</span>
+              <span>Rating stars</span>
+            </div>
+            <div>
+              <h4>Titolo Evento</h4>
+              <p>Orario</p>
+              <p>Città</p>
+            </div>
+          </div>
+        </section>
+      </main>
     </>
   );
 }
