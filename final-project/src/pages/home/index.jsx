@@ -19,19 +19,42 @@ export default function Home() {
       </Head>
       {/* ---NAV--- */}
       <nav className={styles.navPageHome}>
-        <div className={styles.containerImage}>
-          <img src="/logoipsum-331.svg" alt="logo" />
+        <div className={styles.containerDesk}>
+          <div className={styles.containerImage}>
+            <img src="/logoipsum-331.svg" alt="logo" />
+          </div>
+          <div className={styles.topMenu}>
+            <Link href="/#">Preferiti</Link>
+            <Link href="/#">Esperienze</Link>
+            <Link href="/#">Profilo</Link>
+            <Link href="/#">Contatti</Link>
+            <Link href="/#">About Us</Link>
+          </div>
         </div>
-        <div className={styles.containerInput}></div>
-        <div className={styles.filterIcons}>
-          <button>Food & wine</button>
-          <button>Wellness</button>
-          <button>Events</button>
-          <button>Open Air</button>
+        <div>
+          <div className={styles.containerInput}>
+            <input type="text" placeholder="search..." />
+            <button>Click</button>
+          </div>
+          <div className={styles.filterIcons}>
+            <button>Food & wine</button>
+            <button>Wellness</button>
+            <button>Events</button>
+            <button>Open Air</button>
+          </div>
         </div>
       </nav>
       {/* ---MAIN--- */}
       <main className={styles.mainPageHome}>
+        <div className={styles.textDesk}>
+          <h1>Uncover Sicily with SicilyExperience!</h1>
+          <p>
+            Embark on a captivating journey through the heart of Sicily with
+            SicilyExperience. Our platform offers more than just a booking
+            experience - it's your ultimate guide to exploring Sicily, tailored
+            to your interests and preferences.
+          </p>
+        </div>
         <div className={styles.titleAndLink}>
           <h2>#Experience for you</h2>
           <Link href="#">See all</Link>

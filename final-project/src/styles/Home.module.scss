@@ -16,6 +16,16 @@
   padding-top: 2.5rem;
   background-color: var(--color-main-first);
   margin-bottom: 1.875rem;
+
+  .topMenu {
+    display: none;
+  }
+}
+
+.containerInput {
+  button {
+    display: none;
+  }
 }
 
 // ---MAIN---
@@ -90,4 +100,43 @@
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
+}
+
+@media screen and (min-width: 768px) {
+  // ----NAV---
+  .navPageHome {
+    background: linear-gradient(rgba(139, 138, 138, 0.4), rgba(0, 0, 0, 0.1)),
+      url("/sicilyexp-pic.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 70vh;
+    padding: 10px 40px;
+
+    .topMenu {
+      display: flex;
+      gap: 14px;
+    }
+  }
+
+  .containerDesk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .containerInput {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+
+    button {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  // ----MAIN---
 }
