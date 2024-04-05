@@ -67,6 +67,21 @@ export default function Home() {
             <p>Orario</p>
             <p>Città</p>
           </div>
+          {/* <div className={styles.boxSlider}>
+            <h4>Titolo Evento</h4>
+            <p>Orario</p>
+            <p>Città</p>
+          </div>
+          <div className={styles.boxSlider}>
+            <h4>Titolo Evento</h4>
+            <p>Orario</p>
+            <p>Città</p>
+          </div>
+          <div className={styles.boxSlider}>
+            <h4>Titolo Evento</h4>
+            <p>Orario</p>
+            <p>Città</p>
+          </div> */}
         </div>
 
         <div className={styles.titleAndLink}>
@@ -78,10 +93,10 @@ export default function Home() {
           <div className={styles.box}>
             <div className={styles.boxIconTop}>
               <span>
-                <IconHeart />
+                <IconStar />
               </span>
               <span>
-                <IconStar />
+                <IconHeart />
               </span>
             </div>
             <div className={styles.boxText}>
@@ -108,6 +123,9 @@ export default function Home() {
             </Link>
           </div>
         </header>
+        <footer className={styles.footer}>
+          <p>Copyright</p>
+        </footer>
       </main>
     </div>
   );

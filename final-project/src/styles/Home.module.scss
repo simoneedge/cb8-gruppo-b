@@ -15,7 +15,7 @@
   padding-bottom: 3.75rem;
   padding-top: 2.5rem;
   background-color: var(--color-main-first);
-  margin-bottom: 1.875rem;
+  padding-bottom: 1.875rem;
 
   .topMenu {
     display: none;
@@ -29,12 +29,15 @@
 }
 
 // ---MAIN---
+.textDesk {
+  display: none;
+}
 
 .titleAndLink {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px 20px 20px;
+  padding: 40px 20px 20px 20px;
 }
 
 // ---SLIDER---
@@ -102,6 +105,11 @@
   padding: 10px 0;
 }
 
+// --FOOTER--
+.footer {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   // ----NAV---
   .navPageHome {
@@ -139,4 +147,53 @@
   }
 
   // ----MAIN---
+  // --text section--
+  .textDesk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 40px 100px 40px;
+    gap: 10px;
+    width: 100%;
+    background-color: orange;
+
+    h1,
+    p {
+      width: 700px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .titleAndLink {
+    padding: 40px 120px 40px 120px;
+  }
+
+  // SLIDER NO DESK
+  .containerSlider {
+    padding: 40px 120px 40px 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .boxSlider {
+    width: 400px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  // --FOOTER--
+  .footer {
+    display: block;
+    height: 24vh;
+    color: white;
+    background-color: rgb(16, 16, 34);
+  }
 }
