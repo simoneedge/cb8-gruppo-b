@@ -7,7 +7,7 @@ import { IconHeart } from "@tabler/icons-react";
 import { IconStar } from "@tabler/icons-react";
 import { IconSailboat } from "@tabler/icons-react";
 import { IconUserCircle } from "@tabler/icons-react";
-import ImageSlider from "@/components/slider";
+import ImageSlider from "@/components/imageSlider";
 // Immagini dello slider
 const images = ["/exp1.jpg", "/sicilyexp-pic.jpeg"];
 
