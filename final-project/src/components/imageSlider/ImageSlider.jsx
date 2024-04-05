@@ -7,7 +7,7 @@ const ImageSlider = ({ images }) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -27,7 +27,7 @@ const ImageSlider = ({ images }) => {
                 width: "100%",
                 objectFit: "cover",
                 borderRadius: "30px",
-                padding: "2px",
+                padding: "4px",
               }}
             />
           </div>
