@@ -45,6 +45,7 @@ export default function ExperienceDetail() {
           </div>
         </div>
       </nav>
+
       {/* ---MAIN--- */}
       <main className={styles.mainExperienceDetail}>
         <section className={styles.info}>
@@ -59,37 +60,76 @@ export default function ExperienceDetail() {
             <p>Rating Stelle</p>
             <p>prezzo</p>
           </div>
+          <div className={styles.containerOrganiz}>
+            <div className={styles.organizPicture}>
+              <Image
+                src="/organiz.png"
+                width={100}
+                height={100}
+                alt="organizer picture"
+              />
+            </div>
+            <div className={styles.organizNameSurn}>
+              <p>Giulia</p>
+              <p>Rossi</p>
+            </div>
+          </div>
         </section>
-        {/* ---ORGANIZER SECTION--- */}
-        <div className={styles.containerOrganiz}>
-          <div className={styles.organizPicture}>
-            <Image
-              src="/organiz.png"
-              width={100}
-              height={100}
-              alt="organizer picture"
-            />
-          </div>
-          <div>
-            <p>Giulia</p>
-            <p>Rossi</p>
-          </div>
-        </div>
-        {/* ---DESCRIPTION--- */}
-        <div className={styles.infoDescription}>
-          <h2>Description</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-            delectus illum quam, laboriosam aliquam quibusdam? Perspiciatis quis
-            quo ab dolores impedit repellat cumque, excepturi eveniet corrupti
-            hic cum tenetur quae! Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Quisquam provident natus aliquid cumque commodi,
-            earum deleniti nemo ullam, accusamus quae a pariatur dicta ipsam
-            ratione inventore labore. Minus, facilis animi.
-          </p>
-        </div>
 
-        <button>Add Experience</button>
+        {/* ---DESCRIPTION and PICTURE SECTION FOR DESK--- */}
+        <div className={styles.PicAndDescription}>
+          <div className={styles.boxPicture}>
+            <div className={styles.mainPic}>
+              <Image
+                src="/exp1.jpg"
+                width={400}
+                height={400}
+                alt="image experience"
+              />
+            </div>
+            <div className={styles.containerPicBottom}>
+              <div className={styles.picBottom}>
+                <Image
+                  src="/exp1.jpg"
+                  width={400}
+                  height={400}
+                  alt="image experience"
+                />
+              </div>
+              <div className={styles.picBottom}>
+                <Image
+                  src="/exp1.jpg"
+                  width={400}
+                  height={400}
+                  alt="image experience"
+                />
+              </div>
+              <div className={styles.picBottom}>
+                <Image
+                  src="/exp1.jpg"
+                  width={400}
+                  height={400}
+                  alt="image experience"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.infoDescription}>
+            <h2>Description</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+              delectus illum quam, laboriosam aliquam quibusdam? Perspiciatis
+              quis quo ab dolores impedit repellat cumque, excepturi eveniet
+              corrupti hic cum tenetur quae! Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Quisquam provident natus aliquid
+              cumque commodi, earum deleniti nemo ullam, accusamus quae a
+              pariatur dicta ipsam ratione inventore labore. Minus, facilis
+              animi.
+            </p>
+            <button className={styles.experienceBtn}>Add Experience</button>
+          </div>
+        </div>
         <div className={styles.suggestion}>
           <h2>Suggestion for you</h2>
         </div>
