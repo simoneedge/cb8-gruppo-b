@@ -106,27 +106,29 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* bottom menu */}
-        <header>
-          <div className={styles.menu}>
-            <Link href="/#">
-              <IconHome />
-            </Link>
-            <Link href="/#">
-              <IconSailboat />
-            </Link>
-            <Link href="/#">
-              <IconHeart />
-            </Link>
-            <Link href="/#">
-              <IconUserCircle />
-            </Link>
-          </div>
-        </header>
-        <footer className={styles.footer}>
-          <p>Copyright</p>
-        </footer>
       </main>
+      {/* bottom menu */}
+      {/* ---HEADER-- */}
+      <header>
+        <div className={styles.menu}>
+          <Link href="/#">
+            <IconHome />
+          </Link>
+          <Link href="/#">
+            <IconSailboat />
+          </Link>
+          <Link href="/#">
+            <IconHeart />
+          </Link>
+          <Link href="/#">
+            <IconUserCircle />
+          </Link>
+        </div>
+      </header>
+      {/* ---FOOTER--- */}
+      <footer className={styles.footer}>
+        <p>Copyright</p>
+      </footer>
     </div>
   );
 }
