@@ -1,5 +1,12 @@
+import styles from "../../styles/Home.module.scss";
 import Head from "next/head";
 import Link from "next/link";
+
+import { IconHome } from "@tabler/icons-react";
+import { IconHeart } from "@tabler/icons-react";
+import { IconStar } from "@tabler/icons-react";
+import { IconSailboat } from "@tabler/icons-react";
+import { IconUserCircle } from "@tabler/icons-react";
 
 export default function Home() {
   return (
@@ -15,9 +22,7 @@ export default function Home() {
         <div className={styles.containerImage}>
           <img src="/logoipsum-331.svg" alt="logo" />
         </div>
-        <div className={styles.containerInput}>
-          <SearchBar />
-        </div>
+        <div className={styles.containerInput}></div>
         <div className={styles.filterIcons}>
           <button>Food & wine</button>
           <button>Wellness</button>
