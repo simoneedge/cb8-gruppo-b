@@ -5,6 +5,10 @@ import Image from "next/image";
 
 import { IconHeart } from "@tabler/icons-react";
 import { IconBuilding } from "@tabler/icons-react";
+import { IconHome } from "@tabler/icons-react";
+import { IconStar } from "@tabler/icons-react";
+import { IconSailboat } from "@tabler/icons-react";
+import { IconUserCircle } from "@tabler/icons-react";
 
 export default function ExperienceDetail() {
   return (
@@ -86,7 +90,29 @@ export default function ExperienceDetail() {
         </div>
 
         <button>Add Experience</button>
+        <div className={styles.suggestion}>
+          <h2>Suggestion for you</h2>
+        </div>
       </main>
+      <header>
+        <div className={styles.menu}>
+          <Link href="/#">
+            <IconHome />
+          </Link>
+          <Link href="/#">
+            <IconSailboat />
+          </Link>
+          <Link href="/#">
+            <IconHeart />
+          </Link>
+          <Link href="/#">
+            <IconUserCircle />
+          </Link>
+        </div>
+      </header>
+      <footer className={styles.footer}>
+        <p>Copyright</p>
+      </footer>
     </div>
   );
 }

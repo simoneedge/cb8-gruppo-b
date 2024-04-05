@@ -1,7 +1,7 @@
 .ExperienceDetail {
   width: 100%;
   height: 100%;
-  max-width: 1800px;
+  // max-width: 1800px;
 }
 
 .containerDesk {
@@ -67,6 +67,22 @@
 
 // ---DESCRIPTION----
 .infoDescription {
-  padding-bottom: 30px;
   padding-top: 20px;
+}
+
+.suggestion {
+  padding-bottom: 40px;
+}
+
+// ---BOTTOM MENU----
+.menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #dddddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
 }
