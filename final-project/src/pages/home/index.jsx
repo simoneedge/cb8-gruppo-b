@@ -7,6 +7,9 @@ import { IconHeart } from "@tabler/icons-react";
 import { IconStar } from "@tabler/icons-react";
 import { IconSailboat } from "@tabler/icons-react";
 import { IconUserCircle } from "@tabler/icons-react";
+import ImageSlider from "@/components/slider";
+// Immagini dello slider
+const images = ["/exp1.jpg", "/sicilyexp-pic.jpeg"];
 
 export default function Home() {
   return (
@@ -61,6 +64,7 @@ export default function Home() {
         </div>
 
         {/* //Slider */}
+        <ImageSlider images={images} />
         <div className={styles.containerSlider}>
           <div className={styles.boxSlider}>
             <h4>Titolo Evento</h4>
