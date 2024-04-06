@@ -2,13 +2,10 @@ import styles from "@/styles/Home.module.scss";
 import { IconHeart } from "@tabler/icons-react";
 import { IconStar } from "@tabler/icons-react";
 
-const fetchExperiences = async () => {
-  const res = await fetch("/api/experiences");
-  const data = await res.json();
-  return data;
-};
-
 const Card = ({ experience }) => {
+  if (!experience) {
+    return null;
+  }
   return (
     <section className={styles.containerSlider}>
       <div className={styles.box}>
@@ -22,7 +19,7 @@ const Card = ({ experience }) => {
         </div>
         <div className={styles.boxText}>
           <h4>{experience.title}</h4>
-          <p>{experience.time.first_slot}</p>
+          <p>{experience.time[0].first_slot}</p>
           <p>{experience.geolocation}</p>
         </div>
       </div>
@@ -31,8 +28,3 @@ const Card = ({ experience }) => {
 };
 
 export default Card;
-
-export const getServerSideProps = async () => {
-  const experiences = await fetchExperiences();
-  return { props: { experiences } };
-};
