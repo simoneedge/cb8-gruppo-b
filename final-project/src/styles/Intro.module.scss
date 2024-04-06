@@ -1,0 +1,46 @@
+.Intro {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(33, 100, 122);
+}
+
+.main {
+  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 5rem;
+  }
+
+  h1 {
+    font-size: 1.375rem;
+    padding-top: 1.875rem;
+  }
+
+  p {
+    padding-top: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  button {
+    margin-top: 3.125rem;
+    padding: 0.625rem 1.25rem;
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+    border-radius: 0.625rem;
+    cursor: pointer;
+  }
+
+  a {
+    padding-top: 1.25rem;
+    color: rgb(204, 201, 31);
+  }
+
+  .containerBtn {
+    display: flex;
+    gap: 1.25rem;
+  }
+}
