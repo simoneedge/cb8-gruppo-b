@@ -5,7 +5,7 @@ import Link from "next/link";
 import ImageSlider from "@/components/imageSlider";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
-import Card from "@/components/card";
+import SignUpForm from "@/components/signUpForm";
 
 // Immagini dello slider
 const images = ["/exp1.jpg", "/sicilyexp-pic.jpeg"];
@@ -90,10 +90,10 @@ export default function Home() {
 
         <div className={styles.titleAndLink}>
           <h2>#Show Experience</h2>
+          <SignUpForm />
         </div>
 
         {/* List with random cards, but updates when the search is performed */}
-        <Card />
       </main>
       {/* bottom menu */}
       {/* ---HEADER-- */}
