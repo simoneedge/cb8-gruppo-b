@@ -6,7 +6,6 @@ import Image from "next/image";
 import { IconHeart } from "@tabler/icons-react";
 import { IconBuilding } from "@tabler/icons-react";
 import { IconHome } from "@tabler/icons-react";
-import { IconStar } from "@tabler/icons-react";
 import { IconSailboat } from "@tabler/icons-react";
 import { IconUserCircle } from "@tabler/icons-react";
 
@@ -56,6 +55,7 @@ export default function ExperienceDetail() {
               <IconBuilding />
             </div>
           </div>
+          {/* ****PREZZO E RATING MOBILE*** */}
           <div className={styles.infoPriceStars}>
             <p>Rating Stelle</p>
             <p>prezzo</p>
@@ -77,15 +77,18 @@ export default function ExperienceDetail() {
         </section>
 
         {/* ---DESCRIPTION and PICTURE SECTION FOR DESK--- */}
-        <div className={styles.PicAndDescription}>
+        <div className={styles.picAndDescription}>
           <div className={styles.boxPicture}>
             <div className={styles.mainPic}>
               <Image
                 src="/exp1.jpg"
-                width={400}
-                height={400}
+                width={800}
+                height={800}
                 alt="image experience"
               />
+              <span className={styles.iconHeartDesk}>
+                <IconHeart size={26} />
+              </span>
             </div>
             <div className={styles.containerPicBottom}>
               <div className={styles.picBottom}>
@@ -127,6 +130,11 @@ export default function ExperienceDetail() {
               pariatur dicta ipsam ratione inventore labore. Minus, facilis
               animi.
             </p>
+            {/* ****PREZZO E RATING DESK*** */}
+            <div className={styles.infoPriceStarsDesk}>
+              <p>Rating Stelle</p>
+              <p>150 $</p>
+            </div>
             <button className={styles.experienceBtn}>Add Experience</button>
           </div>
         </div>
