@@ -9,6 +9,7 @@ import { IconHome } from "@tabler/icons-react";
 import { IconSailboat } from "@tabler/icons-react";
 import { IconUserCircle } from "@tabler/icons-react";
 import MenuMobile from "@/components/menuMobile";
+import MenuDesk from "@/components/menuDesk";
 
 export default function ExperienceDetail() {
   return (
@@ -32,8 +33,9 @@ export default function ExperienceDetail() {
             <IconHeart size={26} />
           </span>
         </div>
-        <div className={styles.containerDesk}>
-          <div className={styles.containerImage}>
+        <MenuDesk />
+        {/* <div className={styles.containerDesk}> */}
+        {/* <div className={styles.containerImage}>
             <img src="/logoipsum-331.svg" alt="logo" />
           </div>
           <div className={styles.topMenu}>
@@ -42,8 +44,8 @@ export default function ExperienceDetail() {
             <Link href="/#">Profilo</Link>
             <Link href="/#">Contatti</Link>
             <Link href="/#">About Us</Link>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </nav>
 
       {/* ---MAIN--- */}

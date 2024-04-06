@@ -16,10 +16,6 @@
   padding-top: 2.5rem;
   background-color: var(--color-main-first);
   padding-bottom: 1.875rem;
-
-  .topMenu {
-    display: none;
-  }
 }
 
 .containerInput {
@@ -92,19 +88,6 @@
   }
 }
 
-// ---BOTTOM MENU----
-.menu {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-top: 1px solid #dddddd;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-}
-
 // --FOOTER--
 .footer {
   display: none;
@@ -121,18 +104,6 @@
     width: 100%;
     height: 70vh;
     padding: 10px 40px;
-
-    .topMenu {
-      display: flex;
-      gap: 14px;
-    }
-  }
-
-  .containerDesk {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
   }
 
   .containerInput {
@@ -183,10 +154,6 @@
 
   .boxSlider {
     width: 400px;
-  }
-
-  .menu {
-    display: none;
   }
 
   // --FOOTER--
