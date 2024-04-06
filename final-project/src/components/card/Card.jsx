@@ -12,6 +12,7 @@ const Card = ({ experience }) => {
         <div className={styles.boxIconTop}>
           <span>
             <IconStar />
+            {experience.rating && experience.rating.$numberDecimal}
           </span>
           <span>
             <IconHeart />
