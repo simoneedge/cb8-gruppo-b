@@ -1,17 +1,46 @@
 import styles from "../../styles/ExperienceDetail.module.scss";
 import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
 
+import Image from "next/image";
+import { IconHeartFilled } from "@tabler/icons-react";
 import { IconHeart } from "@tabler/icons-react";
 import { IconBuilding } from "@tabler/icons-react";
-import { IconHome } from "@tabler/icons-react";
-import { IconSailboat } from "@tabler/icons-react";
-import { IconUserCircle } from "@tabler/icons-react";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
+import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 
 export default function ExperienceDetail() {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const { data: session } = useSession();
+  const [showModal, setShowModal] = useState(false);
+
+  const onHandleFavorite = () => {
+    if (session) {
+      setIsFavorite((prev) => !prev);
+    } else {
+      setShowModal(true);
+    }
+  };
+
+  useEffect(() => {
+    if (session) {
+      fetch("/api/favorites/idCHENONSO", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: experienceId,
+        }),
+      });
+    }
+  }, [session]);
+
+  const handleModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className={styles.ExperieceDetail}>
       <Head>
@@ -22,6 +51,17 @@ export default function ExperienceDetail() {
       </Head>
       {/* ---NAV--- */}
       <nav className={styles.navExperienceDetail}>
+        {/* ***MODAL TEST*** */}
+        {showModal && (
+          <div className={styles.modal}>
+            <div className={styles.modalContent}>
+              <span className={styles.closeModal} onClick={handleModal}>
+                &times;
+              </span>
+              <p>User need Login</p>
+            </div>
+          </div>
+        )}
         <div className={styles.containerSlider}>
           <Image
             src="/exp1.jpg"
@@ -29,23 +69,18 @@ export default function ExperienceDetail() {
             height={1000}
             alt="Experience picture"
           />
-          <span className={styles.containerIconHeart}>
-            <IconHeart size={26} />
-          </span>
+          <button
+            className={styles.containerIconHeart}
+            onClick={onHandleFavorite}
+          >
+            {isFavorite ? (
+              <IconHeartFilled size={26} color={"red"} />
+            ) : (
+              <IconHeart size={26} />
+            )}
+          </button>
         </div>
         <MenuDesk />
-        {/* <div className={styles.containerDesk}> */}
-        {/* <div className={styles.containerImage}>
-            <img src="/logoipsum-331.svg" alt="logo" />
-          </div>
-          <div className={styles.topMenu}>
-            <Link href="/#">Preferiti</Link>
-            <Link href="/#">Esperienze</Link>
-            <Link href="/#">Profilo</Link>
-            <Link href="/#">Contatti</Link>
-            <Link href="/#">About Us</Link>
-          </div> */}
-        {/* </div> */}
       </nav>
 
       {/* ---MAIN--- */}
@@ -89,9 +124,16 @@ export default function ExperienceDetail() {
                 height={800}
                 alt="image experience"
               />
-              <span className={styles.iconHeartDesk}>
-                <IconHeart size={26} />
-              </span>
+              <button
+                className={styles.iconHeartDesk}
+                onClick={onHandleFavorite}
+              >
+                {isFavorite ? (
+                  <IconHeartFilled size={26} color={"red"} />
+                ) : (
+                  <IconHeart size={26} />
+                )}
+              </button>
             </div>
             <div className={styles.containerPicBottom}>
               <div className={styles.picBottom}>
