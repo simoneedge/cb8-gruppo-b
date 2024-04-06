@@ -2,13 +2,9 @@ import styles from "../../styles/Home.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 
-import { IconHome } from "@tabler/icons-react";
-import { IconHeart } from "@tabler/icons-react";
-import { IconStar } from "@tabler/icons-react";
-import { IconSailboat } from "@tabler/icons-react";
-import { IconUserCircle } from "@tabler/icons-react";
 import ImageSlider from "@/components/imageSlider";
 import MenuMobile from "@/components/menuMobile";
+import MenuDesk from "@/components/menuDesk";
 import Card from "@/components/card";
 
 // Immagini dello slider
@@ -25,7 +21,8 @@ export default function Home() {
       </Head>
       {/* ---NAV--- */}
       <nav className={styles.navPageHome}>
-        <div className={styles.containerDesk}>
+        <MenuDesk />
+        {/* <div className={styles.containerDesk}>
           <div className={styles.containerImage}>
             <img src="/logoipsum-331.svg" alt="logo" />
           </div>
@@ -36,7 +33,7 @@ export default function Home() {
             <Link href="/#">Contatti</Link>
             <Link href="/#">About Us</Link>
           </div>
-        </div>
+        </div> */}
         <div>
           <div className={styles.containerInput}>
             <input type="text" placeholder="search..." />

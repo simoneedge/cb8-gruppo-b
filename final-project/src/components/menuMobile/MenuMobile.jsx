@@ -1,4 +1,4 @@
-import styles from "../../styles/Home.module.scss";
+import styles from "../../styles/Menu.module.scss";
 import Link from "next/link";
 import { IconHome } from "@tabler/icons-react";
 import { IconHeart } from "@tabler/icons-react";
