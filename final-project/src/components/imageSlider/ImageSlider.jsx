@@ -1,42 +1,39 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import styles from "./index.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper/modules";
 
 const ImageSlider = ({ images }) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3500,
-  };
-
   return (
-    <div>
-      <Slider {...settings}>
+    <>
+      <Swiper
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        speed={600}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        modules={[Autoplay, Pagination]}
+      >
         {images.map((image, index) => (
-          <div key={index} className={styles.Slider}>
+          <SwiperSlide key={index}>
             <img
               src={image}
               alt="image"
               style={{
-                height: "400px",
+                height: "300px",
                 width: "100%",
                 objectFit: "cover",
                 borderRadius: "30px",
                 padding: "4px",
               }}
             />
-          </div>
+          </SwiperSlide>
         ))}
-      </Slider>
-      <div className={styles.dot}>
-        <span>l</span>
-      </div>
-    </div>
+      </Swiper>
+    </>
   );
 };
 
