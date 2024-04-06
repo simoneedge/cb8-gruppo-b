@@ -8,6 +8,7 @@ import { IconStar } from "@tabler/icons-react";
 import { IconSailboat } from "@tabler/icons-react";
 import { IconUserCircle } from "@tabler/icons-react";
 import ImageSlider from "@/components/imageSlider";
+import MenuMobile from "@/components/menuMobile";
 // Immagini dello slider
 const images = ["/exp1.jpg", "/sicilyexp-pic.jpeg"];
 
@@ -114,20 +115,7 @@ export default function Home() {
       {/* bottom menu */}
       {/* ---HEADER-- */}
       <header>
-        <div className={styles.menu}>
-          <Link href="/#">
-            <IconHome />
-          </Link>
-          <Link href="/#">
-            <IconSailboat />
-          </Link>
-          <Link href="/#">
-            <IconHeart />
-          </Link>
-          <Link href="/#">
-            <IconUserCircle />
-          </Link>
-        </div>
+        <MenuMobile />
       </header>
       {/* ---FOOTER--- */}
       <footer className={styles.footer}>

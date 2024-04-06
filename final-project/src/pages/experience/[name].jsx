@@ -8,6 +8,7 @@ import { IconBuilding } from "@tabler/icons-react";
 import { IconHome } from "@tabler/icons-react";
 import { IconSailboat } from "@tabler/icons-react";
 import { IconUserCircle } from "@tabler/icons-react";
+import MenuMobile from "@/components/menuMobile";
 
 export default function ExperienceDetail() {
   return (
@@ -143,20 +144,7 @@ export default function ExperienceDetail() {
         </div>
       </main>
       <header>
-        <div className={styles.menu}>
-          <Link href="/#">
-            <IconHome />
-          </Link>
-          <Link href="/#">
-            <IconSailboat />
-          </Link>
-          <Link href="/#">
-            <IconHeart />
-          </Link>
-          <Link href="/#">
-            <IconUserCircle />
-          </Link>
-        </div>
+        <MenuMobile />
       </header>
       <footer className={styles.footer}>
         <p>Copyright</p>
