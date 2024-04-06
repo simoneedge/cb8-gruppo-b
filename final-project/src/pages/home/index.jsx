@@ -8,6 +8,7 @@ import { IconStar } from "@tabler/icons-react";
 import { IconSailboat } from "@tabler/icons-react";
 import { IconUserCircle } from "@tabler/icons-react";
 import ImageSlider from "@/components/imageSlider";
+import Card from "@/components/card";
 // Immagini dello slider
 const images = ["/exp1.jpg", "/sicilyexp-pic.jpeg"];
 
@@ -93,23 +94,7 @@ export default function Home() {
         </div>
 
         {/* List with random cards, but updates when the search is performed */}
-        <section className={styles.containerSlider}>
-          <div className={styles.box}>
-            <div className={styles.boxIconTop}>
-              <span>
-                <IconStar />
-              </span>
-              <span>
-                <IconHeart />
-              </span>
-            </div>
-            <div className={styles.boxText}>
-              <h4>Titolo Evento</h4>
-              <p>Orario</p>
-              <p>Città</p>
-            </div>
-          </div>
-        </section>
+        <Card />
       </main>
       {/* bottom menu */}
       {/* ---HEADER-- */}
