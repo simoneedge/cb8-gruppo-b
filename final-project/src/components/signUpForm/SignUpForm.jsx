@@ -1,3 +1,6 @@
+import styles from "../../styles/SignUpForm.module.scss";
+
+import { IconX } from "@tabler/icons-react";
 import { useFormik } from "formik";
 // Importa tutte le funzioni dal modulo "yup"
 import * as Yup from "yup";
@@ -36,9 +39,9 @@ const SignUpForm = () => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="name">
-        Name <br />
+    <>
+      <form onSubmit={formik.handleSubmit} className={styles.SignUpForm}>
+        <label htmlFor="name">Name </label>
         <input
           type="text"
           name="name"
@@ -48,10 +51,7 @@ const SignUpForm = () => {
           value={formik.values.name}
         />
         {formik.errors.name ? <div>{formik.errors.name}</div> : null}
-      </label>
-      <label htmlFor="lastname">
-        <br />
-        Lastname <br />
+        <label htmlFor="lastname">Lastname </label>
         <input
           type="text"
           name="lastname"
@@ -61,10 +61,8 @@ const SignUpForm = () => {
           value={formik.values.lastname}
         />
         {formik.errors.lastname ? <div>{formik.errors.lastname}</div> : null}
-      </label>
-      <label htmlFor="username">
-        <br />
-        Username <br />
+
+        <label htmlFor="username">Username </label>
         <input
           type="text"
           name="username"
@@ -74,10 +72,8 @@ const SignUpForm = () => {
           value={formik.values.username}
         />
         {formik.errors.username ? <div>{formik.errors.username}</div> : null}
-      </label>
-      <label htmlFor="email">
-        <br />
-        Email <br />
+
+        <label htmlFor="email">Email </label>
         <input
           type="email"
           name="email"
@@ -87,10 +83,8 @@ const SignUpForm = () => {
           value={formik.values.email}
         />
         {formik.errors.email ? <div>{formik.errors.email}</div> : null}
-      </label>
-      <label htmlFor="password">
-        <br />
-        Password <br />
+
+        <label htmlFor="password">Password </label>
         <input
           type="password"
           name="password"
@@ -100,10 +94,15 @@ const SignUpForm = () => {
           value={formik.values.password}
         />
         {formik.errors.password ? <div>{formik.errors.password}</div> : null}
-      </label>
-      <br />
-      <input type="submit" value="Sumbit" />
-    </form>
+
+        <button type="submit" value="Submit" className={styles.btnSubmit}>
+          Submit
+        </button>
+      </form>
+      <button className={styles.closeBtn}>
+        <IconX size={30} />
+      </button>
+    </>
   );
 };
 
