@@ -1,19 +1,24 @@
 import styles from ".././styles/Intro.module.scss";
-
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-
-// next auth
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useEffect } from "react";
+import SignUpForm from "@/components/signUpForm";
 
 export default function Intro() {
   const { data: session } = useSession();
+  const [isVisibleRegistration, setIsVisibleRegistration] = useState(false);
+  const [isshowPage, setIsShowPage] = useState(true);
 
   useEffect(() => {
     console.log(session);
   }, [session]);
+
+  const handleRegistration = () => {
+    setIsVisibleRegistration(true);
+    setIsShowPage(false);
+  };
 
   return (
     <div className={styles.Intro}>
@@ -24,24 +29,33 @@ export default function Intro() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Image src="/logoipsum-331.svg" width={100} height={100} alt="logo" />
-        <h1>Find interest experience to Join in Sicily!</h1>
-        <p>We share all experience!</p>
-
-        {session ? (
+        {isVisibleRegistration && <SignUpForm />}
+        {isshowPage && (
           <>
-            <p>Signed in as {session.user.username}</p>
-            <button onClick={() => signOut()}>Sign Out</button>
-          </>
-        ) : (
-          <div className={styles.containerBtn}>
-            <button onClick={() => signIn()}>Sign In</button>
-            <button>Register</button>
-          </div>
-        )}
+            <Image
+              src="/logoipsum-331.svg"
+              width={100}
+              height={100}
+              alt="logo"
+            />
+            <h1>Find interest experience to Join in Sicily!</h1>
+            <p>We share all experience!</p>
 
-        <Link href="/home">Browse as guest</Link>
-        {/* <Link href="api/auth/signin">SIGN IN</Link> */}
+            {session ? (
+              <>
+                <p>Signed in as {session.user.username}</p>
+                <button onClick={() => signOut()}>Sign Out</button>
+              </>
+            ) : (
+              <div className={styles.containerBtn}>
+                <button onClick={() => signIn()}>Sign In</button>
+                <button onClick={handleRegistration}>Register</button>
+              </div>
+            )}
+
+            <Link href="/home">Browse as guest</Link>
+          </>
+        )}
       </main>
     </div>
   );
