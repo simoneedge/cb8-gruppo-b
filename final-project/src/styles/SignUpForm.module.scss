@@ -1,0 +1,31 @@
+.SignUpForm {
+  background-color: rgb(219, 213, 213);
+  padding: 80px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  input {
+    width: 200px;
+    height: 30px;
+    padding-left: 6px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: none;
+  }
+  label {
+    font-weight: bold;
+    width: 200px;
+    padding-bottom: 4px;
+  }
+
+  .btnSubmit {
+    font-weight: bold;
+    background-color: rgb(255, 208, 0);
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+  }
+}
