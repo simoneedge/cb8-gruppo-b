@@ -9,6 +9,7 @@ import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import StarsRating from "@/components/starsRating";
 
 export default function ExperienceDetail() {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -95,7 +96,8 @@ export default function ExperienceDetail() {
           </div>
           {/* ****PREZZO E RATING MOBILE*** */}
           <div className={styles.infoPriceStars}>
-            <p>Rating Stelle</p>
+            {/* <p>Rating Stelle</p> */}
+            <StarsRating rating={4} />
             <p>prezzo</p>
           </div>
           <div className={styles.containerOrganiz}>
@@ -177,7 +179,7 @@ export default function ExperienceDetail() {
             </p>
             {/* ****PREZZO E RATING DESK*** */}
             <div className={styles.infoPriceStarsDesk}>
-              <p>Rating Stelle</p>
+              <StarsRating rating={4} />
               <p>150 $</p>
             </div>
             <button className={styles.experienceBtn}>Add Experience</button>
