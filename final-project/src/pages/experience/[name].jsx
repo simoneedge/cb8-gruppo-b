@@ -24,19 +24,19 @@ export default function ExperienceDetail() {
     }
   };
 
-  useEffect(() => {
-    if (session) {
-      fetch("/api/favorites/idCHENONSO", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id: experienceId,
-        }),
-      });
-    }
-  }, [session]);
+  // useEffect(() => {
+  //   if (session) {
+  //     fetch("/api/favorites/idCHENONSO", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         id: experienceId,
+  //       }),
+  //     });
+  //   }
+  // }, [session]);
 
   const handleModal = () => {
     setShowModal(false);
