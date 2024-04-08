@@ -35,9 +35,11 @@ export default function Intro() {
             <div className={styles.logo}>
               <Image
                 src="/logosicily.svg"
-                layout="fill"
-                objectFit="contain"
+                width={100}
+                height={100}
+                className={styles.logoImage}
                 alt="logo"
+                priority
               />
             </div>
 
