@@ -40,6 +40,7 @@ export default function Intro() {
                 alt="logo"
               />
             </div>
+
             <h1>Find interest experience to Join in Sicily!</h1>
             <p>We share all experience!</p>
 
