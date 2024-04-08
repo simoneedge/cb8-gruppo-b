@@ -32,12 +32,14 @@ export default function Intro() {
         {isFormVisible && <SignUpForm isClose={handleRegistration} />}
         {isShowPage && (
           <>
-            <Image
-              src="/logoipsum-331.svg"
-              width={100}
-              height={100}
-              alt="logo"
-            />
+            <div className={styles.logo}>
+              <Image
+                src="/logosicily.svg"
+                layout="fill"
+                objectFit="contain"
+                alt="logo"
+              />
+            </div>
             <h1>Find interest experience to Join in Sicily!</h1>
             <p>We share all experience!</p>
 
