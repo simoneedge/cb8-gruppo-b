@@ -8,16 +8,16 @@ import SignUpForm from "@/components/signUpForm";
 
 export default function Intro() {
   const { data: session } = useSession();
-  const [isVisibleRegistration, setIsVisibleRegistration] = useState(false);
-  const [isshowPage, setIsShowPage] = useState(true);
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [isShowPage, setIsShowPage] = useState(true);
 
   useEffect(() => {
     console.log(session);
   }, [session]);
 
-  const handleRegistration = () => {
-    setIsVisibleRegistration(true);
-    setIsShowPage(false);
+  const handleRegistration = (state) => {
+    setIsFormVisible(state);
+    setIsShowPage(!state);
   };
 
   return (
@@ -29,8 +29,8 @@ export default function Intro() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {isVisibleRegistration && <SignUpForm />}
-        {isshowPage && (
+        {isFormVisible && <SignUpForm isClose={handleRegistration} />}
+        {isShowPage && (
           <>
             <Image
               src="/logoipsum-331.svg"
@@ -49,7 +49,9 @@ export default function Intro() {
             ) : (
               <div className={styles.containerBtn}>
                 <button onClick={() => signIn()}>Sign In</button>
-                <button onClick={handleRegistration}>Register</button>
+                <button onClick={() => handleRegistration(true)}>
+                  Register
+                </button>
               </div>
             )}
 
