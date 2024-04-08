@@ -70,6 +70,7 @@ export default function AboutPage() {
         If you have any questions or inquiries, please don't hesitate to contact
         us:
       </p>
+      <p>Email: customerservice@sicilyexperience.com</p>
       <p>Address: Via Roma, 123 - Palermo, Sicily</p>
       <p>Phone: +39 123 456 789</p>
     </div>
