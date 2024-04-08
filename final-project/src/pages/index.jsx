@@ -8,16 +8,16 @@ import SignUpForm from "@/components/signUpForm";
 
 export default function Intro() {
   const { data: session } = useSession();
-  const [isVisibleRegistration, setIsVisibleRegistration] = useState(false);
-  const [isshowPage, setIsShowPage] = useState(true);
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [isShowPage, setIsShowPage] = useState(true);
 
   useEffect(() => {
     console.log(session);
   }, [session]);
 
-  const handleRegistration = () => {
-    setIsVisibleRegistration(true);
-    setIsShowPage(false);
+  const handleRegistration = (state) => {
+    setIsFormVisible(state);
+    setIsShowPage(!state);
   };
 
   return (
@@ -29,15 +29,20 @@ export default function Intro() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {isVisibleRegistration && <SignUpForm />}
-        {isshowPage && (
+        {isFormVisible && <SignUpForm isClose={handleRegistration} />}
+        {isShowPage && (
           <>
-            <Image
-              src="/logoipsum-331.svg"
-              width={100}
-              height={100}
-              alt="logo"
-            />
+            <div className={styles.logo}>
+              <Image
+                src="/logosicily.svg"
+                width={100}
+                height={100}
+                className={styles.logoImage}
+                alt="logo"
+                priority
+              />
+            </div>
+
             <h1>Find interest experience to Join in Sicily!</h1>
             <p>We share all experience!</p>
 
@@ -49,7 +54,9 @@ export default function Intro() {
             ) : (
               <div className={styles.containerBtn}>
                 <button onClick={() => signIn()}>Sign In</button>
-                <button onClick={handleRegistration}>Register</button>
+                <button onClick={() => handleRegistration(true)}>
+                  Register
+                </button>
               </div>
             )}
 

@@ -9,7 +9,7 @@ import CardList from "@/components/cardList";
 import ImageSlider from "@/components/imageSlider";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
-import Experience from "../experience";
+
 
 // Immagini dello slider
 const images = ["/exp1.jpg", "/sicilyexp-pic.jpeg"];
@@ -127,11 +127,18 @@ export default function Home() {
             <p>Città</p>
           </div> */}
         </div>
+
         <h2>#Show Experience</h2>
         <SearchBar data={experiences} onSearch={onHandleSearch} />
         <CityFilter options={cityOptions} onFilter={setCityFilter} />
         <CategoryFilter onFilter={setCategoryFilter} />
         <CardList experiences={filteredExperiences} />
+=======
+
+        <div className={styles.titleAndLink}>
+          <h2>#Show Experience</h2>
+        </div>
+
 
         {/* List with random cards, but updates when the search is performed */}
       </main>

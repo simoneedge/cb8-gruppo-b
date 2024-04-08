@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
+  z-index: 3;
 }
 
 .MenuDesk {
@@ -21,10 +22,15 @@
     align-items: center;
     width: 100%;
     padding: 16px 40px;
+    background-color: rgba(238, 238, 238, 0.815);
 
     .topMenu {
       display: flex;
       gap: 14px;
+    }
+
+    a {
+      color: black;
     }
   }
 
