@@ -34,8 +34,21 @@ const SignUpForm = ({ isClose }) => {
         .required("*Required*"),
     }),
     onSubmit: (values) => {
-      // Per adesso stampa i valori in console
       console.log(values);
+      // Per adesso stampa i valori in console
+      fetch("/api/user", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(values),
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     },
   });
 
