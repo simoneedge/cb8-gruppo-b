@@ -1,14 +1,22 @@
 import styles from "@/styles/Home.module.scss";
 import { IconHeart } from "@tabler/icons-react";
 import { IconStar } from "@tabler/icons-react";
+import { useRouter } from "next/router";
 
 const Card = ({ experience }) => {
+  const router = useRouter();
+
   if (!experience) {
     return null;
   }
+
+  const onHandleClick = () => {
+    router.push(`/experiences/${experience._id}`);
+  };
+
   return (
     <section className={styles.containerSlider}>
-      <div className={styles.box}>
+      <div className={styles.box} onClick={onHandleClick}>
         <div className={styles.boxIconTop}>
           <span>
             <IconStar />
