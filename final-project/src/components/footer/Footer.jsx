@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
           <div className={styles.contributor}>
             <IconBrandGithub />
-            <p>Rita Iandolino</p>
+            <p>Rita Landino</p>
             <Link href="https://github.com/RitaL1990">Github</Link>
           </div>
           <div className={styles.contributor}>
