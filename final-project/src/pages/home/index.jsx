@@ -2,14 +2,13 @@ import styles from "../../styles/Home.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import SearchBar from "@/components/searchBar";
-import CityFilter from "@/components/cityFilter";
-import CategoryFilter from "@/components/categoryFilter";
+// import SearchBar from "@/components/searchBar";s
+// import CityFilter from "@/components/cityFilter";
+// import CategoryFilter from "@/components/categoryFilter";
 import CardList from "@/components/cardList";
 import ImageSlider from "@/components/imageSlider";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
-
 
 // Immagini dello slider
 const images = ["/exp1.jpg", "/sicilyexp-pic.jpeg"];
@@ -102,7 +101,6 @@ export default function Home() {
           <h2>#Experience for you</h2>
           <Link href="#">See all</Link>
         </div>
-
         {/* //Slider */}
         <ImageSlider images={images} />
         <div className={styles.containerSlider}>
@@ -127,19 +125,15 @@ export default function Home() {
             <p>Città</p>
           </div> */}
         </div>
-
         <h2>#Show Experience</h2>
-        <SearchBar data={experiences} onSearch={onHandleSearch} />
+        {/* <SearchBar data={experiences} onSearch={onHandleSearch} />
         <CityFilter options={cityOptions} onFilter={setCityFilter} />
-        <CategoryFilter onFilter={setCategoryFilter} />
+        <CategoryFilter onFilter={setCategoryFilter} /> */}
         <CardList experiences={filteredExperiences} />
-=======
-
+        =======
         <div className={styles.titleAndLink}>
           <h2>#Show Experience</h2>
         </div>
-
-
         {/* List with random cards, but updates when the search is performed */}
       </main>
       {/* bottom menu */}
