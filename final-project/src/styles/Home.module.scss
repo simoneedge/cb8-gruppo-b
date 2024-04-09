@@ -13,9 +13,10 @@
   gap: 1.25rem;
   background-color: var(--color-main-first);
   padding-bottom: 1.875rem;
-  background: url("/ill2.jpeg");
+  background: url("/homeMobile.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 40vh;
 }
 
@@ -97,7 +98,7 @@
 @media screen and (min-width: 768px) {
   // ----NAV---
   .navPageHome {
-    background: url("/ill1.jpeg");
+    background: url("/homePic.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -154,5 +155,4 @@
   .boxSlider {
     width: 400px;
   }
-
 }
