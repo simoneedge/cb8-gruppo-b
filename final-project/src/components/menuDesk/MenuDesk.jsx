@@ -7,7 +7,7 @@ const MenuDesk = () => {
     <div className={styles.MenuDesk}>
       <div className={styles.containerImage}>
         <Image
-          src="/logosicily.svg"
+          src="/logoBianco.svg"
           width={100}
           height={100}
           className={styles.logoImage}

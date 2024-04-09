@@ -34,7 +34,7 @@ export default function Intro() {
           <>
             <div className={styles.logo}>
               <Image
-                src="/Risorsa.svg"
+                src="/logoBianco.svg"
                 width={100}
                 height={100}
                 className={styles.logoImage}
