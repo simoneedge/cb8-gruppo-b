@@ -1,6 +1,6 @@
 import styles from "@/styles/Home.module.scss";
 import { IconHeart } from "@tabler/icons-react";
-import { IconStar } from "@tabler/icons-react";
+import StarsRating from "../starsRating";
 import { useRouter } from "next/router";
 
 const Card = ({ experience }) => {
@@ -19,8 +19,9 @@ const Card = ({ experience }) => {
       <div className={styles.box} onClick={onHandleClick}>
         <div className={styles.boxIconTop}>
           <span>
-            <IconStar />
-            {experience.rating && experience.rating.$numberDecimal}
+            <StarsRating
+              rating={experience.rating && experience.rating.$numberDecimal}
+            />
           </span>
           <span>
             <IconHeart />
