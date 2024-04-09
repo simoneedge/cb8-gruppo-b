@@ -34,7 +34,7 @@ export default function Intro() {
           <>
             <div className={styles.logo}>
               <Image
-                src="/logosicily.svg"
+                src="/Risorsa.svg"
                 width={100}
                 height={100}
                 className={styles.logoImage}
@@ -44,7 +44,7 @@ export default function Intro() {
             </div>
 
             <h1>Find interest experience to Join in Sicily!</h1>
-            <p>We share all experience!</p>
+            <p>We share all experiences!</p>
 
             {session ? (
               <>
