@@ -28,7 +28,7 @@ export default function AboutPage() {
         </li>
         <li>
           <a href="https://www.linkedin.com/in/rita-teresa-landino-a7a54b2b4/">
-            Rita Iandolino
+            Rita Landino
           </a>
           - BE Developer
         </li>
