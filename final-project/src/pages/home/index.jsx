@@ -73,24 +73,25 @@ export default function Home() {
       {/* ---NAV--- */}
       <nav className={styles.navPageHome}>
         <MenuDesk />
+        <h1>
+          Discover Sicilian Experiences: Find Local Adventures in Your City
+        </h1>
 
-        <div>
-          <div className={styles.containerInput}>
-            <input type="text" placeholder="search..." />
-            <button>Click</button>
-          </div>
-          <div className={styles.filterIcons}>
-            <button>Food & wine</button>
-            <button>Wellness</button>
-            <button>Events</button>
-            <button>Open Air</button>
-          </div>
+        <div className={styles.containerInput}>
+          <input type="text" placeholder="search..." />
+          <button>Click</button>
+        </div>
+        <div className={styles.filterIcons}>
+          <button>Food & wine</button>
+          <button>Wellness</button>
+          <button>Events</button>
+          <button>Open Air</button>
         </div>
       </nav>
       {/* ---MAIN--- */}
       <main className={styles.mainPageHome}>
         <div className={styles.textDesk}>
-          <h1>Uncover Sicily with SicilyExperience!</h1>
+          <h2>Uncover Sicily with SicilyExperience!</h2>
           <p>
             Embark on a captivating journey through the heart of Sicily with
             SicilyExperience. Our platform offers more than just a booking
