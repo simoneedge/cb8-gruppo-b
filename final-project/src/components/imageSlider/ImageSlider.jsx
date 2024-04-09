@@ -2,8 +2,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
+import Card from "../card";
 
-const ImageSlider = ({ images }) => {
+const ImageSlider = ({ experiences }) => {
   return (
     <>
       <Swiper
@@ -17,19 +18,9 @@ const ImageSlider = ({ images }) => {
         loop={true}
         modules={[Autoplay, Pagination]}
       >
-        {images.map((image, index) => (
+        {experiences.map((experience, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={image}
-              alt="image"
-              style={{
-                height: "300px",
-                width: "100%",
-                objectFit: "cover",
-                borderRadius: "30px",
-                padding: "4px",
-              }}
-            />
+            <Card experience={experience} />
           </SwiperSlide>
         ))}
       </Swiper>

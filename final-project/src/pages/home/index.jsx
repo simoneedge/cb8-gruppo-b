@@ -11,9 +11,6 @@ import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
 import Footer from "@/components/footer";
 
-// Immagini dello slider
-const images = ["/exp1.jpg", "/sicilyexp-pic.jpeg"];
-
 export default function Home() {
   // Aggiunta delle esperienze filtrate
   const [experiences, setExperiences] = useState([]);
@@ -103,29 +100,15 @@ export default function Home() {
           <h2>#Experience for you</h2>
           <Link href="/experiences">See all</Link>
         </div>
-        {/* //Slider */}
-        <ImageSlider images={images} />
+        {/*Slider con le prime 6 esperienze che si trovano sul database */}
+        {/* Aggiunta dello stile delle card passata come prop, solamente per lo slider */}
+        <ImageSlider experiences={experiences.slice(0, 6)} />
         <div className={styles.containerSlider}>
           <div className={styles.boxSlider}>
             <h4>Titolo Evento</h4>
             <p>Orario</p>
             <p>Città</p>
           </div>
-          {/* <div className={styles.boxSlider}>
-            <h4>Titolo Evento</h4>
-            <p>Orario</p>
-            <p>Città</p>
-          </div>
-          <div className={styles.boxSlider}>
-            <h4>Titolo Evento</h4>
-            <p>Orario</p>
-            <p>Città</p>
-          </div>
-          <div className={styles.boxSlider}>
-            <h4>Titolo Evento</h4>
-            <p>Orario</p>
-            <p>Città</p>
-          </div> */}
         </div>
         <h2>#Show Experience</h2>
         <SearchBar data={experiences} onSearch={onHandleSearch} />
