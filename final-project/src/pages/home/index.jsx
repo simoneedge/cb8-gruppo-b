@@ -3,7 +3,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import SearchBar from "@/components/searchBar";
-s;
 import CityFilter from "@/components/cityFilter";
 import CategoryFilter from "@/components/categoryFilter";
 import CardList from "@/components/cardList";
