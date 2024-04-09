@@ -2,9 +2,10 @@ import styles from "../../styles/Home.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-// import SearchBar from "@/components/searchBar";s
-// import CityFilter from "@/components/cityFilter";
-// import CategoryFilter from "@/components/categoryFilter";
+import SearchBar from "@/components/searchBar";
+s;
+import CityFilter from "@/components/cityFilter";
+import CategoryFilter from "@/components/categoryFilter";
 import CardList from "@/components/cardList";
 import ImageSlider from "@/components/imageSlider";
 import MenuMobile from "@/components/menuMobile";
@@ -126,9 +127,9 @@ export default function Home() {
           </div> */}
         </div>
         <h2>#Show Experience</h2>
-        {/* <SearchBar data={experiences} onSearch={onHandleSearch} />
+        <SearchBar data={experiences} onSearch={onHandleSearch} />
         <CityFilter options={cityOptions} onFilter={setCityFilter} />
-        <CategoryFilter onFilter={setCategoryFilter} /> */}
+        <CategoryFilter onFilter={setCategoryFilter} />
         <CardList experiences={filteredExperiences} />
         =======
         <div className={styles.titleAndLink}>
