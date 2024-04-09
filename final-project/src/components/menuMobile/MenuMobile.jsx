@@ -9,10 +9,10 @@ import { IconInfoCircle } from "@tabler/icons-react";
 const MenuMobile = () => {
   return (
     <div className={styles.menu}>
-      <Link href="/#">
+      <Link href="/home">
         <IconHome />
       </Link>
-      <Link href="/#">
+      <Link href="/aboutUs">
         <IconInfoCircle />
       </Link>
       <Link href="/experience">
@@ -21,7 +21,7 @@ const MenuMobile = () => {
       <Link href="/#">
         <IconHeart />
       </Link>
-      <Link href="/#">
+      <Link href="/profile">
         <IconUserCircle />
       </Link>
     </div>
