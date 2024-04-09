@@ -9,6 +9,7 @@ import CardList from "@/components/cardList";
 import ImageSlider from "@/components/imageSlider";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
+import Footer from "@/components/footer";
 
 // Immagini dello slider
 const images = ["/exp1.jpg", "/sicilyexp-pic.jpeg"];
@@ -142,9 +143,10 @@ export default function Home() {
         <MenuMobile />
       </header>
       {/* ---FOOTER--- */}
-      <footer className={styles.footer}>
+      <Footer />
+      {/* <footer className={styles.footer}>
         <p>Copyright</p>
-      </footer>
+      </footer> */}
     </div>
   );
 }
