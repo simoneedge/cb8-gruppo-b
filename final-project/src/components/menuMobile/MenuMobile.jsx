@@ -4,12 +4,16 @@ import { IconHome } from "@tabler/icons-react";
 import { IconHeart } from "@tabler/icons-react";
 import { IconSailboat } from "@tabler/icons-react";
 import { IconUserCircle } from "@tabler/icons-react";
+import { IconInfoCircle } from "@tabler/icons-react";
 
 const MenuMobile = () => {
   return (
     <div className={styles.menu}>
       <Link href="/#">
         <IconHome />
+      </Link>
+      <Link href="/#">
+        <IconInfoCircle />
       </Link>
       <Link href="/experience">
         <IconSailboat />
