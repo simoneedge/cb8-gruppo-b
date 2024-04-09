@@ -100,7 +100,7 @@ export default function Home() {
         </div>
         <div className={styles.titleAndLink}>
           <h2>#Experience for you</h2>
-          <Link href="#">See all</Link>
+          <Link href="/experiences">See all</Link>
         </div>
         {/* //Slider */}
         <ImageSlider images={images} />
@@ -131,7 +131,6 @@ export default function Home() {
         <CityFilter options={cityOptions} onFilter={setCityFilter} />
         <CategoryFilter onFilter={setCategoryFilter} />
         <CardList experiences={filteredExperiences} />
-        =======
         <div className={styles.titleAndLink}>
           <h2>#Show Experience</h2>
         </div>
