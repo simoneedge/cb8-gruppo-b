@@ -17,7 +17,7 @@ const MenuDesk = () => {
       </div>
       <div className={styles.topMenu}>
         <Link href="/#">Favorites</Link>
-        <Link href="/experience">Experiences</Link>
+        <Link href="/experiences">Experiences</Link>
         <Link href="/#">Profile</Link>
         <Link href="/#">About Us</Link>
       </div>

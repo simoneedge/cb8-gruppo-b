@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CardList from "@/components/cardList";
 import styles from "../../styles/Experience.module.scss";
 
-export default function Experience() {
+export default function Experiences() {
   const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {
