@@ -8,6 +8,7 @@ import { IconBuilding } from "@tabler/icons-react";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import StarsRating from "@/components/starsRating";
 
@@ -15,6 +16,9 @@ export default function ExperienceDetail() {
   const [isFavorite, setIsFavorite] = useState(false);
   const { data: session } = useSession();
   const [showModal, setShowModal] = useState(false);
+  const [experience, setExperience] = useState(null);
+  const router = useRouter();
+  const { id } = router.query;
 
   const onHandleFavorite = () => {
     if (session) {
@@ -24,19 +28,21 @@ export default function ExperienceDetail() {
     }
   };
 
-  // useEffect(() => {
-  //   if (session) {
-  //     fetch("/api/favorites/idCHENONSO", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         id: experienceId,
-  //       }),
-  //     });
-  //   }
-  // }, [session]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`/api/experiences/${id}`);
+      const data = await res.json();
+
+      setExperience(data);
+    };
+    if (id) {
+      fetchData();
+    }
+  }, [id]);
+
+  if (!experience) {
+    return <div>Loading</div>;
+  }
 
   const handleModal = () => {
     setShowModal(false);
@@ -88,9 +94,9 @@ export default function ExperienceDetail() {
       <main className={styles.mainExperienceDetail}>
         <section className={styles.info}>
           <div className={styles.infoTitleCity}>
-            <h1>Titolo Esperienza</h1>
+            <h1>{experience.title}</h1>
             <div className={styles.city}>
-              <p>Città</p>
+              <p>{experience.geolocation}</p>
               <IconBuilding />
             </div>
           </div>
@@ -167,20 +173,13 @@ export default function ExperienceDetail() {
 
           <div className={styles.infoDescription}>
             <h2>Description</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-              delectus illum quam, laboriosam aliquam quibusdam? Perspiciatis
-              quis quo ab dolores impedit repellat cumque, excepturi eveniet
-              corrupti hic cum tenetur quae! Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Quisquam provident natus aliquid
-              cumque commodi, earum deleniti nemo ullam, accusamus quae a
-              pariatur dicta ipsam ratione inventore labore. Minus, facilis
-              animi.
-            </p>
+            <p>{experience.program}</p>
             {/* ****PREZZO E RATING DESK*** */}
             <div className={styles.infoPriceStarsDesk}>
-              <StarsRating rating={4} />
-              <p>150 $</p>
+              <StarsRating
+                rating={experience.rating && experience.rating.$numberDecimal}
+              />
+              <p>{experience.price && experience.price.$numberDecimal}$</p>
             </div>
             <button className={styles.experienceBtn}>Add Experience</button>
           </div>

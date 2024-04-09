@@ -15,7 +15,7 @@ const MenuMobile = () => {
       <Link href="/aboutUs">
         <IconInfoCircle />
       </Link>
-      <Link href="/experience">
+      <Link href="/experiences">
         <IconSailboat />
       </Link>
       <Link href="/#">
