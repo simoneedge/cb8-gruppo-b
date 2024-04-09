@@ -11,12 +11,14 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import StarsRating from "@/components/starsRating";
+import CardList from "@/components/cardList";
 
 export default function ExperienceDetail() {
   const [isFavorite, setIsFavorite] = useState(false);
   const { data: session } = useSession();
   const [showModal, setShowModal] = useState(false);
   const [experience, setExperience] = useState(null);
+  const [relatedExperiences, setRelatedExperiences] = useState([]);
   const router = useRouter();
   const { id } = router.query;
   // slider
@@ -48,6 +50,15 @@ export default function ExperienceDetail() {
       const data = await res.json();
 
       setExperience(data);
+
+      const allRes = await fetch("/api/experiences");
+      const allData = await allRes.json();
+
+      const relatedData = allData.filter(
+        (exp) => exp.category === data.category && exp._id !== data._id
+      );
+
+      setRelatedExperiences(relatedData);
     };
     if (id) {
       fetchData();
@@ -118,7 +129,7 @@ export default function ExperienceDetail() {
           <div className={styles.infoPriceStars}>
             {/* <p>Rating Stelle</p> */}
             <StarsRating rating={4} />
-            <p>prezzo</p>
+            <p>{experience.price && experience.price.$numberDecimal}$</p>
           </div>
           <div className={styles.containerOrganiz}>
             <div className={styles.organizPicture}>
@@ -130,8 +141,11 @@ export default function ExperienceDetail() {
               />
             </div>
             <div className={styles.organizNameSurn}>
-              <p>Giulia</p>
-              <p>Rossi</p>
+              <p>
+                {experience.host && experience.host[0]
+                  ? experience.host[0].name_host
+                  : ""}
+              </p>
             </div>
           </div>
         </section>
@@ -192,6 +206,7 @@ export default function ExperienceDetail() {
         </div>
         <div className={styles.suggestion}>
           <h2>Suggestion for you</h2>
+          <CardList experiences={relatedExperiences} />
         </div>
       </main>
       <header>
