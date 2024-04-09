@@ -15,6 +15,20 @@ export default function ExperienceDetail() {
   const [isFavorite, setIsFavorite] = useState(false);
   const { data: session } = useSession();
   const [showModal, setShowModal] = useState(false);
+  // slider
+  const [mainPic, setMainPic] = useState("/exp1.jpg");
+  const [pics, setPics] = useState([
+    "/ill1.jpeg",
+    "/ill2.jpeg",
+    "/sicilyexp-pic.jpeg",
+  ]);
+
+  const handleImageClick = (clickedPic) => {
+    const newPics = pics.map((pic) => (pic === clickedPic ? mainPic : pic));
+    newPics.sort();
+    setMainPic(clickedPic);
+    setPics(newPics);
+  };
 
   const onHandleFavorite = () => {
     if (session) {
@@ -121,7 +135,7 @@ export default function ExperienceDetail() {
           <div className={styles.boxPicture}>
             <div className={styles.mainPic}>
               <Image
-                src="/exp1.jpg"
+                src={mainPic}
                 width={800}
                 height={800}
                 alt="image experience"
@@ -138,30 +152,20 @@ export default function ExperienceDetail() {
               </button>
             </div>
             <div className={styles.containerPicBottom}>
-              <div className={styles.picBottom}>
-                <Image
-                  src="/exp1.jpg"
-                  width={400}
-                  height={400}
-                  alt="image experience"
-                />
-              </div>
-              <div className={styles.picBottom}>
-                <Image
-                  src="/exp1.jpg"
-                  width={400}
-                  height={400}
-                  alt="image experience"
-                />
-              </div>
-              <div className={styles.picBottom}>
-                <Image
-                  src="/exp1.jpg"
-                  width={400}
-                  height={400}
-                  alt="image experience"
-                />
-              </div>
+              {pics.map((pic, index) => (
+                <div
+                  key={index}
+                  className={styles.picBottom}
+                  onClick={() => handleImageClick(pic)}
+                >
+                  <Image
+                    src={pic}
+                    width={400}
+                    height={400}
+                    alt="image experience"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
