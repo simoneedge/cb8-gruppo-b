@@ -107,9 +107,8 @@ export default function AboutUs() {
           <p className={styles.values}>Phone: +39 123 456 789</p>
         </div>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+
+      <Footer />
     </div>
   );
 }

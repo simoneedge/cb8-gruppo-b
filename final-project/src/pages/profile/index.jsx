@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../../styles/Profile.module.scss";
 import Image from "next/image";
+import MenuDesk from "@/components/menuDesk";
+import MenuMobile from "@/components/menuMobile";
+import Footer from "@/components/footer";
 
 export default function Profile() {
   const { data: session, status } = useSession({
@@ -31,7 +34,11 @@ export default function Profile() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.infoProfile}>
+      <nav className={styles.nav}>
+        <MenuDesk />
+        <MenuMobile />
+      </nav>
+      <main className={styles.infoProfile}>
         <Image
           src="/organiz.png"
           width={100}
@@ -45,8 +52,11 @@ export default function Profile() {
         </div>
         <p className={styles.username}>{user.username}</p>
         <p className={styles.email}>{user.email}</p>
-      </div>
-      <h4 className={styles.title}>Bookings made</h4>
+      </main>
+      <section className={styles.bookings}>
+        <h4 className={styles.title}>Bookings made: none</h4>
+      </section>
+      <Footer />
     </div>
   );
 }
