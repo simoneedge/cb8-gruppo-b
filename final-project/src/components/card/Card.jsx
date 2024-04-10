@@ -31,7 +31,7 @@ const Card = ({ experience, style }) => {
           />
         </span>
         <span onClick={onHandleFavoriteClick}>
-          {isFavorite ? <IconHeartFilled /> : <IconHeart />}
+          {isFavorite ? <IconHeartFilled color="red" /> : <IconHeart />}
         </span>
       </div>
       <div className={styles.boxText}>
