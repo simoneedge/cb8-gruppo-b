@@ -88,19 +88,17 @@ export default function Home() {
         </h1>
 
         <div className={styles.containerInput}>
-          {/* <input type="text" placeholder="search..." /> */}
           <SearchBar data={experiences} onSearch={onHandleSearch} />
-
           <button>Click</button>
         </div>
         <CityFilter options={cityOptions} onFilter={setCityFilter} />
         <CategoryFilter onFilter={setCategoryFilter} />
-        <div className={styles.filterIcons}>
+        {/* <div className={styles.filterIcons}>
           <button>Food & wine</button>
           <button>Wellness</button>
           <button>Events</button>
           <button>Open Air</button>
-        </div>
+        </div> */}
       </nav>
       {/* ---MAIN--- */}
       <main className={styles.mainPageHome}>
