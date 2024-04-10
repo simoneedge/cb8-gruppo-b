@@ -16,11 +16,11 @@ export default function Intro() {
     console.log(session);
   }, [session]);
 
-  if (session?.user) {
+  if (session?.user.username) {
     router.push("/home");
   }
 
-  if (session?.user) {
+  if (session?.user.username) {
     return null;
   }
 
