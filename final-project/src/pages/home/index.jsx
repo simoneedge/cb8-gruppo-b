@@ -2,6 +2,7 @@ import styles from "../../styles/Home.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import SearchBar from "@/components/searchBar";
 import CityFilter from "@/components/cityFilter";
 import CategoryFilter from "@/components/categoryFilter";
@@ -18,6 +19,7 @@ export default function Home() {
   const [cityOptions, setCityOptions] = useState([]);
   const [cityFilter, setCityFilter] = useState(null);
   const [categoryFilter, setCategoryFilter] = useState(null);
+  const { data: session } = useSession();
   // Chiamata di tutti i dati delle eperienze complete
   useEffect(() => {
     const fetchData = async () => {
@@ -70,6 +72,16 @@ export default function Home() {
       {/* ---NAV--- */}
       <nav className={styles.navPageHome}>
         <MenuDesk />
+        {session ? (
+          <>
+            <p>{session.user.username}</p>
+            <button onClick={() => signOut()}>Sign Out</button>
+          </>
+        ) : (
+          <div className={styles.containerBtn}>
+            <button onClick={() => signIn()}>Sign In</button>
+          </div>
+        )}
         <h1>
           Discover Sicilian Experiences: Find Local Adventures in Your City
         </h1>
