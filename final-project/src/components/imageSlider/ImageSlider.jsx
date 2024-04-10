@@ -14,7 +14,7 @@ const ImageSlider = ({ experiences }) => {
         pagination={{ clickable: true }}
         speed={600}
         autoplay={{
-          delay: 3500,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         loop={true}
