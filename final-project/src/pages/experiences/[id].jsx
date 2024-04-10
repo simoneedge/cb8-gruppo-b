@@ -2,9 +2,12 @@ import styles from "../../styles/ExperienceDetail.module.scss";
 import Head from "next/head";
 
 import Image from "next/image";
-import { IconHeartFilled } from "@tabler/icons-react";
-import { IconHeart } from "@tabler/icons-react";
-import { IconBuilding } from "@tabler/icons-react";
+import {
+  IconHeart,
+  IconHeartFilled,
+  IconBuilding,
+  IconArrowLeft,
+} from "@tabler/icons-react";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
 import { useState, useEffect } from "react";
@@ -119,6 +122,12 @@ export default function ExperienceDetail() {
       <main className={styles.mainExperienceDetail}>
         <section className={styles.info}>
           <div className={styles.infoTitleCity}>
+            <button
+              className={styles.arrowButton}
+              onClick={() => router.back()}
+            >
+              <IconArrowLeft size={40} />
+            </button>
             <h1>{experience.title}</h1>
             <div className={styles.city}>
               <p>{experience.geolocation}</p>

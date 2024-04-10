@@ -3,6 +3,12 @@
   height: 100%;
 }
 
+.arrowButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .containerSlider {
   position: relative;
   img {
