@@ -72,6 +72,7 @@ export default function Home() {
       {/* ---NAV--- */}
       <nav className={styles.navPageHome}>
         <MenuDesk />
+        <MenuMobile />
         {session ? (
           <>
             <p>{session.user.username}</p>
@@ -87,15 +88,17 @@ export default function Home() {
         </h1>
 
         <div className={styles.containerInput}>
-          <input type="text" placeholder="search..." />
+          <SearchBar data={experiences} onSearch={onHandleSearch} />
           <button>Click</button>
         </div>
-        <div className={styles.filterIcons}>
+        <CityFilter options={cityOptions} onFilter={setCityFilter} />
+        <CategoryFilter onFilter={setCategoryFilter} />
+        {/* <div className={styles.filterIcons}>
           <button>Food & wine</button>
           <button>Wellness</button>
           <button>Events</button>
           <button>Open Air</button>
-        </div>
+        </div> */}
       </nav>
       {/* ---MAIN--- */}
       <main className={styles.mainPageHome}>
@@ -115,33 +118,23 @@ export default function Home() {
         {/*Slider con le prime 6 esperienze che si trovano sul database */}
 
         <ImageSlider experiences={experiences.slice(0, 6)} />
-        <div className={styles.containerSlider}>
+        {/* <div className={styles.containerSlider}>
           <div className={styles.boxSlider}>
             <h4>Titolo Evento</h4>
             <p>Orario</p>
             <p>Città</p>
           </div>
-        </div>
-        <h2>#Show Experience</h2>
-        <SearchBar data={experiences} onSearch={onHandleSearch} />
-        <CityFilter options={cityOptions} onFilter={setCityFilter} />
-        <CategoryFilter onFilter={setCategoryFilter} />
-        <CardList experiences={filteredExperiences} />
+        </div> */}
+
         <div className={styles.titleAndLink}>
           <h2>#Show Experience</h2>
         </div>
+        <CardList experiences={filteredExperiences} />
+
         {/* List with random cards, but updates when the search is performed */}
       </main>
-      {/* bottom menu */}
-      {/* ---HEADER-- */}
-      <header>
-        <MenuMobile />
-      </header>
-      {/* ---FOOTER--- */}
+
       <Footer />
-      {/* <footer className={styles.footer}>
-        <p>Copyright</p>
-      </footer> */}
     </div>
   );
 }

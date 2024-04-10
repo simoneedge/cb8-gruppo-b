@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Fuse from "fuse.js";
+import styles from "../../styles/Home.module.scss";
 
 const SearchBar = ({ data, onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,7 +19,7 @@ const SearchBar = ({ data, onSearch }) => {
   };
 
   return (
-    <div>
+    <div className={styles.containerInput}>
       <input
         type="text"
         placeholder="Search for..."
