@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import MenuDesk from "@/components/menuDesk";
 import MenuMobile from "@/components/menuMobile";
+import Footer from "@/components/footer";
 
 export default function Intro() {
   return (
@@ -30,7 +31,13 @@ export default function Intro() {
           </h1>
         </div>
       </nav>
-      {/* <main>**SEZIONE CARD AGGIUNTE AI PREFERITI***</main> */}
+      <main className={styles.mainFavorites}>
+        {/* <main>**SEZIONE CARD AGGIUNTE AI PREFERITI***</main> */}
+      </main>
+
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
