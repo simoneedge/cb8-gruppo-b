@@ -35,9 +35,7 @@ export default function Intro() {
         {/* <main>**SEZIONE CARD AGGIUNTE AI PREFERITI***</main> */}
       </main>
 
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }
