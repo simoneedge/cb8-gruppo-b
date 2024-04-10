@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import StarsRating from "@/components/starsRating";
 import CardList from "@/components/cardList";
+import Footer from "@/components/footer";
 
 export default function ExperienceDetail() {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -113,6 +114,7 @@ export default function ExperienceDetail() {
           </button>
         </div>
         <MenuDesk />
+        <MenuMobile />
       </nav>
 
       {/* ---MAIN--- */}
@@ -209,12 +211,8 @@ export default function ExperienceDetail() {
           <CardList experiences={relatedExperiences} />
         </div>
       </main>
-      <header>
-        <MenuMobile />
-      </header>
-      <footer className={styles.footer}>
-        <p>Copyright</p>
-      </footer>
+
+      <Footer />
     </div>
   );
 }
