@@ -18,31 +18,31 @@ export default function AboutPage() {
           <a href="https://www.linkedin.com/in/federica-iuvara">
             Federica Iuvara
           </a>
-          - UX/UI Designer
+          - Software Developer
         </li>
         <li>
           <a href="https://www.linkedin.com/in/paolo-spoto-894110227/">
             Paolo Spoto
           </a>
-          - BE Developer
+          - Software Developer
         </li>
         <li>
           <a href="https://www.linkedin.com/in/rita-teresa-landino-a7a54b2b4/">
             Rita Landino
           </a>
-          - BE Developer
+          - Software Developer
         </li>
         <li>
           <a href="https://www.linkedin.com/in/alessio-restivo/">
             Alessio Restivo
           </a>
-          - FE Developer
+          - Software Developer
         </li>
         <li>
           <a href="https://www.linkedin.com/in/elia-di-lorenzo-526040235/">
             Elia Di Lorenzo
           </a>
-          - FE Developer
+          - Software Developer
         </li>
       </ul>
       <h2>Our Values</h2>
