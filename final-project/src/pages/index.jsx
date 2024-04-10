@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { useSession, signIn, signOut } from "next-auth/react";
+import router from "next/router";
 import SignUpForm from "@/components/signUpForm";
 
 export default function Intro() {
@@ -14,6 +15,14 @@ export default function Intro() {
   useEffect(() => {
     console.log(session);
   }, [session]);
+
+  if (session?.user) {
+    router.push("/home");
+  }
+
+  if (session?.user) {
+    return null;
+  }
 
   const handleRegistration = (state) => {
     setIsFormVisible(state);
