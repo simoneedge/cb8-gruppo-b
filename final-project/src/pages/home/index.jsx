@@ -101,7 +101,7 @@ export default function Home() {
           <Link href="/experiences">See all</Link>
         </div>
         {/*Slider con le prime 6 esperienze che si trovano sul database */}
-        {/* Aggiunta dello stile delle card passata come prop, solamente per lo slider */}
+
         <ImageSlider experiences={experiences.slice(0, 6)} />
         <div className={styles.containerSlider}>
           <div className={styles.boxSlider}>

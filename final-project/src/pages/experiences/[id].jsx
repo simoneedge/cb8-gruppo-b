@@ -66,7 +66,7 @@ export default function ExperienceDetail() {
   }, [id]);
 
   if (!experience) {
-    return <div>Loading</div>;
+    return <div></div>;
   }
 
   const handleModal = () => {
