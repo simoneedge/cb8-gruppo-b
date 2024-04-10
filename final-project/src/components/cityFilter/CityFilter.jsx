@@ -10,7 +10,14 @@ const CityFilter = ({ options, onFilter }) => {
     label: option,
   }));
 
-  return <Select options={selectOptions} onChange={onHandleChange} />;
+  return (
+    <Select
+      options={selectOptions}
+      onChange={onHandleChange}
+      isSearchable={false}
+      placeholder="City"
+    />
+  );
 };
 
 export default CityFilter;

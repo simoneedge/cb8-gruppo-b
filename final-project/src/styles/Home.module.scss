@@ -97,30 +97,6 @@
 }
 
 // ---SECTION LIST ----
-.box {
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)),
-    url("/exp1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 90%;
-  height: 34vh;
-  border-radius: 20px;
-  padding: 20px 40px 0px 40px;
-  color: white;
-  margin-bottom: 80px;
-  cursor: pointer;
-
-  .boxIconTop {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .boxText {
-    background-color: white;
-    color: black;
-    margin-top: 50px;
-  }
-}
 
 // --FOOTER--
 .footer {

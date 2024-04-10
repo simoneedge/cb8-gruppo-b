@@ -8,6 +8,8 @@ const ImageSlider = ({ experiences }) => {
   return (
     <>
       <Swiper
+        style={{ margin: "0 10px" }}
+        spaceBetween={20}
         slidesPerView={1}
         pagination={{ clickable: true }}
         speed={600}
@@ -20,7 +22,7 @@ const ImageSlider = ({ experiences }) => {
       >
         {experiences.map((experience, index) => (
           <SwiperSlide key={index}>
-            <Card experience={experience} />
+            <Card experience={experience} style={{ width: "100%" }} />
           </SwiperSlide>
         ))}
       </Swiper>
