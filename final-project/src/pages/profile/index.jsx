@@ -1,5 +1,6 @@
 import { useSession, signIn } from "next-auth/react";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 import styles from "../../styles/Profile.module.scss";
 import Image from "next/image";
 
@@ -24,6 +25,12 @@ export default function Profile() {
 
   return (
     <div className={styles.Profile}>
+      <Head>
+        <title>Profile</title>
+        <meta name="description" content="Profile information" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <div className={styles.infoProfile}>
         <Image
           src="/organiz.png"
