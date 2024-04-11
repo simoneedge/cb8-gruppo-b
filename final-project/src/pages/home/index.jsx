@@ -133,13 +133,9 @@ export default function Home() {
           </div>
         </div> */}
 
-
         <div className={styles.titleAndLink}>
           <h2>#Show Experience</h2>
         </div>
-        <CardList experiences={filteredExperiences} />
-
-        {/* List with random cards, but updates when the search is performed */}
       </main>
 
       <Footer />
