@@ -147,12 +147,6 @@ export default function Home() {
 
         <ImageSlider experiences={experiences.slice(0, 6)} />
 
-        <h2>#Show Experience</h2>
-        <SearchBar data={experiences} onSearch={onHandleSearch} />
-        <CityFilter options={cityOptions} onFilter={setCityFilter} />
-        <CategoryFilter onFilter={setCategoryFilter} />
-        <CardList experiences={filteredExperiences} />
-
         {/* <div className={styles.containerSlider}>
           <div className={styles.boxSlider}>
             <h4>Titolo Evento</h4>
@@ -161,8 +155,37 @@ export default function Home() {
           </div>
         </div> */}
 
-        <div className={styles.titleAndLink}>
-          <h2>#Show Experience</h2>
+        <div className={styles.containerReview}>
+          <div className={styles.imgReview}>
+            <Image
+              src="/reviewPic.jpg"
+              width={800}
+              height={800}
+              alt="review picture"
+              priority
+            />
+          </div>
+          <div className={styles.textReview}>
+            <p className={styles.textOne}>What They Say</p>
+            <h2>
+              What our Customer <br /> Say About Us
+            </h2>
+            <p className={styles.userReview}>
+              "Discovering Sicily through Sicily Experience was an absolute
+              delight! From the tantalizing flavors of Sicilian cuisine to the
+              serene wellness retreats nestled amidst breathtaking landscapes,
+              this platform offers an unforgettable journey through the heart
+              and soul of Sicily. Whether you're a food enthusiast craving
+              authentic Sicilian dishes, a wellness seeker in search of
+              rejuvenation, or an adventurer eager to explore the island's
+              open-air experiences, Sicily Experience has something for
+              everyone. Each experience is curated to perfection, ensuring that
+              every moment spent in Sicily is filled with joy, relaxation, and a
+              true taste of Sicilian hospitality. Don't miss out on the
+              opportunity to embark on your own Sicilian adventure with Sicily
+              Experience!" <br />- Threresa Mezzie
+            </p>
+          </div>
         </div>
       </main>
 
