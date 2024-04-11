@@ -118,6 +118,13 @@ export default function Home() {
         {/*Slider con le prime 6 esperienze che si trovano sul database */}
 
         <ImageSlider experiences={experiences.slice(0, 6)} />
+
+        <h2>#Show Experience</h2>
+        <SearchBar data={experiences} onSearch={onHandleSearch} />
+        <CityFilter options={cityOptions} onFilter={setCityFilter} />
+        <CategoryFilter onFilter={setCategoryFilter} />
+        <CardList experiences={filteredExperiences} />
+
         {/* <div className={styles.containerSlider}>
           <div className={styles.boxSlider}>
             <h4>Titolo Evento</h4>
@@ -125,6 +132,7 @@ export default function Home() {
             <p>Città</p>
           </div>
         </div> */}
+
 
         <div className={styles.titleAndLink}>
           <h2>#Show Experience</h2>

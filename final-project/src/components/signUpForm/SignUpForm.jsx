@@ -128,10 +128,6 @@ const SignUpForm = ({ isClose }) => {
               Submit
             </button>
           </form>
-
-          <button className={styles.closeBtn} onClick={handleCloseBtn}>
-            <IconX size={30} />
-          </button>
         </>
       )}
     </>

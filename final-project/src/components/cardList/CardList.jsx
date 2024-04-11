@@ -1,8 +1,9 @@
 import Card from "../card/Card";
+import styles from "./index.module.scss";
 
 const CardList = ({ experiences }) => {
   return (
-    <div>
+    <div className={styles.CardList}>
       {experiences.map((experience) => (
         <Card key={experience._id} experience={experience} />
       ))}

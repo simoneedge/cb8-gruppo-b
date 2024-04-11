@@ -3,8 +3,9 @@ import { IconHeart, IconHeartFilled } from "@tabler/icons-react";
 import StarsRating from "../starsRating";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Image from "next/image";
 
-const Card = ({ experience, style }) => {
+const Card = ({ experience }) => {
   const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -23,7 +24,15 @@ const Card = ({ experience, style }) => {
   };
 
   return (
-    <div className={styles.box} onClick={onHandleClick} style={style}>
+    <div className={styles.cardBox} onClick={onHandleClick}>
+      <div className={styles.cardBoxImage}>
+        <Image
+          src="/images/Events/exp1/4.webp"
+          width={400}
+          height={320}
+          alt="experience"
+        />
+      </div>
       <div className={styles.boxIconTop}>
         <span>
           <StarsRating
