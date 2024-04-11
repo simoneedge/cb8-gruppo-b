@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useSession, signIn, signOut } from "next-auth/react";
 import router from "next/router";
 import SignUpForm from "@/components/signUpForm";
+import SignInButton from "@/components/signInButton";
 
 export default function Intro() {
   const { data: session } = useSession();
@@ -55,19 +56,7 @@ export default function Intro() {
             <h1>Find interest experience to Join in Sicily!</h1>
             <p>We share all experiences!</p>
 
-            {session ? (
-              <>
-                <p>Signed in as {session.user.username}</p>
-                <button onClick={() => signOut()}>Sign Out</button>
-              </>
-            ) : (
-              <div className={styles.containerBtn}>
-                <button onClick={() => signIn()}>Sign In</button>
-                <button onClick={() => handleRegistration(true)}>
-                  Register
-                </button>
-              </div>
-            )}
+            <SignInButton />
 
             <Link href="/home">Browse as guest</Link>
           </>
