@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
+import Image from "next/image";
 import SearchBar from "@/components/searchBar";
 import CityFilter from "@/components/cityFilter";
 import CategoryFilter from "@/components/categoryFilter";
@@ -73,16 +74,35 @@ export default function Home() {
       <nav className={styles.navPageHome}>
         <MenuDesk />
         <MenuMobile />
-        {session ? (
-          <>
-            <p>{session.user.username}</p>
-            <button onClick={() => signOut()}>Sign Out</button>
-          </>
-        ) : (
-          <div className={styles.containerBtn}>
-            <button onClick={() => signIn()}>Sign In</button>
+        <div className={styles.sessionLogo}>
+          <Image
+            src="/logoBianco.svg"
+            width={100}
+            height={100}
+            className={styles.logoImage}
+            alt="logo"
+            priority
+          />
+          {/* ----SESSION--- */}
+          <div>
+            {session ? (
+              <div className={styles.sessionContainer}>
+                <p className={styles.textName}>
+                  Welcome {session.user.username}!
+                </p>
+                <button className={styles.btnMenu} onClick={() => signOut()}>
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <div className={styles.containerBtn}>
+                <button className={styles.btnMenu} onClick={() => signIn()}>
+                  Sign In
+                </button>
+              </div>
+            )}
           </div>
-        )}
+        </div>
         <h1>
           Discover Sicilian Experiences: Find Local Adventures in Your City
         </h1>

@@ -1,4 +1,4 @@
-import { useSession, signIn } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../../styles/Profile.module.scss";
@@ -14,6 +14,7 @@ export default function Profile() {
       signIn();
     },
   });
+
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -45,6 +46,25 @@ export default function Profile() {
           height={100}
           alt="user profile picture"
         />
+        <div className={styles.session}>
+          {session ? (
+            <div className={styles.sessionContainer}>
+              <p className={styles.textName}>
+                Welcome {session.user.username}!
+              </p>
+              <button className={styles.btnMenu} onClick={() => signOut()}>
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <div className={styles.containerBtn}>
+              <button className={styles.btnMenu} onClick={() => signIn()}>
+                Sign In
+              </button>
+            </div>
+          )}
+        </div>
+
         <div className={styles.infoName}>
           <h2>
             {user.name} {user.lastname}
