@@ -3,12 +3,16 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #ffffff;
-  border-top: 1px solid #dddddd;
+  background-color: var(--color-blue2);
+  // border-top: 1px solid var(--color-orange);
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 14px 0;
   z-index: 3;
+
+  a {
+    color: var(--color-white);
+  }
 }
 
 .MenuDesk {
@@ -22,8 +26,6 @@
     align-items: center;
     width: 100%;
     padding: 16px 40px;
-
-    // background-color: rgba(238, 238, 238, 0.815);
 
     .topMenu {
       display: flex;
