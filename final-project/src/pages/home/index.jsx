@@ -84,7 +84,7 @@ export default function Home() {
             priority
           />
           {/* ----SESSION--- */}
-          <div>
+          <div className={styles.session}>
             {session ? (
               <div className={styles.sessionContainer}>
                 <p className={styles.textName}>
