@@ -104,21 +104,27 @@ export default function Home() {
           </div>
         </div>
         <h1>
-          Discover Sicilian Experiences: Find Local Adventures in Your City
+          Discover Sicilian Experiences: Find Local Adventures in Your City!
         </h1>
+        <p>
+          Embark on a journey through the heart of Sicily's culture, cuisine,
+          and landscapes. Explore hidden gems, savor authentic flavors, and
+          create unforgettable memories. Start your adventure today by
+          discovering unique experiences waiting for you in our app!
+        </p>
 
+        <Link href="/experiences" className={styles.btnCallAction}>
+          Start Exploring
+        </Link>
+        {/* --SEARCH-- */}
+        {/* 
         <div className={styles.containerInput}>
           <SearchBar data={experiences} onSearch={onHandleSearch} />
           <button>Click</button>
         </div>
         <CityFilter options={cityOptions} onFilter={setCityFilter} />
         <CategoryFilter onFilter={setCategoryFilter} />
-        {/* <div className={styles.filterIcons}>
-          <button>Food & wine</button>
-          <button>Wellness</button>
-          <button>Events</button>
-          <button>Open Air</button>
-        </div> */}
+       */}
       </nav>
       {/* ---MAIN--- */}
       <main className={styles.mainPageHome}>
