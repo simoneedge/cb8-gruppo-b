@@ -4,6 +4,9 @@ import { SessionProvider } from "next-auth/react";
 import { createTheme, MantineProvider } from "@mantine/core";
 
 export default function App({ Component, pageProps }) {
+  const theme = createTheme({
+    //
+  });
   return (
     <SessionProvider session={pageProps.session}>
       <MantineProvider theme={theme}>
