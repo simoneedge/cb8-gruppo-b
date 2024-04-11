@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import clientPromise from "../../../../utils/mongodb";
+
 export const authOptions = {
   providers: [
     CredentialsProvider({
@@ -29,6 +30,9 @@ export const authOptions = {
     }),
   ],
   strategy: "jwt",
+  pages: {
+    signIn: "/signIn",
+  },
   callbacks: {
     async jwt({ token, user }) {
       // Persist the OAuth access_token to the token right after signin
