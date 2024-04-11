@@ -1,8 +1,11 @@
 import Link from "next/link";
 import styles from "../../styles/Menu.module.scss";
 import Image from "next/image";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const MenuDesk = () => {
+  const { data: session } = useSession();
+
   return (
     <div className={styles.MenuDesk}>
       <div className={styles.containerImage}>
@@ -16,10 +19,28 @@ const MenuDesk = () => {
         />
       </div>
       <div className={styles.topMenu}>
-        <Link href="/#">Favorites</Link>
+        <Link href="/favorites">Favorites</Link>
         <Link href="/experiences">Experiences</Link>
-        <Link href="/#">Profile</Link>
-        <Link href="/#">About Us</Link>
+        <Link href="/profile">Profile</Link>
+        <Link href="/aboutUs">About Us</Link>
+        <div>
+          {session ? (
+            <div className={styles.sessionContainer}>
+              <p className={styles.textName}>
+                Welcome {session.user.username}!
+              </p>
+              <button className={styles.btnMenu} onClick={() => signOut()}>
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <div className={styles.containerBtn}>
+              <button className={styles.btnMenu} onClick={() => signIn()}>
+                Sign In
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
