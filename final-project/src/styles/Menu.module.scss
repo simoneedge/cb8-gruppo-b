@@ -20,6 +20,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .containerImage {
+    cursor: pointer;
+  }
+
   .MenuDesk {
     display: flex;
     justify-content: space-between;
