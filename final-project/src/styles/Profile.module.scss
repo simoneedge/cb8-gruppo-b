@@ -29,6 +29,31 @@
   }
 }
 
+//SESSION
+
+.sessionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btnMenu {
+  background-color: var(--color-yellow);
+  border: none;
+  padding: 10px 24px;
+  color: var(--color-black);
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.textName {
+  color: var(--color-yellow);
+}
+
+//info NAME ecc.
+
 .infoName {
   display: flex;
   align-items: center;
@@ -37,9 +62,13 @@
 
 .title {
   color: var(--color-orange);
-  padding: 1.875rem 3.75rem;
   font-size: 1.25rem;
-  padding: 2.5rem 1.25rem 1.25rem 1.25rem;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.bookings {
+  padding-bottom: 60px;
 }
 
 @media screen and (min-width: 768px) {
@@ -57,5 +86,9 @@
   }
   .bookings {
     padding-bottom: 30px;
+  }
+
+  .session {
+    display: none;
   }
 }
