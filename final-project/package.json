@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/core": "^7.7.1",
+    "@mantine/form": "^7.7.1",
+    "@mantine/hooks": "^7.7.1",
     "@tabler/icons-react": "^3.1.0",
     "bcryptjs": "^2.4.3",
     "formik": "^2.4.5",
@@ -27,6 +30,9 @@
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
+    "postcss": "^8.4.38",
+    "postcss-preset-mantine": "^1.14.4",
+    "postcss-simple-vars": "^7.0.1",
     "sass": "^1.74.1"
   }
 }

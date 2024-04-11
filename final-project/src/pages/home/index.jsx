@@ -115,13 +115,6 @@ export default function Home() {
         {/*Slider con le prime 6 esperienze che si trovano sul database */}
 
         <ImageSlider experiences={experiences.slice(0, 6)} />
-        <div className={styles.containerSlider}>
-          <div className={styles.boxSlider}>
-            <h4>Titolo Evento</h4>
-            <p>Orario</p>
-            <p>Città</p>
-          </div>
-        </div>
         <h2>#Show Experience</h2>
         <SearchBar data={experiences} onSearch={onHandleSearch} />
         <CityFilter options={cityOptions} onFilter={setCityFilter} />

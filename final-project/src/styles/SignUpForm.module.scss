@@ -1,12 +1,14 @@
 .SignUpForm {
-  position: fixed;
   background-color: rgb(219, 213, 213);
   padding: 80px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 6px;
-  height: 600px;
+  height: 500px;
+  width: 600px;
 
   input {
     width: 200px;
@@ -29,23 +31,6 @@
     font-size: 18px;
     border: none;
     border-radius: 10px;
-  }
-}
-
-.closeBtn {
-  display: block;
-  position: relative;
-  top: -20px;
-  right: -26%;
-  color: rgb(106, 121, 206);
-  border: none;
-  background: transparent;
-  outline: none;
-}
-
-@media screen and (min-width: 768px) {
-  .closeBtn {
-    top: -20px;
-    right: -9%;
+    cursor: pointer;
   }
 }
