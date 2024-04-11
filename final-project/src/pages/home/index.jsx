@@ -103,19 +103,21 @@ export default function Home() {
             )}
           </div>
         </div>
-        <h1>
-          Discover Sicilian Experiences: Find Local Adventures in Your City!
-        </h1>
-        <p>
-          Embark on a journey through the heart of Sicily's culture, cuisine,
-          and landscapes. Explore hidden gems, savor authentic flavors, and
-          create unforgettable memories. Start your adventure today by
-          discovering unique experiences waiting for you in our app!
-        </p>
+        <div className={styles.navText}>
+          <h1>
+            Discover Sicilian Experiences: Find Local Adventures in Your City!
+          </h1>
+          <p>
+            Embark on a journey through the heart of Sicily's culture, cuisine,
+            and landscapes. Explore hidden gems, savor authentic flavors, and
+            create unforgettable memories. Start your adventure today by
+            discovering unique experiences waiting for you in our app!
+          </p>
 
-        <Link href="/experiences" className={styles.btnCallAction}>
-          Start Exploring
-        </Link>
+          <Link href="/experiences" className={styles.btnCallAction}>
+            Start Exploring
+          </Link>
+        </div>
         {/* --SEARCH-- */}
         {/* 
         <div className={styles.containerInput}>
