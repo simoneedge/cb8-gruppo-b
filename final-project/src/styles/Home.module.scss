@@ -202,7 +202,7 @@
   }
   .userReview {
     padding-top: 20px;
-    color: var(--color-white);
+    color: var(--color-white2);
   }
 }
 
@@ -314,6 +314,54 @@
 
   .boxSlider {
     width: 400px;
+  }
+
+  // 3 pic section
+  .containerPics {
+    display: flex;
+    gap: 20px;
+    padding: 120px 120px 40px 120px;
+
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .side img {
+      height: 200px;
+      width: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .fullwidth img {
+      height: 410px;
+      width: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .textReview {
+      padding-right: 40px;
+      width: 500px;
+    }
+
+    .numbers {
+      display: flex;
+      gap: 20px;
+      padding-top: 20px;
+
+      h4 {
+        color: var(--color-orange);
+      }
+      p {
+        color: var(--color-white2);
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
   }
 
   // REVIEWW

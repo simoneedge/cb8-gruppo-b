@@ -155,6 +155,58 @@ export default function Home() {
           </div>
         </div> */}
 
+        <div className={styles.containerPics}>
+          <div className={styles.textReview}>
+            <p className={styles.textOne}>New For You</p>
+            <h2>Enjoy With a New Experience</h2>
+            <p className={styles.userReview}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              necessitatibus laborum dolorem, recusandae beatae nemo odio hic
+              commodi neque totam repudiandae rerum fugit, et aliquid provident
+              laudantium ipsum culpa excepturi! Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit. Fuga iusto eveniet distinctio
+              molestiae quas repellat labore illum? Harum expedita ea incidunt
+              omnis! Similique ducimus quod quam repellat quis ab quaerat. Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Temporibus nemo
+              quo similique esse voluptates porro iure reiciendis alias laborum,
+              omnis consequuntur neque itaque ab cumque ullam ad, dolorum
+              aspernatur velit!
+            </p>
+            <div className={styles.numbers}>
+              <span>
+                <h4>500+</h4>
+                <p>Satisfied Costumers</p>
+              </span>
+              <span>
+                <h4>120+</h4>
+                <p>Destinations</p>
+              </span>
+              <span>
+                <h4>400+</h4>
+                <p>Bookings last week</p>
+              </span>
+            </div>
+          </div>
+
+          <div className={styles.fullwidth}>
+            <Image src="/mare.jpg" width={800} height={800} alt="Immagine 3" />
+          </div>
+          <div className={styles.side}>
+            <Image
+              src="/orange.jpg"
+              width={800}
+              height={800}
+              alt="Immagine 1"
+            />
+            <Image
+              src="/girlAir.jpg"
+              width={800}
+              height={800}
+              alt="Immagine 2"
+            />
+          </div>
+        </div>
+
         <div className={styles.containerReview}>
           <div className={styles.imgReview}>
             <Image
