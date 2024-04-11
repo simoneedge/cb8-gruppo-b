@@ -3,14 +3,44 @@ import styles from "../../styles/Reservation.module.scss";
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import { IconArrowNarrowLeft } from "@tabler/icons-react";
+import { useSession } from 'next-auth/react';
 
 const Reservation = () => {
+  const {data: session} = useSession
   const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`/api/reservation/${session.user.id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phone,
+          email
+        }),
+      });
+      if (response.ok) {
+        console.log('Booking made successfully!');
+      } else {
+        console.error('Error during booking:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error during booking:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className={styles.Reservation}>
       <IconArrowNarrowLeft />
       <img className={styles.iconRes} src="https://img.icons8.com/stickers/100/reservation.png" alt="reservation" />
+      <form>
       <div className={styles.hourRes}>
         <h4>Select one of the following time availability</h4>
         <label>
@@ -58,11 +88,21 @@ const Reservation = () => {
         />
       </div>
       <div className={styles.emailRes}>
-        <input type="email" id="name" name="name" placeholder="Your email address" />
+        <input
+          type="email"
+          id="name"
+          name="name"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Your email address"
+        />
       </div>
-      <button className={styles.btnRes}>Confirm your reservation!</button>
+      <button onClick={handleSubmit} disabled={isLoading}>
+        {isLoading ? 'Loading...' : 'Book your experience!'}
+      </button>
+      </form>
     </div>
   );
-}
+};
 
 export default Reservation;
