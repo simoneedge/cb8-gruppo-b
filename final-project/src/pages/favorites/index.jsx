@@ -17,10 +17,10 @@ export default function Intro() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className={styles.navFavorites}>
-        <header>
+        <nav>
           <MenuDesk />
           <MenuMobile />
-        </header>
+        </nav>
         <div className={styles.textNav}>
           <h1>
             Welcome to your collection of favorite experiences! Here you can
@@ -35,9 +35,7 @@ export default function Intro() {
         {/* <main>**SEZIONE CARD AGGIUNTE AI PREFERITI***</main> */}
       </main>
 
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }
