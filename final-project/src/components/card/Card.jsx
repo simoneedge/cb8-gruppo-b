@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import { IconHeart, IconHeartFilled } from "@tabler/icons-react";
+import { IconHeart, IconHeartFilled, IconMapPin } from "@tabler/icons-react";
 import StarsRating from "../starsRating";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -28,25 +28,34 @@ const Card = ({ experience }) => {
       <div className={styles.cardBoxImage}>
         <Image
           src="/images/Events/exp1/4.webp"
-          width={400}
-          height={320}
+          width={800}
+          height={800}
           alt="experience"
         />
       </div>
       <div className={styles.boxIconTop}>
-        <span>
+        <span className={styles.stars}>
           <StarsRating
             rating={experience.rating && experience.rating.$numberDecimal}
           />
         </span>
         <span onClick={onHandleFavoriteClick}>
-          {isFavorite ? <IconHeartFilled color="red" /> : <IconHeart />}
+          {isFavorite ? (
+            <IconHeartFilled size={28} color="red" />
+          ) : (
+            <IconHeart size={28} />
+          )}
         </span>
       </div>
       <div className={styles.boxText}>
         <h4>{experience.title}</h4>
         <p>{experience.time[0].first_slot}</p>
-        <p>{experience.geolocation}</p>
+        <div className={styles.containerCity}>
+          <span className={styles.iconCity}>
+            <IconMapPin />
+          </span>
+          <p className={styles.city}>{experience.geolocation}</p>
+        </div>
       </div>
     </div>
   );
