@@ -7,18 +7,28 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 
 const Card = ({ experience }) => {
-  const { data: session } = useSession();
   const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
+  const { data: session, update } = useSession();
 
+  const reloadSession = () => {
+    const event = new Event("visibilitychange");
+    document.dispatchEvent(event);
+  };
+
+  useEffect(() => {
+    session.user.favorites.includes(experience._id)
+      ? setIsFavorite(true)
+      : setIsFavorite(false);
+  }, []);
   // Controlla se l'esperienza è nei preferiti quando il componente
   // viene montato
-  useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  // useEffect(() => {
+  //   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    const isFav = favorites.some((fav) => fav._id === experience._id);
-    setIsFavorite(isFav);
-  }, []);
+  //   const isFav = favorites.some((fav) => fav._id === experience._id);
+  //   setIsFavorite(isFav);
+  // }, []);
 
   if (!experience) {
     return null;
@@ -31,19 +41,28 @@ const Card = ({ experience }) => {
   const onHandleFavoriteClick = (e) => {
     e.stopPropagation();
 
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    if (isFavorite) {
-      // Rimuove l'esperienza dai preferiti
-      const index = favorites.findIndex((fav) => fav._id === experience._id);
-      favorites.splice(index, 1);
-    } else {
-      // Aggiunge l'esperienza ia preferiti
-      favorites.push(experience);
-    }
-    // Aggiorna i preferiti nel localStorage
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-    // Infine aggiorna lo stato locale
-    setIsFavorite(!isFavorite);
+    // const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    // if (isFavorite) {
+    //   // Rimuove l'esperienza dai preferiti
+    //   const index = favorites.findIndex((fav) => fav._id === experience._id);
+    //   favorites.splice(index, 1);
+    // } else {
+    //   // Aggiunge l'esperienza ia preferiti
+    //   favorites.push(experience);
+    // }
+    // // Aggiorna i preferiti nel localStorage
+    // localStorage.setItem("favorites", JSON.stringify(favorites));
+    // // Infine aggiorna lo stato locale
+    // setIsFavorite(!isFavorite);
+    fetch(`/api/favorites/${session.user.id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: experience._id }),
+    }).then((response) => {
+      reloadSession();
+    });
   };
 
   return (
@@ -90,7 +109,6 @@ const Card = ({ experience }) => {
           </span>
           <p className={styles.city}>{experience.geolocation}</p>
         </div>
-
       </div>
     </div>
   );
