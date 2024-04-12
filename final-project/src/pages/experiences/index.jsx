@@ -14,7 +14,6 @@ import { IconFilters } from "@tabler/icons-react";
 export default function Experiences() {
   const [experiences, setExperiences] = useState([]);
 
-  // search
   const [filteredExperiences, setFilteredExperiences] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [fuse, setFuse] = useState(null);
@@ -22,23 +21,6 @@ export default function Experiences() {
   useEffect(() => {
     setFuse(new Fuse(experiences, { keys: ["title"] }));
   }, [experiences]);
-
-  //   useEffect(() => {
-  //     if (category) {
-  //       const results = experiences.filter((exp) => exp.category === category);
-  //       setFilteredExperiences(results);
-  //     }
-  //   }, [category, filteredExperiences, experiences]);
-
-  //   const onHandleSearch = (e) => {
-  //     setSearchTerm(e.target.value);
-  //     if (fuse) {
-  //       const results = fuse.search(e.target.value).map(({ item }) => item);
-  //       results.length > 0
-  //         ? setFilteredExperiences(results)
-  //         : setFilteredExperiences(experiences);
-  //     }
-  //   };
 
   const handleSelect = (categoryValue) => {
     if (categoryValue === category) {
@@ -65,7 +47,6 @@ export default function Experiences() {
 
   useEffect(() => {
     filterExperiences();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm, category, experiences]);
   useEffect(() => {
     fetch("http://localhost:3000/api/experiences")
