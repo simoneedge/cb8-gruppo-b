@@ -27,9 +27,19 @@ export default function Experiences() {
         <meta name="description" content="List of experiences" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className={styles.nav}>
+      <nav className={styles.navExperiences}>
         <MenuDesk />
         <MenuMobile />
+
+        <div className={styles.textNav}>
+          <h1>
+            Welcome to your collection of favorite experiences! Here you can
+            keep track of all the adventures you've loved the most with us. Add
+            the experiences you want to relive over and over again. Each
+            experience is a precious piece in your journey of discovery. Keep
+            exploring and creating unforgettable memories with us!
+          </h1>
+        </div>
       </nav>
       <main>
         <h1>Experience</h1>
