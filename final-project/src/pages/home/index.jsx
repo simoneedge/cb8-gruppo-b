@@ -4,10 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
-import SearchBar from "@/components/searchBar";
-import CityFilter from "@/components/cityFilter";
-import CategoryFilter from "@/components/categoryFilter";
-import CardList from "@/components/cardList";
+import { IconCheck } from "@tabler/icons-react";
 import ImageSlider from "@/components/imageSlider";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
@@ -103,22 +100,30 @@ export default function Home() {
             )}
           </div>
         </div>
-        <h1>
-          Discover Sicilian Experiences: Find Local Adventures in Your City
-        </h1>
+        <div className={styles.navText}>
+          <h1>
+            Discover Sicilian Experiences: Find Local Adventures in Your City!
+          </h1>
+          <p>
+            Embark on a journey through the heart of Sicily's culture, cuisine,
+            and landscapes. Explore hidden gems, savor authentic flavors, and
+            create unforgettable memories. Start your adventure today by
+            discovering unique experiences waiting for you in our app!
+          </p>
 
+          <Link href="/experiences" className={styles.btnCallAction}>
+            Start Exploring
+          </Link>
+        </div>
+        {/* --SEARCH-- */}
+        {/* 
         <div className={styles.containerInput}>
           <SearchBar data={experiences} onSearch={onHandleSearch} />
           <button>Click</button>
         </div>
         <CityFilter options={cityOptions} onFilter={setCityFilter} />
         <CategoryFilter onFilter={setCategoryFilter} />
-        {/* <div className={styles.filterIcons}>
-          <button>Food & wine</button>
-          <button>Wellness</button>
-          <button>Events</button>
-          <button>Open Air</button>
-        </div> */}
+       */}
       </nav>
       {/* ---MAIN--- */}
       <main className={styles.mainPageHome}>
@@ -139,12 +144,6 @@ export default function Home() {
 
         <ImageSlider experiences={experiences.slice(0, 6)} />
 
-        <h2>#Show Experience</h2>
-        <SearchBar data={experiences} onSearch={onHandleSearch} />
-        <CityFilter options={cityOptions} onFilter={setCityFilter} />
-        <CategoryFilter onFilter={setCategoryFilter} />
-        <CardList experiences={filteredExperiences} />
-
         {/* <div className={styles.containerSlider}>
           <div className={styles.boxSlider}>
             <h4>Titolo Evento</h4>
@@ -153,8 +152,143 @@ export default function Home() {
           </div>
         </div> */}
 
-        <div className={styles.titleAndLink}>
-          <h2>#Show Experience</h2>
+        <div className={styles.listCheck}>
+          <h2>Discover Sicily: Experiences to Explore</h2>
+          <ul>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Culinary Tours: Organize guided visits to local markets, farms,
+              and restaurants for users to discover Sicily's rich culinary
+              tradition.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Cultural Excursions: Provide guided tours to historical sites,
+              monuments, and museums in Sicily, allowing users to immerse
+              themselves in the island's history and culture.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Outdoor Activities: Offer experiences such as mountain hikes, boat
+              trips, snorkeling, scuba diving, and other outdoor activities for
+              users to explore Sicily's natural beauty.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Wine and Food Tours: Arrange wine tastings, vineyard visits, and
+              cooking classes to allow users to savor the unique flavors of
+              Sicily.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Adventure Expeditions: Provide activities such as quad biking,
+              paragliding, rock climbing, and trekking for users seeking a more
+              adventurous experience.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Relaxation and Wellness: Offer relaxation packages including
+              massages, yoga sessions, and thermal treatments at local spas and
+              wellness centers.
+            </li>
+          </ul>
+        </div>
+
+        <div className={styles.containerPics}>
+          <div className={styles.textReview}>
+            <p className={styles.textOne}>New For You</p>
+            <h2>Enjoy With a New Experience</h2>
+            <p className={styles.userReview}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              necessitatibus laborum dolorem, recusandae beatae nemo odio hic
+              commodi neque totam repudiandae rerum fugit, et aliquid provident
+              laudantium ipsum culpa excepturi! Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit. Fuga iusto eveniet distinctio
+              molestiae quas repellat labore illum? Harum expedita ea incidunt
+              omnis! Similique ducimus quod quam repellat quis ab quaerat. Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Temporibus nemo
+              quo similique esse voluptates porro iure reiciendis alias laborum,
+              omnis consequuntur neque itaque ab cumque ullam ad, dolorum
+              aspernatur velit!
+            </p>
+            <div className={styles.numbers}>
+              <span>
+                <h4>500+</h4>
+                <p>Satisfied Costumers</p>
+              </span>
+              <span>
+                <h4>120+</h4>
+                <p>Destinations</p>
+              </span>
+              <span>
+                <h4>400+</h4>
+                <p>Bookings last week</p>
+              </span>
+            </div>
+          </div>
+
+          <div className={styles.fullwidth}>
+            <Image src="/mare.jpg" width={800} height={800} alt="Immagine 3" />
+          </div>
+          <div className={styles.side}>
+            <Image
+              src="/orange.jpg"
+              width={800}
+              height={800}
+              alt="Immagine 1"
+            />
+            <Image
+              src="/girlAir.jpg"
+              width={800}
+              height={800}
+              alt="Immagine 2"
+            />
+          </div>
+        </div>
+
+        <div className={styles.containerReview}>
+          <div className={styles.imgReview}>
+            <Image
+              src="/reviewPic.jpg"
+              width={800}
+              height={800}
+              alt="review picture"
+              priority
+            />
+          </div>
+          <div className={styles.textReview}>
+            <p className={styles.textOne}>What They Say</p>
+            <h2>
+              What our Customer <br /> Say About Us
+            </h2>
+            <p className={styles.userReview}>
+              "Discovering Sicily through Sicily Experience was an absolute
+              delight! From the tantalizing flavors of Sicilian cuisine to the
+              serene wellness retreats nestled amidst breathtaking landscapes,
+              this platform offers an unforgettable journey through the heart
+              and soul of Sicily. Whether you're a food enthusiast craving
+              authentic Sicilian dishes, a wellness seeker in search of
+              rejuvenation, or an adventurer eager to explore the island's
+              open-air experiences, Sicily Experience has something for
+              everyone. Each experience is curated to perfection, ensuring that
+              every moment spent in Sicily is filled with joy, relaxation, and a
+              true taste of Sicilian hospitality. Don't miss out on the
+              opportunity to embark on your own Sicilian adventure with Sicily
+              Experience!" <br />- Threresa Mezzie
+            </p>
+          </div>
         </div>
       </main>
 

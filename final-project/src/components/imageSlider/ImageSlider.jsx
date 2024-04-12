@@ -8,13 +8,14 @@ const ImageSlider = ({ experiences }) => {
   return (
     <>
       <Swiper
-        style={{ margin: "0 8px" }}
+        style={{ margin: "0" }}
         spaceBetween={20}
         slidesPerView={1.2}
         breakpoints={{
           640: { slidesPerView: 2.3 },
           900: { slidesPerView: 3.4 },
-          1500: { slidesPerView: 4.3 },
+          // 1500: { slidesPerView: 4.3 },
+          1024: { slidesPerView: 2.3 },
         }}
         pagination={{ clickable: true }}
         speed={600}

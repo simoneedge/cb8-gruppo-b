@@ -8,7 +8,7 @@ const MenuDesk = () => {
 
   return (
     <div className={styles.MenuDesk}>
-      <div className={styles.containerImage}>
+      <Link className={styles.containerImage} href="/home">
         <Image
           src="/logoBianco.svg"
           width={100}
@@ -17,7 +17,7 @@ const MenuDesk = () => {
           alt="logo"
           priority
         />
-      </div>
+      </Link>
       <div className={styles.topMenu}>
         <Link href="/favorites">Favorites</Link>
         <Link href="/experiences">Experiences</Link>

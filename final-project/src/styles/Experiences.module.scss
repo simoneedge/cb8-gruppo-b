@@ -4,9 +4,46 @@
   min-height: 100vh;
 }
 
+.navExperiences {
+  height: 80vh;
+  background-color: var(--color-blue2);
+  color: var(--color-orange);
+}
+
+.textNav {
+  padding-top: 4.375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    padding: 0.625rem;
+    width: 400px;
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
+}
+
+.mainExperiences {
+  min-height: 50vh;
+  background-color: var(--color-blue2);
+  padding: 80px 20px;
+}
+
 @media screen and (min-width: 768px) {
-  .nav {
-    height: 34vh;
-    background-color: var(--color-blue2);
+  .textNav {
+    padding-top: 1.25rem;
+    padding-bottom: 100px;
+    h1 {
+      width: 37.5rem;
+      line-height: 1.5;
+    }
+  }
+
+  .mainExperiences {
+    min-height: 80vh;
+    flex-shrink: 1;
+    padding-top: 100px;
   }
 }

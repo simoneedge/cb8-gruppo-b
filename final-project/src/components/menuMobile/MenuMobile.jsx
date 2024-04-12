@@ -1,10 +1,12 @@
 import styles from "../../styles/Menu.module.scss";
 import Link from "next/link";
-import { IconHome } from "@tabler/icons-react";
-import { IconHeart } from "@tabler/icons-react";
-import { IconSailboat } from "@tabler/icons-react";
-import { IconUserCircle } from "@tabler/icons-react";
-import { IconInfoCircle } from "@tabler/icons-react";
+import {
+  IconHome,
+  IconHeart,
+  IconSailboat,
+  IconUserCircle,
+  IconInfoCircle,
+} from "@tabler/icons-react";
 
 const MenuMobile = () => {
   return (
