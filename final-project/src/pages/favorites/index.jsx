@@ -1,13 +1,31 @@
 import styles from "../../styles/Favorites.module.scss";
-
+import { useSession, signIn } from "next-auth/react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import MenuDesk from "@/components/menuDesk";
 import MenuMobile from "@/components/menuMobile";
 import Footer from "@/components/footer";
+import CardList from "@/components/cardList";
 
-export default function Intro() {
+export default function Favorites() {
+  const { data: session, status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      signIn();
+    },
+  });
+
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    if (session) {
+      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      setFavorites(favorites);
+    }
+  }, [session]);
+
   return (
     <div className={styles.Favorites}>
       <Head>
@@ -31,10 +49,7 @@ export default function Intro() {
           </h1>
         </div>
       </nav>
-      <main className={styles.mainFavorites}>
-        {/* <main>**SEZIONE CARD AGGIUNTE AI PREFERITI***</main> */}
-      </main>
-
+      <CardList experiences={favorites} />
       <Footer />
     </div>
   );
