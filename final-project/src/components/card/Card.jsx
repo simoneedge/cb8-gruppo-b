@@ -1,4 +1,4 @@
-import styles from "./index.module.scss";
+import styles from "../../styles/Card.module.scss";
 import { IconHeart, IconHeartFilled, IconMapPin } from "@tabler/icons-react";
 import StarsRating from "../starsRating";
 import { useRouter } from "next/router";
@@ -28,8 +28,8 @@ const Card = ({ experience }) => {
       <div className={styles.cardBoxImage}>
         <Image
           src="/images/Events/exp1/4.webp"
-          width={800}
-          height={800}
+          width={1000}
+          height={1000}
           alt="experience"
         />
       </div>
