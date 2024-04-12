@@ -70,57 +70,56 @@ export default function Experiences() {
       <nav className={styles.navExperiences}>
         <MenuDesk />
         <MenuMobile />
-
-        <div className={styles.textNav}>
-          <h1>
-            Discover the myriad of experiences waiting for you within our app.
-            Take your time to peruse through our curated selection and choose
-            the perfect adventure to create your next cherished memory. Whether
-            you're seeking culinary delights, cultural explorations, or
-            thrilling outdoor escapades, our app has something special just for
-            you. Begin your journey of discovery today and let the magic of
-            Sicily unfold before your eyes.
-          </h1>
+        <div className={styles.containerTextAndSearch}>
+          <div className={styles.textNav}>
+            <h1>
+              Discover the myriad of experiences waiting for you within our app.
+              Take your time to peruse through our curated selection and choose
+              the perfect adventure to create your next cherished memory.
+            </h1>
+          </div>
+          {/* ***LA SEARCH ADESSO è DENTRO LA NAV*** */}
+          <div className={styles.search}>
+            <Flex
+              direction={"column"}
+              align={"center"}
+              justify={"center"}
+              w={"100%"}
+              p={"xl"}
+              bg={"white"}
+              c={"black"}
+              style={{ borderRadius: "5px" }}
+            >
+              <TextInput
+                label="Search"
+                type="text"
+                placeholder="Search for..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                w={"100%"}
+              />
+              <Space h={"xl"} />
+              <Select
+                onChange={(_value, category) => handleSelect(category?.value)}
+                label="Pick a category"
+                placeholder="All"
+                data={["Food", "Wellness", "Events", "Openair"]}
+                w={"100%"}
+                clearable
+                leftSection={<IconFilters />}
+                comboboxProps={{
+                  transitionProps: {
+                    transition: "pop",
+                    duration: 200,
+                    shadow: "md",
+                  },
+                }}
+              />
+            </Flex>
+          </div>
         </div>
       </nav>
       <main className={styles.mainExperiences}>
-        {/* ***QUI VIENE AGGIUNTA LA SEARCH*** */}
-        <Flex
-          direction={"column"}
-          align={"center"}
-          justify={"center"}
-          w={"30%"}
-          p={"xl"}
-          bg={"white"}
-          c={"black"}
-          style={{ borderRadius: "5px" }}
-        >
-          <TextInput
-            label="Search"
-            type="text"
-            placeholder="Search for..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            w={"100%"}
-          />
-          <Space h={"xl"} />
-          <Select
-            onChange={(_value, category) => handleSelect(category?.value)}
-            label="Pick a category"
-            placeholder="All"
-            data={["Food", "Wellness", "Events", "Openair"]}
-            w={"100%"}
-            clearable
-            leftSection={<IconFilters />}
-            comboboxProps={{
-              transitionProps: {
-                transition: "pop",
-                duration: 200,
-                shadow: "md",
-              },
-            }}
-          />
-        </Flex>
         <div className={styles.containerCardList}>
           <CardList experiences={filteredExperiences} />
         </div>
