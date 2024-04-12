@@ -169,6 +169,34 @@
 //   color: white;
 // }
 
+.listCheck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px 40px 20px;
+
+  h2 {
+    color: var(--color-white);
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  .check {
+    color: var(--color-orange);
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 10px;
+    width: 94%;
+    color: var(--color-white2);
+  }
+}
+
 .containerPics {
   display: none;
 }
@@ -318,6 +346,19 @@
 
   .boxSlider {
     width: 400px;
+  }
+
+  .listCheck {
+    padding-top: 100px;
+
+    .check {
+      min-width: 80px;
+    }
+
+    li {
+      justify-content: flex-start;
+      max-width: 800px;
+    }
   }
 
   // 3 pic section

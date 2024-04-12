@@ -4,10 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
-import SearchBar from "@/components/searchBar";
-import CityFilter from "@/components/cityFilter";
-import CategoryFilter from "@/components/categoryFilter";
-import CardList from "@/components/cardList";
+import { IconCheck } from "@tabler/icons-react";
 import ImageSlider from "@/components/imageSlider";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
@@ -154,6 +151,60 @@ export default function Home() {
             <p>Città</p>
           </div>
         </div> */}
+
+        <div className={styles.listCheck}>
+          <h2>Discover Sicily: Experiences to Explore</h2>
+          <ul>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Culinary Tours: Organize guided visits to local markets, farms,
+              and restaurants for users to discover Sicily's rich culinary
+              tradition.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Cultural Excursions: Provide guided tours to historical sites,
+              monuments, and museums in Sicily, allowing users to immerse
+              themselves in the island's history and culture.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Outdoor Activities: Offer experiences such as mountain hikes, boat
+              trips, snorkeling, scuba diving, and other outdoor activities for
+              users to explore Sicily's natural beauty.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Wine and Food Tours: Arrange wine tastings, vineyard visits, and
+              cooking classes to allow users to savor the unique flavors of
+              Sicily.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Adventure Expeditions: Provide activities such as quad biking,
+              paragliding, rock climbing, and trekking for users seeking a more
+              adventurous experience.
+            </li>
+            <li>
+              <span className={styles.check}>
+                <IconCheck />
+              </span>
+              Relaxation and Wellness: Offer relaxation packages including
+              massages, yoga sessions, and thermal treatments at local spas and
+              wellness centers.
+            </li>
+          </ul>
+        </div>
 
         <div className={styles.containerPics}>
           <div className={styles.textReview}>
