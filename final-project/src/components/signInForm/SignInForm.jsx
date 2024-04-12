@@ -186,7 +186,8 @@ const SignInForm = () => {
           {type === "signIn" ? (
             <Button
               // type={'submit'}
-              color="purple"
+              c={"black"}
+              color="#ffcf56"
               onClick={() => {
                 handleSignIn();
               }}
@@ -196,7 +197,8 @@ const SignInForm = () => {
           ) : (
             <Button
               // type={'submit'}
-              color="purple"
+              c={"black"}
+              color="#ffcf56"
               onClick={() => {
                 handleSignUp();
               }}
