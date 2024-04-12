@@ -49,7 +49,7 @@ export default function Experiences() {
     filterExperiences();
   }, [searchTerm, category, experiences]);
   useEffect(() => {
-    fetch("http://localhost:3000/api/experiences")
+    fetch("/api/experiences")
       .then((res) => res.json())
       .then((data) => {
         setExperiences(data);
