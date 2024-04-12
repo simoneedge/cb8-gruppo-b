@@ -86,7 +86,7 @@ export default function Experiences() {
           direction={"column"}
           align={"center"}
           justify={"center"}
-          w={"70%"}
+          w={"30%"}
           p={"xl"}
           bg={"white"}
           c={"black"}
