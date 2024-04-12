@@ -5,7 +5,7 @@
   min-height: 300px;
   border-radius: 20px;
   padding: 20px 40px 0px 40px;
-  color: white;
+  color: var(--color-white);
   cursor: pointer;
   overflow: hidden;
 
@@ -26,14 +26,51 @@
   .boxIconTop {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     z-index: 1;
   }
 
   .boxText {
-    position: relative;
-    background-color: aquamarine;
-    color: black;
-    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 130px;
+    width: 100%;
+    background: rgba(224, 215, 215, 0.363);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: var(--color-blue2);
+    padding-right: 40px;
+    padding-top: 10px;
+
+    h4 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .containerCity {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .iconCity {
+      color: var(--color-orange);
+    }
+
+    .city {
+      color: var(--color-white);
+    }
   }
 }
