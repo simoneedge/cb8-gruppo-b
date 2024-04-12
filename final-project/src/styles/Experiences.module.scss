@@ -25,6 +25,19 @@
   }
 }
 
+.containerTextAndSearch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.search {
+  // text-align: center;
+  padding-bottom: 10px;
+}
+
 .mainExperiences {
   min-height: 50vh;
   background-color: var(--color-blue2);
@@ -32,9 +45,13 @@
 }
 
 @media screen and (min-width: 768px) {
+  .navExperiences {
+    height: 90vh;
+  }
+
   .textNav {
     padding-top: 1.25rem;
-    padding-bottom: 100px;
+    // padding-bottom: 100px;
     h1 {
       width: 37.5rem;
       line-height: 1.5;
