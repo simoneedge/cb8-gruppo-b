@@ -1,5 +1,5 @@
 import Card from "../card/Card";
-import styles from "./index.module.scss";
+import styles from "../../styles/CardList.module.scss";
 
 const CardList = ({ experiences }) => {
   return (
