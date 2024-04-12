@@ -5,8 +5,23 @@
 }
 
 @media screen and (min-width: 768px) {
-  .nav {
-    height: 34vh;
+  .navExperiences {
+    height: 80vh;
     background-color: var(--color-blue2);
+    color: var(--color-white);
+  }
+
+  .textNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      padding: 0.625rem;
+      width: 500px;
+      line-height: 1.5;
+      font-size: 1.5rem;
+    }
   }
 }

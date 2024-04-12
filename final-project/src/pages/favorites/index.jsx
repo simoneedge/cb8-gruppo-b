@@ -17,10 +17,9 @@ export default function Intro() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className={styles.navFavorites}>
-        <nav>
-          <MenuDesk />
-          <MenuMobile />
-        </nav>
+        <MenuDesk />
+        <MenuMobile />
+
         <div className={styles.textNav}>
           <h1>
             Welcome to your collection of favorite experiences! Here you can

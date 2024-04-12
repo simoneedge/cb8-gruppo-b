@@ -9,8 +9,7 @@ const ImageSlider = ({ experiences }) => {
     <>
       <Swiper
         style={{ margin: "0" }}
-        // spaceBetween={20}
-        spaceBetween={0}
+        spaceBetween={20}
         slidesPerView={1.2}
         breakpoints={{
           640: { slidesPerView: 2.3 },
