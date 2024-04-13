@@ -16,6 +16,7 @@ import { useSession } from "next-auth/react";
 import StarsRating from "@/components/starsRating";
 import CardList from "@/components/cardList";
 import Footer from "@/components/footer";
+import ImagesSlider from "@/components/imagesSlider";
 
 export default function ExperienceDetail() {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -26,12 +27,8 @@ export default function ExperienceDetail() {
   const router = useRouter();
   const { id } = router.query;
   // slider
-  const [mainPic, setMainPic] = useState("/exp1.jpg");
-  const [pics, setPics] = useState([
-    "/ill1.jpeg",
-    "/ill2.jpeg",
-    "/sicilyexp-pic.jpeg",
-  ]);
+  const [mainPic, setMainPic] = useState(null);
+  const [pics, setPics] = useState([]);
 
   const handleImageClick = (clickedPic) => {
     const newPics = pics.map((pic) => (pic === clickedPic ? mainPic : pic));
@@ -54,6 +51,11 @@ export default function ExperienceDetail() {
       const data = await res.json();
 
       setExperience(data);
+
+      // Imposta l'immagine principale e le altre immagini utilizzando i dati
+      // dell'esperienza
+      setMainPic(data.pictures[0]);
+      setPics(data.pictures.slice(1));
 
       const allRes = await fetch("/api/experiences");
       const allData = await allRes.json();
@@ -99,22 +101,7 @@ export default function ExperienceDetail() {
           </div>
         )}
         <div className={styles.containerSlider}>
-          <Image
-            src="/exp1.jpg"
-            width={1000}
-            height={1000}
-            alt="Experience picture"
-          />
-          <button
-            className={styles.containerIconHeart}
-            onClick={onHandleFavorite}
-          >
-            {isFavorite ? (
-              <IconHeartFilled size={26} color={"red"} />
-            ) : (
-              <IconHeart size={26} />
-            )}
-          </button>
+          <ImagesSlider pictures={experience.pictures} />
         </div>
         <MenuDesk />
         <MenuMobile />
@@ -167,8 +154,8 @@ export default function ExperienceDetail() {
             <div className={styles.mainPic}>
               <Image
                 src={mainPic}
-                width={800}
-                height={800}
+                width={1000}
+                height={1000}
                 alt="image experience"
               />
               <button
