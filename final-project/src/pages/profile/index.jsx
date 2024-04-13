@@ -40,12 +40,14 @@ export default function Profile() {
         <MenuMobile />
       </nav>
       <main className={styles.infoProfile}>
-        <Image
-          src="/organiz.png"
-          width={100}
-          height={100}
-          alt="user profile picture"
-        />
+        <div className={styles.backTheme}>
+          <Image
+            src="/organiz.png"
+            width={100}
+            height={100}
+            alt="user profile picture"
+          />
+        </div>
         <div className={styles.session}>
           {session ? (
             <div className={styles.sessionContainer}>
@@ -64,14 +66,20 @@ export default function Profile() {
             </div>
           )}
         </div>
-
-        <div className={styles.infoName}>
-          <h2>
-            {user.name} {user.lastname}
-          </h2>
+        <div className={styles.containerInfo}>
+          <div className={styles.infoName}>
+            <h2>
+              {user.name} {user.lastname}
+            </h2>
+          </div>
+          <p className={styles.username}>
+            <span className={styles.labelInfo}>Username:</span>
+            {user.username}
+          </p>
+          <p className={styles.email}>
+            <span className={styles.labelInfo}>Email:</span> {user.email}
+          </p>
         </div>
-        <p className={styles.username}>{user.username}</p>
-        <p className={styles.email}>{user.email}</p>
       </main>
       <section className={styles.bookings}>
         <h4 className={styles.title}>Bookings made: none</h4>
