@@ -4,11 +4,14 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import Card from "../card";
 
-const ImageSlider = ({ experiences }) => {
+const CardsSlider = ({ experiences }) => {
   return (
     <>
       <Swiper
-        style={{ margin: "0" }}
+        style={{
+          "--swiper-pagination-color": "darkblue",
+          margin: "0",
+        }}
         spaceBetween={20}
         slidesPerView={1.2}
         breakpoints={{
@@ -36,4 +39,4 @@ const ImageSlider = ({ experiences }) => {
   );
 };
 
-export default ImageSlider;
+export default CardsSlider;

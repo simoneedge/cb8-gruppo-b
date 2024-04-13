@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import { IconCheck } from "@tabler/icons-react";
-import ImageSlider from "@/components/imageSlider";
+import CardsSlider from "@/components/cardsSlider";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
 import Footer from "@/components/footer";
@@ -142,7 +142,7 @@ export default function Home() {
         </div>
         {/*Slider con le prime 6 esperienze che si trovano sul database */}
 
-        <ImageSlider experiences={experiences.slice(0, 6)} />
+        <CardsSlider experiences={experiences.slice(0, 6)} />
 
         {/* <div className={styles.containerSlider}>
           <div className={styles.boxSlider}>

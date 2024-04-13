@@ -31,3 +31,7 @@ ul {
   --color-yellow: #ffcf56;
   --color-orange: #cf4012;
 }
+
+img {
+  -webkit-user-drag: none;
+}
