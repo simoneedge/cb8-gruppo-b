@@ -1,36 +1,64 @@
 .SignUpForm {
-  background-color: rgb(219, 213, 213);
-  padding: 80px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  height: 500px;
-  width: 600px;
+  position: relative;
+  max-width: 400px;
+  max-height: 70%;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: var(--color-blue2);
 
-  input {
-    width: 200px;
-    height: 30px;
-    padding-left: 6px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border: none;
-  }
   label {
+    margin-bottom: 5px;
+    color: var(--color-white);
+    font-size: 16px;
+    // font-weight: bold;
+  }
+
+  .required {
+    color: var(--color-orange);
+    font-size: 14px;
     font-weight: bold;
-    width: 200px;
-    padding-bottom: 4px;
+    padding: 0;
+    margin: 0;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
   }
 
   .btnSubmit {
-    font-weight: bold;
-    background-color: rgb(255, 208, 0);
-    font-size: 18px;
+    padding: 10px;
+    margin-top: 10px;
+    margin: auto 0;
+    width: 100%;
     border: none;
-    border-radius: 10px;
+    border-radius: 3px;
+    background-color: var(--color-yellow);
+    color: var(--color-blue2);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: var(--color-orange);
+  }
+
+  .closeBtn {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -10px;
+    padding: 4px;
+    right: 10px;
     cursor: pointer;
   }
 }
