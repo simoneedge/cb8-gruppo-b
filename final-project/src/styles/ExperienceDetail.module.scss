@@ -3,17 +3,17 @@
   height: 100%;
 }
 
-.arrowButton {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
 .containerSlider {
   position: relative;
+  width: 100%;
+  height: 70vh;
+
   img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 60vh;
+    height: 100%;
     object-fit: cover;
   }
 }
@@ -28,27 +28,66 @@
   right: 8%;
   border: none;
   cursor: pointer;
-  background-color: white;
+  background-color: var(--color-white);
   border-radius: 50%;
 }
 
 // ---MAIN ---
 
 .mainExperienceDetail {
-  padding: 20px 30px;
+  padding: 20px 20px;
+  background-color: var(--color-blue2);
+  color: var(--color-white);
 }
 
-.info {
+// .info {
+//   display: flex;
+//   align-items: baseline;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+// }
+
+.titleInfo {
+  line-height: 1.3;
+  font-size: 26px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  color: var(--color-yellow);
+}
+
+.containerCityStarsPrice {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .city {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
+  width: 300px;
+  p {
+    color: var(--color-white2);
+  }
+}
+
+.infoPriceStars {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  p {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-orange);
+  }
+}
+
+.iconMap {
+  color: var(--color-orange);
 }
 
 // ---ORGANIZ SECTION---
@@ -58,7 +97,7 @@
   width: 100%;
   display: flex;
   gap: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   align-items: center;
 }
 .organizPicture {
@@ -70,6 +109,20 @@
   }
 }
 
+.organizNameSurn {
+  p {
+    font-weight: bold;
+    color: var(--color-yellow);
+  }
+}
+
+.btnContainer {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
 // ---DESCRIPTION----
 
 .boxPicture {
@@ -78,15 +131,30 @@
 
 .infoDescription {
   padding-top: 20px;
+
+  h2 {
+    padding-bottom: 10px;
+  }
+}
+
+.description {
+  color: var(--color-white2);
 }
 
 .infoPriceStarsDesk {
   display: none;
 }
 
-.experienceBtn {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.arrowButton {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.experienceBtn,
+.arrowButton {
+  margin-top: 30px;
+  margin-bottom: 60px;
   cursor: pointer;
   padding: 10px 20px;
   font-size: 16px;
@@ -95,6 +163,19 @@
   color: rgb(243, 239, 239);
   border: none;
   border-radius: 10px;
+}
+
+.experienceBtn {
+  color: var(--color-yellow);
+}
+
+.suggestion {
+  color: var(--color-orange);
+  padding-bottom: 80px;
+
+  h2 {
+    padding-bottom: 30px;
+  }
 }
 
 .footer {
@@ -108,7 +189,7 @@
 
   .navExperienceDetail {
     background-color: var(--color-blue2);
-    height: 34vh;
+    // height: 34vh;
   }
 
   .containerDesk {

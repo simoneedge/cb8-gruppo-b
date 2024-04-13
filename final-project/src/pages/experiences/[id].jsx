@@ -5,8 +5,8 @@ import Image from "next/image";
 import {
   IconHeart,
   IconHeartFilled,
-  IconBuilding,
   IconArrowLeft,
+  IconMapPin,
 } from "@tabler/icons-react";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
@@ -90,7 +90,7 @@ export default function ExperienceDetail() {
       {/* ---NAV--- */}
       <nav className={styles.navExperienceDetail}>
         {/* ***MODAL TEST*** */}
-        {showModal && (
+        {/* {showModal && (
           <div className={styles.modal}>
             <div className={styles.modalContent}>
               <span className={styles.closeModal} onClick={handleModal}>
@@ -99,7 +99,7 @@ export default function ExperienceDetail() {
               <p>User need Login</p>
             </div>
           </div>
-        )}
+        )} */}
         <div className={styles.containerSlider}>
           <ImagesSlider pictures={experience.pictures} />
         </div>
@@ -111,24 +111,21 @@ export default function ExperienceDetail() {
       <main className={styles.mainExperienceDetail}>
         <section className={styles.info}>
           <div className={styles.infoTitleCity}>
-            <button
-              className={styles.arrowButton}
-              onClick={() => router.back()}
-            >
-              <IconArrowLeft size={40} />
-            </button>
-            <h1>{experience.title}</h1>
-            <div className={styles.city}>
-              <p>{experience.geolocation}</p>
-              <IconBuilding />
+            <h1 className={styles.titleInfo}>{experience.title}</h1>
+            <div className={styles.containerCityStarsPrice}>
+              <div className={styles.city}>
+                <IconMapPin className={styles.iconMap} />
+                <p>{experience.geolocation}</p>
+              </div>
+              <div className={styles.infoPriceStars}>
+                {/* <p>Rating Stelle</p> */}
+                <StarsRating rating={4} />
+                <p>{experience.price && experience.price.$numberDecimal}$</p>
+              </div>
             </div>
           </div>
           {/* ****PREZZO E RATING MOBILE*** */}
-          <div className={styles.infoPriceStars}>
-            {/* <p>Rating Stelle</p> */}
-            <StarsRating rating={4} />
-            <p>{experience.price && experience.price.$numberDecimal}$</p>
-          </div>
+
           <div className={styles.containerOrganiz}>
             <div className={styles.organizPicture}>
               <Image
@@ -191,7 +188,7 @@ export default function ExperienceDetail() {
 
           <div className={styles.infoDescription}>
             <h2>Description</h2>
-            <p>{experience.program}</p>
+            <p className={styles.description}>{experience.program}</p>
             {/* ****PREZZO E RATING DESK*** */}
             <div className={styles.infoPriceStarsDesk}>
               <StarsRating
@@ -199,7 +196,16 @@ export default function ExperienceDetail() {
               />
               <p>{experience.price && experience.price.$numberDecimal}$</p>
             </div>
-            <button className={styles.experienceBtn}>Add Experience</button>
+            <div className={styles.btnContainer}>
+              <button
+                className={styles.arrowButton}
+                onClick={() => router.back()}
+              >
+                <IconArrowLeft size={20} />
+                Back
+              </button>
+              <button className={styles.experienceBtn}>Add Experience</button>
+            </div>
           </div>
         </div>
         <div className={styles.suggestion}>
