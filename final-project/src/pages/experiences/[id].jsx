@@ -101,7 +101,10 @@ export default function ExperienceDetail() {
           </div>
         )} */}
         <div className={styles.containerSlider}>
-          <ImagesSlider pictures={experience.pictures} />
+          <ImagesSlider
+            className={styles.slider}
+            pictures={experience.pictures}
+          />
         </div>
         <MenuDesk />
         <MenuMobile />
