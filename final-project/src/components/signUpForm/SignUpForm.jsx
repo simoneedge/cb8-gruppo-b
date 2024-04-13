@@ -73,7 +73,9 @@ const SignUpForm = ({ isClose }) => {
               onBlur={formik.handleBlur}
               value={formik.values.name}
             />
-            {formik.errors.name ? <div>{formik.errors.name}</div> : null}
+            {formik.errors.name ? (
+              <div className={styles.required}>{formik.errors.name}</div>
+            ) : null}
             <label htmlFor="lastname">Lastname </label>
             <input
               type="text"
@@ -84,7 +86,7 @@ const SignUpForm = ({ isClose }) => {
               value={formik.values.lastname}
             />
             {formik.errors.lastname ? (
-              <div>{formik.errors.lastname}</div>
+              <div className={styles.required}>{formik.errors.lastname}</div>
             ) : null}
 
             <label htmlFor="username">Username </label>
@@ -97,7 +99,7 @@ const SignUpForm = ({ isClose }) => {
               value={formik.values.username}
             />
             {formik.errors.username ? (
-              <div>{formik.errors.username}</div>
+              <div className={styles.required}>{formik.errors.username}</div>
             ) : null}
 
             <label htmlFor="email">Email </label>
@@ -109,7 +111,9 @@ const SignUpForm = ({ isClose }) => {
               onBlur={formik.handleBlur}
               value={formik.values.email}
             />
-            {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+            {formik.errors.email ? (
+              <div className={styles.required}>{formik.errors.email}</div>
+            ) : null}
 
             <label htmlFor="password">Password </label>
             <input
@@ -121,8 +125,12 @@ const SignUpForm = ({ isClose }) => {
               value={formik.values.password}
             />
             {formik.errors.password ? (
-              <div>{formik.errors.password}</div>
+              <div className={styles.required}>{formik.errors.password}</div>
             ) : null}
+
+            <button className={styles.closeBtn} onClick={handleCloseBtn}>
+              <IconX />
+            </button>
 
             <button type="submit" value="Submit" className={styles.btnSubmit}>
               Submit
