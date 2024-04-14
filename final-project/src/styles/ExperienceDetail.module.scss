@@ -30,7 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.625rem;
   position: absolute;
   top: 8%;
   right: 8%;
@@ -43,7 +43,7 @@
 // ---MAIN ---
 
 .mainExperienceDetail {
-  padding: 20px 20px;
+  padding: 1.25rem 1.25rem;
   background-color: var(--color-blue2);
   color: var(--color-white);
 }
@@ -57,9 +57,9 @@
 
 .titleInfo {
   line-height: 1.3;
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: bold;
-  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
   color: var(--color-yellow);
 }
 
@@ -73,22 +73,22 @@
 .city {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  width: 300px;
+  gap: 0.5rem;
+  width: 18.75rem;
   p {
     color: var(--color-white2);
   }
 }
 
 .infoPriceStars {
-  width: 300px;
+  width: 18.75rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
 
   p {
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: bold;
     color: var(--color-orange);
   }
@@ -104,12 +104,12 @@
   order: 4;
   width: 100%;
   display: flex;
-  gap: 20px;
-  padding-top: 10px;
+  gap: 1.25rem;
+  padding-top: 0.625rem;
   align-items: center;
 }
 .organizPicture {
-  width: 100px;
+  width: 6.25rem;
 
   img {
     border-radius: 50%;
@@ -128,7 +128,7 @@
   display: flex;
   // justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 2.5rem;
 }
 
 // ---DESCRIPTION----
@@ -138,10 +138,10 @@
 }
 
 .infoDescription {
-  padding-top: 20px;
+  padding-top: 1.25rem;
 
   h2 {
-    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
   }
 }
 
@@ -155,22 +155,22 @@
 
 .arrowButton {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   align-items: center;
 }
 
 .experienceBtn,
 .arrowButton {
-  margin-top: 30px;
-  margin-bottom: 60px;
+  margin-top: 1.875rem;
+  margin-bottom: 3.75rem;
   cursor: pointer;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
   background-color: rgb(29, 29, 61);
   color: rgb(243, 239, 239);
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 
 .experienceBtn {
@@ -179,10 +179,10 @@
 
 .suggestion {
   color: var(--color-orange);
-  padding-bottom: 80px;
+  padding-bottom: 5rem;
 
   h2 {
-    padding-bottom: 30px;
+    padding-bottom: 1.875rem;
   }
 }
 
@@ -190,7 +190,7 @@
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48rem) {
   .containerSlider {
     display: none;
   }
@@ -201,15 +201,15 @@
   }
 
   .mainExperienceDetail {
-    padding: 0 60px;
+    padding: 0 3.75rem;
   }
 
   .titleInfo {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 
   // .containerDesk {
-  //   padding: 30px 40px;
+  //   padding: 1.875rem 2.5rem;
   //   display: flex;
   //   align-items: center;
   //   justify-content: space-between;
@@ -232,10 +232,10 @@
   .infoPriceStarsDesk {
     display: block;
     font-weight: bold;
-    padding-top: 20px;
+    padding-top: 3.125rem;
 
     .price {
-      font-size: 26px;
+      font-size: 1.625rem;
     }
   }
 
@@ -252,7 +252,7 @@
     height: 100%;
     justify-content: space-evenly;
     align-items: flex-start;
-    gap: 20px;
+    gap: 1.25rem;
   }
 
   .infoDescription {
@@ -260,7 +260,7 @@
     padding: 0;
 
     h2 {
-      padding-bottom: 20px;
+      padding-bottom: 1.25rem;
     }
   }
 
@@ -275,7 +275,7 @@
       width: 55vw;
       height: 70vh;
       object-fit: cover;
-      border-radius: 20px;
+      border-radius: 1.25rem;
     }
 
     .iconHeartDesk {
@@ -283,11 +283,11 @@
       justify-content: center;
       align-items: center;
       position: absolute;
-      top: 20px;
-      right: 40px;
+      top: 1.25rem;
+      right: 2.5rem;
       cursor: pointer;
       background-color: white;
-      padding: 10px;
+      padding: 0.625rem;
       border-radius: 50%;
       border: none;
     }
@@ -296,13 +296,13 @@
   .containerPicBottom {
     display: flex;
     width: 55vw;
-    gap: 20px;
-    padding-top: 8px;
+    gap: 1.25rem;
+    padding-top: 0.5rem;
 
     .picBottom img {
       width: 17vw;
       height: 24vh;
-      border-radius: 20px;
+      border-radius: 1.25rem;
     }
   }
 
@@ -320,13 +320,13 @@
   }
 
   .suggestion {
-    padding-top: 80px;
-    padding-bottom: 140px;
+    padding-top: 5rem;
+    padding-bottom: 8.75rem;
 
     h2 {
-      padding-bottom: 50px;
+      padding-bottom: 3.125rem;
     }
 
-    // padding-left: 40px;
+    // padding-left: 2.5rem;
   }
 }
