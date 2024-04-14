@@ -133,9 +133,13 @@ export default function ExperienceDetail() {
           <div className={styles.containerOrganiz}>
             <div className={styles.organizPicture}>
               <Image
-                src="/organiz.png"
-                width={100}
-                height={100}
+                src={
+                  experience.host && experience.host[0]
+                    ? experience.host[0].picture_host
+                    : ""
+                }
+                width={200}
+                height={200}
                 alt="organizer picture"
               />
             </div>
@@ -155,8 +159,8 @@ export default function ExperienceDetail() {
             <div className={styles.mainPic}>
               <Image
                 src={mainPic}
-                width={1000}
-                height={1000}
+                width={1200}
+                height={1200}
                 alt="image experience"
               />
               <button
