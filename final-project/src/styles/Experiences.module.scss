@@ -18,8 +18,8 @@
   align-items: center;
 
   h1 {
-    padding: 0.625rem;
-    width: 400px;
+    padding: .625rem;
+    width: 25rem;
     line-height: 1.5;
     font-size: 1.5rem;
   }
@@ -30,30 +30,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .search {
-  // text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: .625rem;
 }
 
 .mainExperiences {
   min-height: 50vh;
   background-color: var(--color-blue2);
-  padding: 80px 20px;
+  padding: 5rem 1.25rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48rem) {
   .navExperiences {
     height: 90vh;
   }
 
   .textNav {
     padding-top: 1.25rem;
-    // padding-bottom: 100px;
     h1 {
-      width: 37.5rem;
+      width: 600px;
       line-height: 1.5;
     }
   }
@@ -61,6 +59,6 @@
   .mainExperiences {
     min-height: 80vh;
     flex-shrink: 1;
-    padding-top: 100px;
+    padding-top: 6.25rem;
   }
 }

@@ -2,13 +2,13 @@
   --percent: calc(var(--rating) / 5 * 100%);
 
   display: inline-block;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-family: Time;
   line-height: 1;
 
   &::before {
     content: "★★★★★";
-    letter-spacing: 3px;
+    letter-spacing: .1875rem;
     background: linear-gradient(
       90deg,
       var(--star-background) var(--percent),
@@ -18,7 +18,7 @@
     -webkit-text-fill-color: transparent;
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 64rem) {
     .Stars {
       font-size: var(--star-size);
     }
