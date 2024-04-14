@@ -50,9 +50,9 @@ const Card = ({ experience }) => {
     <div className={styles.cardBox} onClick={onHandleClick}>
       <div className={styles.cardBoxImage}>
         <Image
-          src="/images/Events/exp1/4.webp"
-          width={1000}
-          height={1000}
+          src={experience.pictures[0] && experience.pictures[0]}
+          width={1200}
+          height={1200}
           alt="experience"
         />
       </div>
@@ -90,7 +90,6 @@ const Card = ({ experience }) => {
           </span>
           <p className={styles.city}>{experience.geolocation}</p>
         </div>
-
       </div>
     </div>
   );
