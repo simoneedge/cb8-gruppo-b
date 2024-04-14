@@ -128,7 +128,6 @@ export default function ExperienceDetail() {
                 <p>{experience.geolocation}</p>
               </div>
               <div className={styles.infoPriceStars}>
-                {/* <p>Rating Stelle</p> */}
                 <StarsRating rating={4} />
                 <p>{experience.price && experience.price.$numberDecimal}$</p>
               </div>
