@@ -7,6 +7,7 @@ import {
   IconHeartFilled,
   IconArrowLeft,
   IconMapPin,
+  IconEmpathize,
 } from "@tabler/icons-react";
 import MenuMobile from "@/components/menuMobile";
 import MenuDesk from "@/components/menuDesk";
@@ -17,6 +18,8 @@ import StarsRating from "@/components/starsRating";
 import CardList from "@/components/cardList";
 import Footer from "@/components/footer";
 import ImagesSlider from "@/components/imagesSlider";
+import ModalConfirmation from "@/components/modalConfirmation";
+import ReservationForm from "@/components/reservationForm";
 
 export default function ExperienceDetail() {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -29,6 +32,8 @@ export default function ExperienceDetail() {
   // slider
   const [mainPic, setMainPic] = useState(null);
   const [pics, setPics] = useState([]);
+  // reservation form
+  const [openReservationForm, setOpenReservationForm] = useState(false);
 
   const handleImageClick = (clickedPic) => {
     const newPics = pics.map((pic) => (pic === clickedPic ? mainPic : pic));
@@ -214,7 +219,12 @@ export default function ExperienceDetail() {
                 <IconArrowLeft size={20} />
                 Back
               </button>
-              <button className={styles.experienceBtn}>Add Experience</button>
+              <button
+                className={styles.experienceBtn}
+                onClick={() => setOpenReservationForm(true)}
+              >
+                Add Experience
+              </button>
             </div>
           </div>
         </div>
@@ -222,6 +232,14 @@ export default function ExperienceDetail() {
           <h2>Suggestion for you</h2>
           <CardList experiences={relatedExperiences} />
         </div>
+        {openReservationForm && (
+          <ModalConfirmation
+            isOpen={openReservationForm}
+            onClose={() => setOpenReservationForm(false)}
+          >
+            <ReservationForm data={experience} />
+          </ModalConfirmation>
+        )}
       </main>
 
       <Footer />
