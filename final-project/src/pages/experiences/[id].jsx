@@ -42,9 +42,19 @@ export default function ExperienceDetail() {
     setPics(newPics);
   };
 
-  const onHandleFavorite = () => {
+  const onHandleFavorite = (e) => {
     if (session) {
-      setIsFavorite((prev) => !prev);
+      e.stopPropagation();
+      fetch(`/api/favorites/${session.user.id}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: experience._id }),
+      }).then((response) => {
+        console.log(response);
+      });
+      setIsFavorite(!isFavorite);
     } else {
       setShowModal(true);
     }
@@ -56,6 +66,10 @@ export default function ExperienceDetail() {
       const data = await res.json();
 
       setExperience(data);
+      if (session?.user.favorites.includes(experience._id)) {
+        setIsFavorite(true);
+        console.log(session.user.favorites);
+      }
 
       // Imposta l'immagine principale e le altre immagini utilizzando i dati
       // dell'esperienza
@@ -169,7 +183,7 @@ export default function ExperienceDetail() {
               />
               <button
                 className={styles.iconHeartDesk}
-                onClick={onHandleFavorite}
+                onClick={(e) => onHandleFavorite(e)}
               >
                 {isFavorite ? (
                   <IconHeartFilled size={26} color={"red"} />
