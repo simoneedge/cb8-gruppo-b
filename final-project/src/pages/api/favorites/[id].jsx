@@ -38,7 +38,11 @@ export default async function handler(req, res) {
     const user = await db
       .collection("users")
       .findOne({ _id: new ObjectId(req.query.id) });
-    user.favorites.push(favorite.id);
+    if (user.favorites.includes(favorite.id)) {
+      user.favorites = user.favorites.filter((id) => id !== favorite.id);
+    } else {
+      user.favorites.push(favorite.id);
+    }
     const result = await db
       .collection("users")
       .updateOne(
