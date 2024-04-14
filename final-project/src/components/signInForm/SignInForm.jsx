@@ -21,6 +21,7 @@ import {
 
 import { signIn } from "next-auth/react";
 import { useEffect, useState } from "react";
+import Favorites from "@/pages/favorites";
 
 const SignInForm = () => {
   const [signInFailed, setSignInFailed] = useState(false);
@@ -64,6 +65,7 @@ const SignInForm = () => {
       username: form.values.name,
       email: form.values.email,
       password: form.values.password,
+      favorites: [],
     };
     fetch("/api/user", {
       headers: {
