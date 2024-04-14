@@ -80,14 +80,16 @@ export default function Experiences() {
           </div>
           {/* ***LA SEARCH ADESSO è DENTRO LA NAV*** */}
           <div className={styles.search}>
+            <Space h={"xl"} /> <Space h={"xl"} />
             <Flex
+              hiddenFrom="sm"
               direction={"column"}
               align={"center"}
               justify={"center"}
               w={"100%"}
               p={"xl"}
-              bg={"white"}
-              c={"black"}
+              bg={"#ffcf56"}
+              c={"#0a011f"}
               style={{ borderRadius: "5px" }}
             >
               <TextInput
@@ -99,6 +101,43 @@ export default function Experiences() {
                 w={"100%"}
               />
               <Space h={"xl"} />
+              <Select
+                onChange={(_value, category) => handleSelect(category?.value)}
+                label="Pick a category"
+                placeholder="All"
+                data={["Food", "Wellness", "Events", "Openair"]}
+                w={"100%"}
+                clearable
+                leftSection={<IconFilters />}
+                comboboxProps={{
+                  transitionProps: {
+                    transition: "pop",
+                    duration: 200,
+                    shadow: "md",
+                  },
+                }}
+              />
+            </Flex>
+            <Flex
+              visibleFrom="sm"
+              align={"center"}
+              justify={"center"}
+              gap={"md"}
+              w={"700"}
+              p={"xl"}
+              bg={"#ffcf56"}
+              c={"#0a011f"}
+              style={{ borderRadius: "5px" }}
+            >
+              <TextInput
+                label="Search"
+                type="text"
+                placeholder="Search for..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                w={"100%"}
+              />
+
               <Select
                 onChange={(_value, category) => handleSelect(category?.value)}
                 label="Pick a category"
