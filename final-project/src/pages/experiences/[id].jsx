@@ -115,6 +115,8 @@ export default function ExperienceDetail() {
         <section className={styles.info}>
           <div className={styles.infoTitleCity}>
             <h1 className={styles.titleInfo}>{experience.title}</h1>
+
+            {/* ****PREZZO E RATING MOBILE*** */}
             <div className={styles.containerCityStarsPrice}>
               <div className={styles.city}>
                 <IconMapPin className={styles.iconMap} />
@@ -127,7 +129,6 @@ export default function ExperienceDetail() {
               </div>
             </div>
           </div>
-          {/* ****PREZZO E RATING MOBILE*** */}
 
           <div className={styles.containerOrganiz}>
             <div className={styles.organizPicture}>
@@ -197,7 +198,9 @@ export default function ExperienceDetail() {
               <StarsRating
                 rating={experience.rating && experience.rating.$numberDecimal}
               />
-              <p>{experience.price && experience.price.$numberDecimal}$</p>
+              <p className={styles.price}>
+                {experience.price && experience.price.$numberDecimal}$
+              </p>
             </div>
             <div className={styles.btnContainer}>
               <button
