@@ -48,7 +48,9 @@ export default function Favorites() {
           </h1>
         </div>
       </nav>
-      <CardList experiences={favorites} />
+      <main className={styles.mainFavorites}>
+        <CardList experiences={favorites} />
+      </main>
       <Footer />
     </div>
   );
