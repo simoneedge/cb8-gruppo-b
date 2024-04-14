@@ -39,6 +39,7 @@ export const authOptions = {
       if (user) {
         token.username = user.username;
         token.id = user._id;
+        token.favorites = user.favorites;
       }
       return token;
     },
@@ -47,6 +48,7 @@ export const authOptions = {
       if (session.user) {
         session.user.username = token.username;
         session.user.id = token.id;
+        session.user.favorites = token.favorites;
       }
       return session;
     },

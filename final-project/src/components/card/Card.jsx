@@ -11,14 +11,26 @@ const Card = ({ experience }) => {
   const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
 
-  // Controlla se l'esperienza è nei preferiti quando il componente
-  // viene montato
   useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-    const isFav = favorites.some((fav) => fav._id === experience._id);
-    setIsFavorite(isFav);
+    if (session?.user.favorites.includes(experience._id)) {
+      setIsFavorite(true);
+      console.log(session.user.favorites);
+    }
   }, []);
+
+  const onHandleFavoriteClick = (e) => {
+    e.stopPropagation();
+    fetch(`/api/favorites/${session.user.id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: experience._id }),
+    }).then((response) => {
+      console.log(response);
+    });
+    setIsFavorite(!isFavorite);
+  };
 
   if (!experience) {
     return null;
@@ -26,24 +38,6 @@ const Card = ({ experience }) => {
 
   const onHandleClick = () => {
     router.push(`/experiences/${experience._id}`);
-  };
-
-  const onHandleFavoriteClick = (e) => {
-    e.stopPropagation();
-
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    if (isFavorite) {
-      // Rimuove l'esperienza dai preferiti
-      const index = favorites.findIndex((fav) => fav._id === experience._id);
-      favorites.splice(index, 1);
-    } else {
-      // Aggiunge l'esperienza ia preferiti
-      favorites.push(experience);
-    }
-    // Aggiorna i preferiti nel localStorage
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-    // Infine aggiorna lo stato locale
-    setIsFavorite(!isFavorite);
   };
 
   return (
