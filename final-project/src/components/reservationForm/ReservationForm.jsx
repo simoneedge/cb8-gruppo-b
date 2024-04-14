@@ -3,6 +3,7 @@ import styles from "../../styles/Reservation.module.scss";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { IconArrowNarrowLeft } from "@tabler/icons-react";
+import Image from "next/image";
 import ModalConfirmation from "../../components/modalConfirmation/ModalConfirmation";
 import { useSession } from "next-auth/react";
 const ReservationForm = ({ data }) => {
@@ -99,56 +100,67 @@ const ReservationForm = ({ data }) => {
 
   return (
     <div className={styles.Reservation}>
-      <IconArrowNarrowLeft />
-      <img
-        className={styles.iconRes}
-        src="https://img.icons8.com/stickers/100/reservation.png"
-        alt="reservation"
-      />
-      <form onSubmit={handleSubmit}>
-        <div className={styles.hourRes}>
-          <h4>Select one of the following time availabilities</h4>
-          <label>
-            <input
-              type="radio"
-              name="timeSlot"
-              value="10AM-12PM"
-              onChange={() => setSelectedTimeSlot("10AM-12PM")}
-            />
-            10 a.m. - 12 p.m.
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="timeSlot"
-              value="4PM-6PM"
-              onChange={() => setSelectedTimeSlot("4PM-6PM")}
-            />
-            4 p.m. - 6 p.m.
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="timeSlot"
-              value="9PM-11PM"
-              onChange={() => setSelectedTimeSlot("9PM-11PM")}
-            />
-            9 p.m. - 11 p.m.
-          </label>
+      <div className={styles.topForm}>
+        <div className={styles.arrowLeft}>
+          <IconArrowNarrowLeft size={28} />
         </div>
-        {formErrors.timeSlot && (
-          <p style={{ color: "red" }}>{formErrors.timeSlot}</p>
-        )}
-        <div>
+        <Image
+          className={styles.logo}
+          src="/logoBianco.svg"
+          width={100}
+          height={100}
+          alt="logo"
+        />
+      </div>
+      <form className={styles.containerForm} onSubmit={handleSubmit}>
+        <div className={styles.form}>
+          <h3>Select one of the following time availabilities</h3>
+          <div className={styles.containerHours}>
+            <div className={styles.hours}>
+              <label className={styles.containerValueHour}>
+                <input
+                  type="radio"
+                  name="timeSlot"
+                  value="10AM-12PM"
+                  onChange={() => setSelectedTimeSlot("10AM-12PM")}
+                />
+                10 a.m. - 12 p.m.
+              </label>
+              <label className={styles.containerValueHour}>
+                <input
+                  type="radio"
+                  name="timeSlot"
+                  value="4PM-6PM"
+                  onChange={() => setSelectedTimeSlot("4PM-6PM")}
+                />
+                4 p.m. - 6 p.m.
+              </label>
+              <label className={styles.containerValueHour}>
+                <input
+                  type="radio"
+                  name="timeSlot"
+                  value="9PM-11PM"
+                  onChange={() => setSelectedTimeSlot("9PM-11PM")}
+                />
+                9 p.m. - 11 p.m.
+              </label>
+            </div>
+            {formErrors.timeSlot && (
+              <p style={{ color: "red" }}>{formErrors.timeSlot}</p>
+            )}
+          </div>
+        </div>
+        <div className={styles.info}>
           <PhoneInput
-            defaultCountry="ua"
+            className={styles.phone}
+            defaultCountry="it"
             value={phone}
             onChange={(phone) => setPhone(phone)}
             placeholder="Enter phone number"
           />
         </div>
         {formErrors.phone && <p style={{ color: "red" }}>{formErrors.phone}</p>}
-        <div className={styles.emailRes}>
+        <div className={`${styles.emailRes} ${styles.info}`}>
           <input
             type="email"
             id="email"
@@ -158,8 +170,12 @@ const ReservationForm = ({ data }) => {
             placeholder="Your email address"
           />
         </div>
-        {formErrors.email && <p style={{ color: "red" }}>{formErrors.email}</p>}
-        <div>
+        <div className={styles.info}>
+          {formErrors.email && (
+            <p style={{ color: "red" }}>{formErrors.email}</p>
+          )}
+        </div>
+        <div className={styles.info}>
           <select
             value={selectedGuests}
             onChange={(e) => setSelectedGuests(e.target.value)}
@@ -177,12 +193,12 @@ const ReservationForm = ({ data }) => {
             <option value="10">10 guests</option>
           </select>
         </div>
-        {formErrors.guests && (
-          <p style={{ color: "red" }}>{formErrors.guests}</p>
-        )}
-        <button type="submit" disabled={isLoading}>
-          {isLoading ? "Loading..." : "Book your experience!"}
-        </button>
+
+        <div className={styles.info}>
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Loading..." : "Book your experience!"}
+          </button>
+        </div>
       </form>
       <ModalConfirmation
         isOpen={successModalOpen}

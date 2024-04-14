@@ -12,7 +12,9 @@ const ModalConfirmation = ({ isOpen, onClose, children }) => {
       <div className={styles["modal"]} onClick={(e) => e.stopPropagation()}>
         <div className={styles["modal-content"]}>
           {children}
-          <button onClick={onClose}>OK</button>
+          <button className={styles.btnOk} onClick={onClose}>
+            OK
+          </button>
         </div>
       </div>
     </div>
