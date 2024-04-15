@@ -6,50 +6,61 @@ import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 
-const Card = ({ experience }) => {
+const Card = ({ experience, isClickable }) => {
   const { data: session } = useSession();
   const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const newfavorites = session?.user?.favorites;
-
+  // Controlla se l'esperienza è nei preferiti quando il componente
+  // viene montato
   useEffect(() => {
-    if (newfavorites?.includes(experience._id)) {
-      setIsFavorite(true);
-      console.log(session.user.favorites);
-    }
-  }, []);
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  const onHandleFavoriteClick = (e) => {
-    e.stopPropagation();
-    fetch(`/api/favorites/${session.user.id}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id: experience._id }),
-    }).then((response) => {
-      console.log(response);
-    });
-    setIsFavorite(!isFavorite);
-    newfavorites?.includes(experience._id)
-      ? newfavorites?.pop(experience._id)
-      : newfavorites?.push(experience._id);
-  };
+    const isFav = favorites.some((fav) => fav._id === experience._id);
+    setIsFavorite(isFav);
+  }, []);
 
   if (!experience) {
     return null;
   }
 
+  const onHandleFavoriteClick = (e) => {
+    e.stopPropagation();
+
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    if (isFavorite) {
+      // Rimuove l'esperienza dai preferiti
+      const index = favorites.findIndex((fav) => fav._id === experience._id);
+      favorites.splice(index, 1);
+    } else {
+      // Aggiunge l'esperienza ia preferiti
+      favorites.push(experience);
+    }
+    // Aggiorna i preferiti nel localStorage
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    // Infine aggiorna lo stato locale
+    setIsFavorite(!isFavorite);
+  };
+
   const onHandleClick = () => {
-    router.push(`/experiences/${experience._id}`);
+    if (isClickable) {
+      router.push(`/experiences/${experience._id}`);
+    }
   };
 
   return (
-    <div className={styles.cardBox} onClick={onHandleClick}>
+    <div
+      className={styles.cardBox}
+      onClick={onHandleClick}
+      style={{ cursor: isClickable ? "pointer" : "default" }}
+    >
       <div className={styles.cardBoxImage}>
         <Image
-          src={experience.pictures[0] && experience.pictures[0]}
+          src={
+            experience.pictures && experience.pictures[0]
+              ? experience.pictures[0]
+              : ""
+          }
           width={1200}
           height={1200}
           alt="experience"
@@ -82,7 +93,6 @@ const Card = ({ experience }) => {
       </div>
       <div className={styles.boxText}>
         <h4>{experience.title}</h4>
-        <p>{experience.time[0].first_slot}</p>
         <div className={styles.containerCity}>
           <span className={styles.iconCity}>
             <IconMapPin />

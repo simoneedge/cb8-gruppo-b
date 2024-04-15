@@ -57,9 +57,6 @@ export default function Experiences() {
       });
   }, []);
 
-  useEffect(() => {
-    console.log(experiences);
-  }, [experiences]);
   return (
     <div className={styles.Experiences}>
       <Head>

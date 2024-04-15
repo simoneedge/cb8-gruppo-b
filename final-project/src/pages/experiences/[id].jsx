@@ -32,6 +32,7 @@ export default function ExperienceDetail() {
   // slider
   const [mainPic, setMainPic] = useState(null);
   const [pics, setPics] = useState([]);
+  const [hasBooked, setHasBooked] = useState(false);
   // reservation form
   const [openReservationForm, setOpenReservationForm] = useState(false);
 
@@ -42,34 +43,12 @@ export default function ExperienceDetail() {
     setPics(newPics);
   };
 
-  const onHandleFavorite = (e) => {
-    if (session) {
-      e.stopPropagation();
-      fetch(`/api/favorites/${session.user.id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: experience._id }),
-      }).then((response) => {
-        console.log(response);
-      });
-      setIsFavorite(!isFavorite);
-    } else {
-      setShowModal(true);
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`/api/experiences/${id}`);
       const data = await res.json();
 
       setExperience(data);
-      if (session?.user.favorites.includes(experience?._id)) {
-        setIsFavorite(true);
-        console.log(session.user.favorites);
-      }
 
       // Imposta l'immagine principale e le altre immagini utilizzando i dati
       // dell'esperienza
@@ -89,6 +68,19 @@ export default function ExperienceDetail() {
       fetchData();
     }
   }, [id]);
+
+  useEffect(() => {
+    if (session && experience) {
+      fetch(`/api/reservations/${session.user.id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          const hasBooked = data.some(
+            (booking) => booking.esperienceId === experience._id
+          );
+          setHasBooked(hasBooked);
+        });
+    }
+  }, [session, experience]);
 
   if (!experience) {
     return <div></div>;
@@ -181,16 +173,6 @@ export default function ExperienceDetail() {
                 height={1200}
                 alt="image experience"
               />
-              <button
-                className={styles.iconHeartDesk}
-                onClick={(e) => onHandleFavorite(e)}
-              >
-                {isFavorite ? (
-                  <IconHeartFilled size={26} color={"red"} />
-                ) : (
-                  <IconHeart size={26} />
-                )}
-              </button>
             </div>
             <div className={styles.containerPicBottom}>
               <div className={styles.containerPicBottom}>
@@ -232,12 +214,16 @@ export default function ExperienceDetail() {
                 <IconArrowLeft size={20} />
                 Back
               </button>
-              <button
-                className={styles.experienceBtn}
-                onClick={() => setOpenReservationForm(true)}
-              >
-                Add Experience
-              </button>
+              {session && (
+                <button
+                  className={styles.experienceBtn}
+                  onClick={
+                    hasBooked ? null : () => setOpenReservationForm(true)
+                  }
+                >
+                  {hasBooked ? "Experience Booked !" : "Add Experience"}
+                </button>
+              )}
             </div>
           </div>
         </div>

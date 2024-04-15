@@ -6,6 +6,7 @@ import Image from "next/image";
 import MenuDesk from "@/components/menuDesk";
 import MenuMobile from "@/components/menuMobile";
 import Footer from "@/components/footer";
+import Card from "@/components/card";
 
 export default function Profile() {
   const { data: session, status } = useSession({
@@ -16,12 +17,34 @@ export default function Profile() {
   });
 
   const [user, setUser] = useState(null);
+  const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
     if (session) {
       fetch(`/api/user/${session.user.id}`)
         .then((res) => res.json())
         .then((data) => setUser(data));
+    }
+  }, [session]);
+
+  useEffect(() => {
+    if (session) {
+      fetch(`/api/reservations/${session.user.id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          const promises = data.map((booking) =>
+            fetch(`/api/experiences/${booking.esperienceId}`)
+              .then((res) => res.json())
+              .then((experience) => {
+                // Aggiunge i dettagli dell'esperienza alla prenotazione così avremo
+                // la lista con le card
+                return { ...booking, experience };
+              })
+          );
+          Promise.all(promises).then((bookingsWithDetails) => {
+            setBookings(bookingsWithDetails);
+          });
+        });
     }
   }, [session]);
 
@@ -42,9 +65,9 @@ export default function Profile() {
       <main className={styles.infoProfile}>
         <div className={styles.backTheme}>
           <Image
-            src="/organiz.png"
-            width={100}
-            height={100}
+            src="/profile-icon-isolated-white-on-600nw-211470211.webp"
+            width={200}
+            height={200}
             alt="user profile picture"
           />
         </div>
@@ -82,7 +105,16 @@ export default function Profile() {
         </div>
       </main>
       <section className={styles.bookings}>
-        <h4 className={styles.title}>Bookings made: none</h4>
+        <h4 className={styles.title}>
+          {bookings.length > 0 ? "Your Bookings:" : "Bookings made: none"}
+        </h4>
+        {bookings.map((booking, index) => (
+          <Card
+            key={index}
+            experience={booking.experience}
+            isClickable={false}
+          />
+        ))}
       </section>
       <Footer />
     </div>

@@ -5,7 +5,7 @@ const CardList = ({ experiences }) => {
   return (
     <div className={styles.CardList}>
       {experiences.map((experience) => (
-        <Card key={experience._id} experience={experience} />
+        <Card key={experience._id} experience={experience} isClickable={true} />
       ))}
     </div>
   );
