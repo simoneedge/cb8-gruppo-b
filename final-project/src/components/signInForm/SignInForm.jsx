@@ -35,6 +35,7 @@ const SignInForm = () => {
   const form = useForm({
     initialValues: {
       email: "",
+      username: "",
       name: "",
       lastname: "",
       password: "",
