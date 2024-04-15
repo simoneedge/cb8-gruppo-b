@@ -6,7 +6,8 @@ import Image from "next/image";
 import MenuDesk from "@/components/menuDesk";
 import MenuMobile from "@/components/menuMobile";
 import Footer from "@/components/footer";
-import Card from "@/components/card";
+// import Card from "@/components/card";
+import Booking from "@/components/booking";
 
 export default function Profile() {
   const { data: session, status } = useSession({
@@ -39,6 +40,7 @@ export default function Profile() {
                 // Aggiunge i dettagli dell'esperienza alla prenotazione così avremo
                 // la lista con le card
                 return { ...booking, experience };
+                // console.log(experience);
               })
           );
           Promise.all(promises).then((bookingsWithDetails) => {
@@ -104,18 +106,25 @@ export default function Profile() {
           </p>
         </div>
       </main>
-      <section className={styles.bookings}>
-        <h4 className={styles.title}>
-          {bookings.length > 0 ? "Your Bookings:" : "Bookings made: none"}
-        </h4>
-        {bookings.map((booking, index) => (
-          <Card
-            key={index}
-            experience={booking.experience}
-            isClickable={false}
-          />
-        ))}
+
+      <section>
+        <div className={styles.bookings}>
+          <h4 className={styles.title}>
+            {bookings.length > 0 ? "Your Bookings:" : "Bookings made: none"}
+          </h4>
+
+          {bookings.map((booking, index) => (
+            <div className={styles.bookingList}>
+              <Booking
+                key={index}
+                experience={booking.experience}
+                isClickable={false}
+              />
+            </div>
+          ))}
+        </div>
       </section>
+
       <Footer />
     </div>
   );

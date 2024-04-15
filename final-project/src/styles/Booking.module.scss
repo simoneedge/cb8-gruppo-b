@@ -1,0 +1,58 @@
+.Booking {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+
+  width: 400px;
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 30px;
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .containerImage {
+    position: relative;
+  }
+
+  img {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+  }
+
+  .heartIcon {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    cursor: pointer;
+  }
+
+  .containerRight {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+  .bold {
+    font-weight: bold;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Booking {
+    width: 700px;
+    flex-direction: row;
+    align-items: flex-start;
+
+    img {
+      width: 500px;
+    }
+  }
+}
