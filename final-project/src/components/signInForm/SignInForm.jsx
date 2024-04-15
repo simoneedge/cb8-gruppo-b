@@ -49,7 +49,7 @@ const SignInForm = () => {
   });
 
   const handleSignIn = async () => {
-    const username = form.values.name;
+    const username = form.values.username;
     const password = form.values.password;
 
     await signIn("credentials", {
