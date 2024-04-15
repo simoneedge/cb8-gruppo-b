@@ -42,7 +42,7 @@ const SignInForm = () => {
     },
 
     validate: {
-      name: (val) =>
+      username: (val) =>
         val.length < 2 ? "Name must have at least 2 letters" : null,
       password: (val) => (val.length >= 4 ? null : "Invalid password"),
     },
