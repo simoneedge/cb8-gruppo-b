@@ -14,7 +14,7 @@ const Card = ({ experience }) => {
   const newfavorites = session?.user?.favorites;
 
   useEffect(() => {
-    if (newfavorites.includes(experience._id)) {
+    if (newfavorites?.includes(experience._id)) {
       setIsFavorite(true);
       console.log(session.user.favorites);
     }
