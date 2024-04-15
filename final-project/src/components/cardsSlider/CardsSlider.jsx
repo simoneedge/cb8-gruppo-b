@@ -10,15 +10,13 @@ const CardsSlider = ({ experiences }) => {
       <Swiper
         style={{
           "--swiper-pagination-color": "darkblue",
-          margin: "0",
+          marginLeft: "10px",
         }}
-        spaceBetween={20}
+        spaceBetween={30}
         slidesPerView={1.2}
         breakpoints={{
           640: { slidesPerView: 2.3 },
-          900: { slidesPerView: 3.4 },
-          // 1500: { slidesPerView: 4.3 },
-          1024: { slidesPerView: 2.3 },
+          1024: { slidesPerView: 3.3 },
         }}
         pagination={{ clickable: true }}
         speed={600}
@@ -31,7 +29,7 @@ const CardsSlider = ({ experiences }) => {
       >
         {experiences.map((experience, index) => (
           <SwiperSlide key={index}>
-            <Card experience={experience} />
+            <Card experience={experience} isClickable={true} />
           </SwiperSlide>
         ))}
       </Swiper>
