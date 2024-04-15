@@ -66,7 +66,7 @@ export default function ExperienceDetail() {
       const data = await res.json();
 
       setExperience(data);
-      if (session?.user.favorites.includes(experience._id)) {
+      if (session?.user.favorites.includes(experience?._id)) {
         setIsFavorite(true);
         console.log(session.user.favorites);
       }
