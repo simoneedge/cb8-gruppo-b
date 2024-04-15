@@ -33,8 +33,8 @@ const Card = ({ experience }) => {
     });
     setIsFavorite(!isFavorite);
     newfavorites?.includes(experience._id)
-      ? newfavorites.pop(experience._id)
-      : newfavorites.push(experience._id);
+      ? newfavorites?.pop(experience._id)
+      : newfavorites?.push(experience._id);
   };
 
   if (!experience) {
