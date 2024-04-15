@@ -112,7 +112,8 @@ const ReservationForm = ({ data }) => {
           alt="logo"
         />
       </div>
-      <form className={styles.containerForm} onSubmit={handleSubmit}>
+      {/* <form className={styles.containerForm} onSubmit={handleSubmit}> */}
+      <form onSubmit={handleSubmit}>
         <div className={styles.form}>
           <h3>Select one of the following time availabilities</h3>
           <div className={styles.containerHours}>
@@ -195,7 +196,11 @@ const ReservationForm = ({ data }) => {
         </div>
 
         <div className={styles.info}>
-          <button type="submit" disabled={isLoading}>
+          <button
+            className={styles.btnExperience}
+            type="submit"
+            disabled={isLoading}
+          >
             {isLoading ? "Loading..." : "Book your experience!"}
           </button>
         </div>
