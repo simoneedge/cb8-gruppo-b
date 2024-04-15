@@ -11,7 +11,7 @@ const Card = ({ experience }) => {
   const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const newfavorites = session.user.favorites;
+  const newfavorites = session?.user?.favorites;
 
   useEffect(() => {
     if (newfavorites.includes(experience._id)) {
@@ -32,7 +32,7 @@ const Card = ({ experience }) => {
       console.log(response);
     });
     setIsFavorite(!isFavorite);
-    newfavorites.includes(experience._id)
+    newfavorites?.includes(experience._id)
       ? newfavorites.pop(experience._id)
       : newfavorites.push(experience._id);
   };
