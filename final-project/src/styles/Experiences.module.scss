@@ -5,7 +5,7 @@
 }
 
 .navExperiences {
-  height: 80vh;
+  height: 70vh;
   background-color: var(--color-blue2);
   color: var(--color-orange);
 }
@@ -18,7 +18,7 @@
   align-items: center;
 
   h1 {
-    padding: .625rem;
+    // padding: 0.625rem;
     width: 25rem;
     line-height: 1.5;
     font-size: 1.5rem;
@@ -30,11 +30,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.25rem;
+  // gap: 1.25rem;
 }
 
 .search {
-  padding-bottom: .625rem;
+  padding-bottom: 0.625rem;
 }
 
 .mainExperiences {
@@ -45,7 +45,7 @@
 
 @media screen and (min-width: 48rem) {
   .navExperiences {
-    height: 90vh;
+    height: 80vh;
   }
 
   .textNav {
@@ -58,7 +58,6 @@
 
   .mainExperiences {
     min-height: 80vh;
-    flex-shrink: 1;
-    padding-top: 6.25rem;
+    padding-bottom: 12.5rem;
   }
 }
