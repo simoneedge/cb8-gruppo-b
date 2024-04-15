@@ -63,9 +63,6 @@ export default function Intro() {
             ) : (
               <div className={styles.containerBtn}>
                 <button onClick={() => signIn()}>Sign In</button>
-                <button onClick={() => handleRegistration(true)}>
-                  Register
-                </button>
               </div>
             )}
 
