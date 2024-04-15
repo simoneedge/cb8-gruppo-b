@@ -36,6 +36,7 @@ const SignInForm = () => {
     initialValues: {
       email: "",
       name: "",
+      lastname: "",
       password: "",
       terms: true,
     },
@@ -64,6 +65,8 @@ const SignInForm = () => {
     const userData = {
       username: form.values.name,
       email: form.values.email,
+      name: form.values.name,
+      lastname: form.values.lastname,
       password: form.values.password,
       favorites: [],
     };
@@ -138,15 +141,55 @@ const SignInForm = () => {
             required
             label={"Username"}
             placeholder={"username"}
-            value={form.values.name}
+            value={form.values.username}
             onChange={(event) =>
-              form.setFieldValue("name", event.currentTarget.value)
+              form.setFieldValue("username", event.currentTarget.value)
             }
-            error={form.errors.name}
             radius={"md"}
           />
 
           <Divider />
+
+          {type === "signUp" && (
+            <>
+              <TextInput
+                required
+                label={"Email"}
+                placeholder={"Your email"}
+                value={form.values.email}
+                onChange={(event) =>
+                  form.setFieldValue("email", event.currentTarget.value)
+                }
+                radius={"md"}
+              />
+
+              <Divider />
+
+              <TextInput
+                required
+                label={"Name"}
+                placeholder={"Your Name"}
+                value={form.values.name}
+                onChange={(event) =>
+                  form.setFieldValue("name", event.currentTarget.value)
+                }
+                radius={"md"}
+              />
+
+              <Divider />
+
+              <TextInput
+                required
+                label={"Lastname"}
+                placeholder={"Your Lastname"}
+                value={form.values.lastname}
+                onChange={(event) =>
+                  form.setFieldValue("lastname", event.currentTarget.value)
+                }
+                radius={"md"}
+              />
+            </>
+          )}
 
           <div>
             <PasswordInput
