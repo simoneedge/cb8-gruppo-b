@@ -5,8 +5,9 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import Experiences from "@/pages/experiences";
 
-const Booking = ({ experience, isClickable }) => {
+const CardBooking = ({ experience, booking, isClickable }) => {
   const { data: session } = useSession();
   const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
@@ -81,7 +82,7 @@ const Booking = ({ experience, isClickable }) => {
                   color="red"
                 />
               ) : (
-                <IconHeart className={styles.heartIcon} size={28} />
+                <IconHeart className={styles.heartIcon} size={28} color="red" />
               )}
             </span>
           )}
@@ -90,8 +91,8 @@ const Booking = ({ experience, isClickable }) => {
           <span className={styles.bold}>Title:</span> {experience.title}
         </h1>
         <h3>
-          <span className={styles.bold}>Host:</span>
-          Nome Host
+          <span className={styles.bold}>Host: </span>
+          {experience.host[0].name_host}
         </h3>
       </div>
 
@@ -110,10 +111,12 @@ const Booking = ({ experience, isClickable }) => {
 
         <h2>Info Booking</h2>
         <p>
-          <span className={styles.bold}>Number: </span>Numero persone
+          <span className={styles.bold}>Number: </span>
+          {booking.guests}
         </p>
         <p>
-          <span className={styles.bold}>Time: </span> Orario
+          <span className={styles.bold}>Time: </span>
+          {booking.timeSlot}
         </p>
         <p>
           <span className={styles.bold}>Price: </span>
@@ -132,4 +135,4 @@ const Booking = ({ experience, isClickable }) => {
   );
 };
 
-export default Booking;
+export default CardBooking;
