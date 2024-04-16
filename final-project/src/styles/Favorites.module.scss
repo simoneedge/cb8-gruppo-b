@@ -7,7 +7,7 @@
 .navFavorites {
   background-color: var(--color-blue2);
   color: var(--color-orange);
-  height: 80vh;
+  height: auto;
 }
 
 .textNav {
@@ -19,7 +19,6 @@
 
   h1 {
     padding: 0.625rem;
-    width: 25rem;
     line-height: 1.5;
     font-size: 1.5rem;
   }
@@ -27,13 +26,12 @@
 
 .mainFavorites {
   min-height: 50vh;
-  padding-bottom: 6.25rem;
+  padding: 3.125rem 0.75rem 11.25rem 0.75rem;
   background-color: var(--color-blue2);
-  padding: 0 8px;
 }
 
 .noFavorites {
-  color: orange;
+  color: var(--color-orange);
   display: flex;
   justify-content: center;
 }
@@ -48,7 +46,8 @@
   }
 
   .mainFavorites {
+    padding-top: 80px;
     min-height: 80vh;
-    padding-bottom: 11.25rem;
+    padding-bottom: 17.5rem;
   }
 }
