@@ -49,7 +49,13 @@ export default function Favorites() {
         </div>
       </nav>
       <main className={styles.mainFavorites}>
-        <CardList experiences={favorites} />
+        {favorites.length === 0 ? (
+          <h3 className={styles.noFavorites}>
+            You have no favorite experiences yet.
+          </h3>
+        ) : (
+          <CardList experiences={favorites} />
+        )}
       </main>
       <Footer />
     </div>

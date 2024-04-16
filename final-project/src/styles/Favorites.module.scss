@@ -29,6 +29,13 @@
   min-height: 50vh;
   padding-bottom: 6.25rem;
   background-color: var(--color-blue2);
+  padding: 0 8px;
+}
+
+.noFavorites {
+  color: orange;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {

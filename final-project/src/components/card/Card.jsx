@@ -75,21 +75,13 @@ const Card = ({ experience, isClickable }) => {
 
         {session && (
           <span onClick={onHandleFavoriteClick}>
-            {isFavorite ? <IconHeartFilled color="red" /> : <IconHeart />}
+            {isFavorite ? (
+              <IconHeartFilled color="red" />
+            ) : (
+              <IconHeart color="red" />
+            )}
           </span>
         )}
-      </div>
-      <div className={styles.boxText}>
-        <h4>{experience.title}</h4>
-        <p>{experience.geolocation}</p>
-
-        <span onClick={onHandleFavoriteClick}>
-          {isFavorite ? (
-            <IconHeartFilled size={28} color="red" />
-          ) : (
-            <IconHeart size={28} />
-          )}
-        </span>
       </div>
       <div className={styles.boxText}>
         <h4>{experience.title}</h4>
@@ -97,7 +89,7 @@ const Card = ({ experience, isClickable }) => {
           <span className={styles.iconCity}>
             <IconMapPin />
           </span>
-          <p className={styles.city}>{experience.geolocation}</p>
+          <p>{experience.geolocation}</p>
         </div>
       </div>
     </div>
