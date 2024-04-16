@@ -100,17 +100,6 @@ export default function ExperienceDetail() {
       </Head>
       {/* ---NAV--- */}
       <nav className={styles.navExperienceDetail}>
-        {/* ***MODAL TEST*** */}
-        {/* {showModal && (
-          <div className={styles.modal}>
-            <div className={styles.modalContent}>
-              <span className={styles.closeModal} onClick={handleModal}>
-                &times;
-              </span>
-              <p>User need Login</p>
-            </div>
-          </div>
-        )} */}
         <div className={styles.containerSlider}>
           <ImagesSlider
             className={styles.slider}

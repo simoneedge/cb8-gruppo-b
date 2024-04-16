@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styles from "../../styles/Reservation.module.scss";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
-import { IconArrowNarrowLeft } from "@tabler/icons-react";
 import Image from "next/image";
 import ModalConfirmation from "../../components/modalConfirmation/ModalConfirmation";
 import { useSession } from "next-auth/react";
@@ -109,7 +108,7 @@ const ReservationForm = ({ data }) => {
           alt="logo"
         />
       </div>
-      {/* <form className={styles.containerForm} onSubmit={handleSubmit}> */}
+
       <form onSubmit={handleSubmit}>
         <div className={styles.form}>
           <h3>Select one of the following time availabilities</h3>
@@ -157,7 +156,11 @@ const ReservationForm = ({ data }) => {
             placeholder="Enter phone number"
           />
         </div>
-        {formErrors.phone && <p style={{ color: "red" }}>{formErrors.phone}</p>}
+        <div className={styles.info}>
+          {formErrors.phone && (
+            <p style={{ color: "red" }}>{formErrors.phone}</p>
+          )}
+        </div>
         <div className={`${styles.emailRes} ${styles.info}`}>
           <input
             type="email"
