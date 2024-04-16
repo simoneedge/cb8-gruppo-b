@@ -12,6 +12,7 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         const { username } = credentials;
+        const { password } = credentials;
 
         const client = await clientPromise;
         const db = client.db("final-project");
@@ -19,7 +20,7 @@ export const authOptions = {
           .collection("users")
           .findOne({ username: username });
 
-        if (user) {
+        if (user.username === username && user.password === password) {
           console.log("User found", user);
           return user;
         } else {
@@ -32,6 +33,7 @@ export const authOptions = {
   strategy: "jwt",
   pages: {
     signIn: "/signIn",
+    error: "/error",
   },
   callbacks: {
     async jwt({ token, user }) {
