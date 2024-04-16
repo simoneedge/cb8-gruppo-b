@@ -26,13 +26,13 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: .625rem;
+  gap: 0.625rem;
   text-align: center;
   width: 90%;
 
   h1 {
     font-size: 1.625rem;
-    padding-bottom: .875rem;
+    padding-bottom: 0.875rem;
     color: var(--color-yellow);
     font-weight: 800;
   }
@@ -45,11 +45,12 @@
 }
 
 .btnCallAction {
+  transition: color 0.3s;
   color: var(--color-blue2);
   background-color: var(--color-yellow);
   border: none;
-  padding: .625rem 1.25rem;
-  border-radius: .5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
   font-size: 1.125rem;
   font-weight: bold;
   margin-top: 2.5rem;
@@ -81,28 +82,27 @@
 .btnMenu {
   background-color: var(--color-yellow);
   border: none;
-  padding: .5rem 1.25rem;
+  padding: 0.5rem 1.25rem;
   font-size: 1rem;
   color: var(--color-black);
   font-weight: bold;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
 .textName {
   color: var(--color-blue2);
   font-weight: 500;
-  padding-top: .625rem;
+  padding-top: 0.625rem;
 }
 
 .sessionContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: .5rem;
+  gap: 0.5rem;
   justify-content: center;
 }
-
 
 // ---MAIN---
 .mainPageHome {
@@ -126,13 +126,8 @@
 
 // ---SLIDER---
 .containerSlider {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  padding-left: 0px;
 }
-
 
 .listCheck {
   display: flex;
@@ -156,7 +151,7 @@
     justify-content: center;
     align-items: center;
     gap: 1.25rem;
-    padding-bottom: .625rem;
+    padding-bottom: 0.625rem;
     width: 94%;
     color: var(--color-white2);
   }
@@ -180,7 +175,7 @@
 .imgReview img {
   width: 100%;
   height: 25rem;
-  border-radius: .625rem;
+  border-radius: 0.625rem;
   object-fit: cover;
 }
 
@@ -230,14 +225,11 @@
     }
   }
 
-  
-
   // /SESSION
 
   .sessionLogo {
     display: none;
   }
-
 
   // ----MAIN---
   // --text section--
@@ -247,7 +239,7 @@
     align-items: center;
     justify-content: center;
     padding: 6.25rem 2.5rem 6.25rem 2.5rem;
-    gap: .625rem;
+    gap: 0.625rem;
     width: 100%;
     background-color: var(--color-blue2);
     color: var(--color-orange);
@@ -264,21 +256,18 @@
     }
   }
 
+  .mainPageHome {
+    padding-bottom: 10rem;
+  }
+
   .titleAndLink {
     padding: 2.5rem 7.5rem 2.5rem 7.5rem;
   }
 
-  // SLIDER NO DESK
-  .containerSlider {
-    padding: 2.5rem 7.5rem 2.5rem 7.5rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.875rem;
-  }
+  // SLIDER DESK
 
-  .boxSlider {
-    width: 25rem;
+  .containerSlider {
+    padding-left: 1.875rem;
   }
 
   .listCheck {
@@ -303,21 +292,21 @@
     .side {
       display: flex;
       flex-direction: column;
-      gap: .625rem;
+      gap: 0.625rem;
       align-items: center;
     }
 
     .side img {
       height: 12.5rem;
       width: 18.75rem;
-      border-radius: .625rem;
+      border-radius: 0.625rem;
       object-fit: cover;
     }
 
     .fullwidth img {
       height: 25.625rem;
       width: 18.75rem;
-      border-radius: .625rem;
+      border-radius: 0.625rem;
       object-fit: cover;
     }
 
@@ -336,7 +325,7 @@
       }
       p {
         color: var(--color-white2);
-        font-size: .875rem;
+        font-size: 0.875rem;
         font-weight: bold;
       }
     }
