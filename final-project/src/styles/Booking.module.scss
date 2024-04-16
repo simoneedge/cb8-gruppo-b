@@ -1,17 +1,16 @@
 .Booking {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
   justify-content: center;
 
-  width: 400px;
-  border: 1px solid blue;
-  border-radius: 10px;
-  padding: 30px;
-  margin-top: 30px;
-
-  h1 {
-    font-size: 26px;
+  width: 25rem;
+  border: 0.0625rem solid var(--color-yellow);
+  border-radius: 0.625rem;
+  padding: 1.875rem;
+  margin-top: 1.875rem;
+  line h1 {
+    font-size: 1.625rem;
   }
 
   .containerImage {
@@ -20,39 +19,47 @@
 
   img {
     width: 100%;
-    max-height: 300px;
-    border-radius: 10px;
+    max-height: 18.75rem;
+    border-radius: 0.625rem;
   }
 
   .heartIcon {
     position: absolute;
-    top: 10px;
-    right: 16px;
+    top: 0.625rem;
+    right: 1rem;
     cursor: pointer;
   }
 
   .containerRight {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.625rem;
+    color: var(--color-white2);
+  }
+
+  h1 {
+    font-size: 1.25rem;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
+    color: var(--color-yellow);
   }
   .bold {
     font-weight: bold;
+    font-size: 1.125rem;
+    color: var(--color-yellow);
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48rem) {
   .Booking {
-    width: 700px;
+    width: 48.75rem;
     flex-direction: row;
     align-items: flex-start;
 
     img {
-      width: 500px;
+      width: 31.25rem;
     }
   }
 }
