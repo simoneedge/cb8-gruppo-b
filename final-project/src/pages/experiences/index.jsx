@@ -75,7 +75,6 @@ export default function Experiences() {
               the perfect adventure to create your next cherished memory.
             </h1>
           </div>
-          {/* ***LA SEARCH ADESSO è DENTRO LA NAV*** */}
           <div className={styles.search}>
             <Space h={"xl"} /> <Space h={"xl"} />
             <Flex

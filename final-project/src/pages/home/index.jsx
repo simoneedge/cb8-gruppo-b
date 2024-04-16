@@ -11,53 +11,23 @@ import MenuDesk from "@/components/menuDesk";
 import Footer from "@/components/footer";
 
 export default function Home() {
-  // Aggiunta delle esperienze filtrate
   const [experiences, setExperiences] = useState([]);
-  const [filteredExperiences, setFilteredExperiences] = useState([]);
-  const [cityOptions, setCityOptions] = useState([]);
-  const [cityFilter, setCityFilter] = useState(null);
-  const [categoryFilter, setCategoryFilter] = useState(null);
+
   const { data: session } = useSession();
-  // Chiamata di tutti i dati delle eperienze complete
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("/api/experiences");
       const data = await res.json();
 
       const cities = data.map((experience) => experience.geolocation);
-      // Così nelle opzioni di scelta non si duplicano le città
+
       const uniqueCities = [...new Set(cities)];
-      // Aggiunta dell'opzione "qualsiasi città" all'inizio dell'array
       uniqueCities.unshift("All");
 
       setExperiences(data);
-      setCityOptions(uniqueCities);
     };
     fetchData();
   }, []);
-
-  useEffect(() => {
-    // Applicazione dei filtri ogni volta che cambiano
-    let filtered = experiences;
-    // Se il filtro è impostato su "All" non applica il filtro per città
-    if (cityFilter && cityFilter !== "All") {
-      filtered = filtered.filter(
-        (experience) => experience.geolocation === cityFilter
-      );
-    }
-
-    if (categoryFilter) {
-      filtered = filtered.filter(
-        (experience) => experience.category === categoryFilter
-      );
-    }
-
-    setFilteredExperiences(filtered);
-  }, [cityFilter, categoryFilter]);
-
-  const onHandleSearch = (results) => {
-    setFilteredExperiences(results);
-  };
 
   return (
     <div className={styles.Home}>
