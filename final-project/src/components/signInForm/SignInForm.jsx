@@ -64,7 +64,7 @@ const SignInForm = () => {
 
   const handleSignUp = async () => {
     const userData = {
-      username: form.values.name,
+      username: form.values.username,
       email: form.values.email,
       name: form.values.name,
       lastname: form.values.lastname,
@@ -82,6 +82,12 @@ const SignInForm = () => {
         if (response.ok) {
           toggle();
           setSignUpCompleted(true);
+          signIn("credentials", {
+            username: form.values.username,
+            password: form.values.password,
+            callbackUrl: callbackUrl || "/",
+            redirect: true,
+          });
         }
       })
       .catch((error) => {
@@ -118,7 +124,7 @@ const SignInForm = () => {
             title="Sign Up Completed!"
             color="green"
           >
-            You can now sign in
+            You'll be redirected to the application soon...
           </Notification>
           <Space h="md" />
         </>
