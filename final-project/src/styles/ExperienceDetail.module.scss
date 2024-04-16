@@ -83,7 +83,6 @@
   align-items: center;
 }
 .organizPicture {
-
   img {
     max-width: 8.125rem;
     max-height: 8.125rem;
@@ -267,6 +266,7 @@
       width: 17vw;
       height: 24vh;
       border-radius: 1.25rem;
+      object-fit: cover;
     }
   }
 

@@ -112,10 +112,9 @@ export default function Profile() {
             {bookings.length > 0 ? "Your Bookings:" : "Bookings made: none"}
           </h4>
 
-          {bookings.map((booking, index) => (
-            <div key={booking.id} className={styles.bookingList}>
+          {bookings.map((booking) => (
+            <div key={booking.esperienceId} className={styles.bookingList}>
               <CardBooking
-                key={index}
                 experience={booking.experience}
                 booking={booking}
                 isClickable={false}

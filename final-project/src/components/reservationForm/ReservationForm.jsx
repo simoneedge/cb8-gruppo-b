@@ -101,9 +101,6 @@ const ReservationForm = ({ data }) => {
   return (
     <div className={styles.Reservation}>
       <div className={styles.topForm}>
-        <div className={styles.arrowLeft}>
-          <IconArrowNarrowLeft size={28} />
-        </div>
         <Image
           className={styles.logo}
           src="/logoBianco.svg"
