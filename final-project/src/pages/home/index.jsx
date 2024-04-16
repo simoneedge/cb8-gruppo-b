@@ -80,7 +80,7 @@ export default function Home() {
             alt="logo"
             priority
           />
-          {/* ----SESSION--- */}
+          {/* ----SESSION MOBILE--- */}
           <div className={styles.session}>
             {session ? (
               <div className={styles.sessionContainer}>
@@ -115,15 +115,6 @@ export default function Home() {
             Start Exploring
           </Link>
         </div>
-        {/* --SEARCH-- */}
-        {/* 
-        <div className={styles.containerInput}>
-          <SearchBar data={experiences} onSearch={onHandleSearch} />
-          <button>Click</button>
-        </div>
-        <CityFilter options={cityOptions} onFilter={setCityFilter} />
-        <CategoryFilter onFilter={setCategoryFilter} />
-       */}
       </nav>
       {/* ---MAIN--- */}
       <main className={styles.mainPageHome}>
@@ -141,17 +132,9 @@ export default function Home() {
           <Link href="/experiences">See all</Link>
         </div>
         {/*Slider con le prime 6 esperienze che si trovano sul database */}
-
-        <CardsSlider experiences={experiences.slice(0, 6)} />
-
-        {/* <div className={styles.containerSlider}>
-          <div className={styles.boxSlider}>
-            <h4>Titolo Evento</h4>
-            <p>Orario</p>
-            <p>Città</p>
-          </div>
-        </div> */}
-
+        <div className={styles.containerSlider}>
+          <CardsSlider experiences={experiences.slice(0, 6)} />
+        </div>
         <div className={styles.listCheck}>
           <h2>Discover Sicily: Experiences to Explore</h2>
           <ul>
