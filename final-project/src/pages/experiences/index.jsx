@@ -39,7 +39,11 @@ export default function Experiences() {
       const searchResults = fuse.search(searchTerm).map(({ item }) => item);
       filtered = filtered.filter((exp) => searchResults.includes(exp));
     }
-
+    console.log(43434);
+    console.log(5454);
+    if (experiences) {
+      console.log(5454);
+    }
     setFilteredExperiences(filtered);
   };
 
