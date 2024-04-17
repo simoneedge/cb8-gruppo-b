@@ -47,7 +47,7 @@
 //SESSION
 
 .containerInfo {
-  padding: 3.125rem;
+  padding: 0.625rem;
   border: 0.0625rem solid var(--color-white2);
   border-radius: 0.5rem;
 }
@@ -79,7 +79,7 @@
 .labelInfo {
   font-weight: bold;
   color: var(--color-white);
-  padding-right: 2.5rem;
+  padding-right: 0.625rem;
 }
 
 .username,
@@ -113,6 +113,7 @@
 
   .containerInfo {
     margin-top: 6.25rem;
+    padding: 3.125rem;
     margin-bottom: 1.25rem;
     height: 30vh;
   }
