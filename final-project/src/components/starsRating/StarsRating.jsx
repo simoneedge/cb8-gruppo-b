@@ -1,4 +1,4 @@
-import styles from "../../styles/StarsRating.module.scss";
+import styles from "./index.module.scss";
 
 const StarsRating = ({ rating }) => {
   return <div className={styles.Stars} style={{ "--rating": rating }}></div>;

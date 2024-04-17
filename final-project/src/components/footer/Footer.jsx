@@ -1,4 +1,4 @@
-import styles from "../../styles/Footer.module.scss";
+import styles from "./index.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { IconBrandGithub } from "@tabler/icons-react";

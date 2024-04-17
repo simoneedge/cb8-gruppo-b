@@ -1,7 +1,6 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-
 import { useToggle, upperFirst } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
 import {
@@ -17,7 +16,6 @@ import {
   Notification,
   Space,
 } from "@mantine/core";
-
 import { signIn } from "next-auth/react";
 import { useEffect, useState } from "react";
 
@@ -57,12 +55,6 @@ const SignInForm = () => {
       callbackUrl: callbackUrl || "/",
       redirect: true,
     });
-    console.log("Sign Up");
-    console.log(434);
-    console.log(4343);
-    if (callbackUrl) {
-      console.log(3);
-    }
   };
 
   const handleSignUp = async () => {

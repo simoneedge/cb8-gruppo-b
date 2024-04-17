@@ -2,8 +2,6 @@ import styles from "../../styles/Favorites.module.scss";
 import { useSession, signIn } from "next-auth/react";
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
 import MenuDesk from "@/components/menuDesk";
 import MenuMobile from "@/components/menuMobile";
 import Footer from "@/components/footer";

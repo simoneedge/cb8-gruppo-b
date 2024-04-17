@@ -1,6 +1,5 @@
 import styles from "../../styles/AboutUs.module.scss";
 import Head from "next/head";
-import Link from "next/link";
 import MenuDesk from "@/components/menuDesk";
 import MenuMobile from "@/components/menuMobile";
 import Footer from "@/components/footer";

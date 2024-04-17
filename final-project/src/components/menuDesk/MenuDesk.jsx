@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../../styles/Menu.module.scss";
+import styles from "./index.module.scss";
 import Image from "next/image";
 import { useSession, signIn, signOut } from "next-auth/react";
 

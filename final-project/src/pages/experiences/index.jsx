@@ -1,23 +1,21 @@
 import styles from "../../styles/Experiences.module.scss";
 import CardList from "@/components/cardList";
-
 import Head from "next/head";
 import MenuDesk from "@/components/menuDesk";
 import MenuMobile from "@/components/menuMobile";
 import Footer from "@/components/footer";
-import React, { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react";
 import { Space, Flex, Select, TextInput } from "@mantine/core";
 import Fuse from "fuse.js";
 import { IconFilters } from "@tabler/icons-react";
 
 export default function Experiences() {
   const [experiences, setExperiences] = useState([]);
-
   const [filteredExperiences, setFilteredExperiences] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [fuse, setFuse] = useState(null);
   const [category, setCategory] = useState("");
+
   useEffect(() => {
     setFuse(new Fuse(experiences, { keys: ["title"] }));
   }, [experiences]);

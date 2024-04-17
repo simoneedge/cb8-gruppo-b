@@ -14,6 +14,7 @@ export default function Home() {
   const [experiences, setExperiences] = useState([]);
 
   const { data: session } = useSession();
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("/api/experiences");
