@@ -119,7 +119,7 @@ const ReservationForm = ({ data }) => {
                   value="10AM-12PM"
                   onChange={() => setSelectedTimeSlot("10AM-12PM")}
                 />
-                10 a.m. - 12 p.m.
+                10 a.m. - 12 a.m.
               </label>
               <label className={styles.containerValueHour}>
                 <input
