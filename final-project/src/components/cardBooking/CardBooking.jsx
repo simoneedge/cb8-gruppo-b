@@ -1,11 +1,9 @@
-import styles from "../../styles/Booking.module.scss";
-import { IconHeart, IconHeartFilled, IconMapPin } from "@tabler/icons-react";
-import StarsRating from "../starsRating";
+import styles from "./index.module.scss";
+import { IconHeart, IconHeartFilled } from "@tabler/icons-react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import Experiences from "@/pages/experiences";
 
 const CardBooking = ({ experience, booking, isClickable }) => {
   const { data: session } = useSession();
@@ -34,7 +32,7 @@ const CardBooking = ({ experience, booking, isClickable }) => {
       const index = favorites.findIndex((fav) => fav._id === experience._id);
       favorites.splice(index, 1);
     } else {
-      // Aggiunge l'esperienza ia preferiti
+      // Aggiunge l'esperienza ai preferiti
       favorites.push(experience);
     }
     // Aggiorna i preferiti nel localStorage

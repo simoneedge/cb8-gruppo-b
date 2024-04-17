@@ -1,4 +1,3 @@
-import React from "react";
 import { useRouter } from "next/router";
 import {
   Center,
@@ -6,7 +5,6 @@ import {
   BackgroundImage,
   Button,
   Flex,
-  Space,
   Divider,
 } from "@mantine/core";
 

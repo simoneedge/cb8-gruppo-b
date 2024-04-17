@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import styles from "../../styles/Reservation.module.scss";
+import { useState, useEffect } from "react";
+import styles from "./index.module.scss";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import Image from "next/image";
 import ModalConfirmation from "../../components/modalConfirmation/ModalConfirmation";
 import { useSession } from "next-auth/react";
+
 const ReservationForm = ({ data }) => {
   const { data: session } = useSession();
   const [phone, setPhone] = useState("");
@@ -55,11 +56,9 @@ const ReservationForm = ({ data }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("arrivato fino a qui");
     if (!formValid) {
       return;
     }
-    console.log("arrivato fino a qui 2");
 
     setIsLoading(true);
 
@@ -83,7 +82,6 @@ const ReservationForm = ({ data }) => {
       if (!response.ok) {
         throw new Error("Something went wrong while saving the reservation");
       } else {
-        console.log(response);
         setSuccessModalOpen(true);
         setPhone("");
         setEmail("");

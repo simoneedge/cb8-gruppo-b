@@ -1,4 +1,4 @@
-import styles from "../../styles/Menu.module.scss";
+import styles from "./index.module.scss";
 import Link from "next/link";
 import {
   IconHome,

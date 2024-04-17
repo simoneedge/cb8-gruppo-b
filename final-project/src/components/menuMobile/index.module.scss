@@ -1,0 +1,68 @@
+.menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-blue2);
+  display: flex;
+  justify-content: space-around;
+  padding: .875rem 0;
+  z-index: 3;
+
+  a {
+    color: var(--color-white);
+  }
+}
+
+.MenuDesk {
+  display: none;
+}
+
+@media screen and (min-width: 48rem) {
+  .containerImage {
+    cursor: pointer;
+  }
+
+  .MenuDesk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2.5rem;
+
+    .topMenu {
+      display: flex;
+      gap: .875rem;
+    }
+
+    a {
+      color: var(--color-back2);
+    }
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .btnMenu {
+    background-color: var(--color-yellow);
+    border: none;
+    width: 5rem;
+    padding: .875rem, 0rem;
+    color: var(--color-black);
+    font-weight: bold;
+    border-radius: .5rem;
+    cursor: pointer;
+  }
+  .textName {
+    color: var(--color-yellow);
+  }
+
+  .sessionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .5rem;
+    justify-content: center;
+  }
+}

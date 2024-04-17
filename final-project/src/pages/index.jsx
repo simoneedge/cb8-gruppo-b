@@ -5,16 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSession, signIn, signOut } from "next-auth/react";
 import router from "next/router";
-import SignUpForm from "@/components/signUpForm";
 
 export default function Intro() {
   const { data: session } = useSession();
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [isShowPage, setIsShowPage] = useState(true);
 
-  useEffect(() => {
-    console.log(session);
-  }, [session]);
+  useEffect(() => {}, [session]);
 
   if (session?.user.username) {
     router.push("/home");

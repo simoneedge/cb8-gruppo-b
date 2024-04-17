@@ -1,4 +1,4 @@
-import styles from "../../styles/Card.module.scss";
+import styles from "./index.module.scss";
 import { IconHeart, IconHeartFilled, IconMapPin } from "@tabler/icons-react";
 import StarsRating from "../starsRating";
 import { useRouter } from "next/router";
@@ -33,7 +33,7 @@ const Card = ({ experience, isClickable }) => {
       const index = favorites.findIndex((fav) => fav._id === experience._id);
       favorites.splice(index, 1);
     } else {
-      // Aggiunge l'esperienza ia preferiti
+      // Aggiunge l'esperienza ai preferiti
       favorites.push(experience);
     }
     // Aggiorna i preferiti nel localStorage

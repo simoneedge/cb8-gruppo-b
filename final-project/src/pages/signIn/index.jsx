@@ -1,9 +1,7 @@
 import { Center, Flex, Button, Space, BackgroundImage } from "@mantine/core";
-
-import React from "react";
 import SignInForm from "../../components/signInForm/SignInForm";
-
 import Link from "next/link";
+
 const SignIn = () => {
   return (
     <>
@@ -46,9 +44,5 @@ const SignIn = () => {
     </>
   );
 };
-console.log(4334);
-console.log(545);
-if (BackgroundImage) {
-  console.log(4343);
-}
+
 export default SignIn;
