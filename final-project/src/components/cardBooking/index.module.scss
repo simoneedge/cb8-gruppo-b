@@ -4,10 +4,11 @@
   gap: 1.25rem;
   justify-content: center;
 
-  width: 25rem;
+  // width: 25rem;
+  width: 100%;
   border: 0.0625rem solid var(--color-yellow);
   border-radius: 0.625rem;
-  padding: 1.875rem;
+  padding: 1.25rem;
   margin-top: 1.875rem;
   line h1 {
     font-size: 1.625rem;
@@ -58,6 +59,7 @@
     width: 48.75rem;
     flex-direction: row;
     align-items: flex-start;
+    padding: 1.875rem;
 
     img {
       width: 31.25rem;
