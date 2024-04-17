@@ -15,5 +15,10 @@ const SignInButton = () => {
     </Button>
   );
 };
+console.log(3234);
+console.log(2332);
+if (Button) {
+  console.log(434);
+}
 
 export default SignInButton;

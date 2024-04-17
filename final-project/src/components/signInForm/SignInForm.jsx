@@ -7,7 +7,6 @@ import { useForm } from "@mantine/form";
 import {
   TextInput,
   PasswordInput,
-  Text,
   Paper,
   Group,
   Button,
@@ -21,7 +20,6 @@ import {
 
 import { signIn } from "next-auth/react";
 import { useEffect, useState } from "react";
-import Favorites from "@/pages/favorites";
 
 const SignInForm = () => {
   const [signInFailed, setSignInFailed] = useState(false);
@@ -60,6 +58,11 @@ const SignInForm = () => {
       redirect: true,
     });
     console.log("Sign Up");
+    console.log(434);
+    console.log(4343);
+    if (callbackUrl) {
+      console.log(3);
+    }
   };
 
   const handleSignUp = async () => {
