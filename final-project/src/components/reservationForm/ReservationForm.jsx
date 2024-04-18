@@ -117,7 +117,7 @@ const ReservationForm = ({ data }) => {
                   type="radio"
                   name="timeSlot"
                   value="10AM-12PM"
-                  onChange={() => setSelectedTimeSlot("10AM-12PM")}
+                  onChange={() => setSelectedTimeSlot("10AM-12AM")}
                 />
                 10 a.m. - 12 a.m.
               </label>
